@@ -92,7 +92,7 @@ export function SiteFooter() {
     <footer className="bg-brand-navy text-primary-foreground">
       <div className="page-wrap grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_1fr]">
         <div>
-          <div className="brightness-0 invert"><Brand /></div>
+          <div><Brand /></div>
           <p className="mt-5 max-w-md text-sm leading-7 text-primary-foreground/70">Premium plots, land developments and luxury homes across South Hyderabad’s fastest-growing corridors.</p>
         </div>
         <div>
@@ -115,7 +115,7 @@ export function SiteFooter() {
   );
 }
 
-export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
+export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: ReactNode; children: ReactNode }) {
   return (
     <section className="bg-gradient-to-br from-[#1763cf] to-[#124da1] pt-20 pb-16 sm:pt-28 sm:pb-20">
       <div className="page-wrap max-w-4xl text-center">
