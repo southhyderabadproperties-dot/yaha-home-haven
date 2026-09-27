@@ -30,12 +30,29 @@ function Index() {
       <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
         <AnimatedPropertyHero />
         <div className="relative z-20 flex-grow flex items-start container mx-auto px-4 md:px-8 pt-48 md:pt-64 pb-20">
-          <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }} className="max-w-3xl text-foreground">
-            <motion.p variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0 } }} className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary backdrop-blur"><MapPin className="h-4 w-4 text-brand-orange" /> South Hyderabad · Telangana</motion.p>
-            <motion.h1 variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-6 font-display text-4xl font-extrabold leading-[1.04] sm:text-6xl lg:text-7xl">Space to grow.<br/><span className="text-brand-orange">Places to belong.</span></motion.h1>
-            <motion.p variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-5 max-w-xl text-sm leading-7 text-foreground sm:text-base sm:leading-8 font-medium bg-background/50 backdrop-blur-sm p-4 rounded-lg inline-block">Verified open plots, strategic land developments and refined luxury homes across Shamshabad, Maheshwaram and the Future City corridor.</motion.p>
-            <motion.div variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-7 flex flex-wrap gap-3"><Button asChild variant="brand" size="lg"><Link to="/projects/autumn-villas">Explore Autumn Villas <ArrowRight /></Link></Button><Button asChild variant="secondary" size="lg"><a href="tel:+919646952999">Speak to an advisor</a></Button></motion.div>
-          </motion.div>
+          <div className="max-w-3xl md:ml-[8%] lg:ml-[12%] w-full">
+            <div className="hidden md:flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-4">
+                <Link to="/properties" className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-bold flex items-center gap-2 transition-all shadow-lg transform hover:-translate-y-1">
+                  Explore Properties <ArrowRight size={18} />
+                </Link>
+                <a href="https://wa.me/918106396021" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-bold transition-all shadow-lg transform hover:-translate-y-1">
+                  <MessageCircle size={20} />
+                  WhatsApp Us
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-6 px-1">
+                <a href="https://www.facebook.com/share/1E9URqKEay/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-all text-sm font-bold drop-shadow-md group">
+                  <span className="text-blue-600 group-hover:scale-110 transition-transform">Facebook</span>
+                  <span>Yaha Properties</span>
+                </a>
+                <a href="https://instagram.com/yahaproperties" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-all text-sm font-bold drop-shadow-md group">
+                  <span className="text-blue-600 group-hover:scale-110 transition-transform">Instagram</span>
+                  <span>@yahaproperties</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
