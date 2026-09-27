@@ -11,7 +11,7 @@ const draw = {
 
 const rise = {
   hidden: { opacity: 0, y: 28 },
-  visible: (delay: number) => ({ opacity: 1, y: 0, transition: { delay, duration: 0.8, ease: [0.22, 1, 0.36, 1] } }),
+  visible: (delay: number) => ({ opacity: 1, y: 0, transition: { delay, duration: 0.8, ease: "easeOut" } }),
 };
 
 function Cloud({ className, delay = 0 }: { className: string; delay?: number }) {
