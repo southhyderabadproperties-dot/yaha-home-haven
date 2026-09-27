@@ -1,6 +1,6 @@
 export function AnimatedPropertyHero() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none">
+    <div className="absolute inset-0 z-0 pointer-events-none bg-white">
       <video
         autoPlay
         muted
@@ -15,7 +15,7 @@ export function AnimatedPropertyHero() {
         muted
         loop
         playsInline
-        className="block md:hidden w-full h-full object-cover"
+        className="block md:hidden w-full h-full object-contain object-top"
       >
         <source src="/YAHA%20LP%20MBL.mp4" type="video/mp4" />
       </video>
