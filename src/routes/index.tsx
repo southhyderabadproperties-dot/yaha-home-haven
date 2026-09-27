@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Home, LandPlot, MapPin, Search, ShieldCheck } from "lucide-react";
+import { ArrowRight, Building2, Home, LandPlot, MapPin, Search, ShieldCheck, MessageCircle, Facebook, Instagram } from "lucide-react";
 import { useState } from "react";
 
 import { AnimatedPropertyHero } from "@/components/animated-property-hero";
@@ -43,11 +43,11 @@ function Index() {
               </div>
               <div className="flex flex-wrap items-center gap-6 px-1">
                 <a href="https://www.facebook.com/share/1E9URqKEay/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-all text-sm font-bold drop-shadow-md group">
-                  <span className="text-blue-600 group-hover:scale-110 transition-transform">Facebook</span>
+                  <Facebook size={18} className="text-blue-600 group-hover:scale-110 transition-transform" />
                   <span>Yaha Properties</span>
                 </a>
                 <a href="https://instagram.com/yahaproperties" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-all text-sm font-bold drop-shadow-md group">
-                  <span className="text-blue-600 group-hover:scale-110 transition-transform">Instagram</span>
+                  <Instagram size={18} className="text-blue-600 group-hover:scale-110 transition-transform" />
                   <span>@yahaproperties</span>
                 </a>
               </div>
