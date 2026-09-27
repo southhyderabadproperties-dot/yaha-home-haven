@@ -8,7 +8,7 @@ export function AnimatedPropertyHero() {
         playsInline
         className="hidden md:block w-full h-full object-contain object-top"
       >
-        <source src="/Upscaler-2K%20-%20UHD-just_change_only_the_text_tiru.mp4" type="video/mp4" />
+        <source src="/remove_that_logo_show_up_the.mp4" type="video/mp4" />
       </video>
       <video
         autoPlay
