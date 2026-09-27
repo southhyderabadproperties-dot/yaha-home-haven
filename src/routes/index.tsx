@@ -29,31 +29,7 @@ function Index() {
     <div>
       <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
         <AnimatedPropertyHero />
-        <div className="relative z-20 flex-grow flex items-start container mx-auto px-4 md:px-8 pt-48 md:pt-64 pb-20">
-          <div className="max-w-3xl md:ml-[8%] lg:ml-[12%] w-full">
-            <div className="hidden md:flex flex-col gap-4">
-              <div className="flex flex-wrap items-center gap-4">
-                <Link to="/properties" className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-bold flex items-center gap-2 transition-all shadow-lg transform hover:-translate-y-1">
-                  Explore Properties <ArrowRight size={18} />
-                </Link>
-                <a href="https://wa.me/918106396021" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-bold transition-all shadow-lg transform hover:-translate-y-1">
-                  <MessageCircle size={20} />
-                  WhatsApp Us
-                </a>
-              </div>
-              <div className="flex flex-wrap items-center gap-6 px-1">
-                <a href="https://www.facebook.com/share/1E9URqKEay/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-all text-sm font-bold drop-shadow-md group">
-                  <Facebook size={18} className="text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span>Yaha Properties</span>
-                </a>
-                <a href="https://instagram.com/yahaproperties" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 hover:text-blue-500 transition-all text-sm font-bold drop-shadow-md group">
-                  <Instagram size={18} className="text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span>@yahaproperties</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </section>
 
       <section className="relative z-10 -mt-1 bg-background py-8 shadow-xl sm:-mt-10 sm:mx-auto sm:max-w-6xl sm:rounded-md sm:px-7">
