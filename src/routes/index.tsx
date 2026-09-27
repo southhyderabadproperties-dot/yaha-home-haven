@@ -27,14 +27,14 @@ function Index() {
 
   return (
     <div>
-      <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-background">
+      <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
         <AnimatedPropertyHero />
-        <div className="page-wrap relative flex min-h-[calc(100svh-5rem)] items-start pt-14 pb-[23rem] sm:pt-20 sm:pb-[25rem] lg:pt-24">
+        <div className="relative z-20 flex-grow flex items-start container mx-auto px-4 md:px-8 pt-48 md:pt-64 pb-20">
           <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }} className="max-w-3xl text-foreground">
             <motion.p variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0 } }} className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary backdrop-blur"><MapPin className="h-4 w-4 text-brand-orange" /> South Hyderabad · Telangana</motion.p>
             <motion.h1 variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-6 font-display text-4xl font-extrabold leading-[1.04] sm:text-6xl lg:text-7xl">Space to grow.<br/><span className="text-brand-orange">Places to belong.</span></motion.h1>
-            <motion.p variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">Verified open plots, strategic land developments and refined luxury homes across Shamshabad, Maheshwaram and the Future City corridor.</motion.p>
-            <motion.div variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-7 flex flex-wrap gap-3"><Button asChild variant="brand" size="lg"><Link to="/projects/autumn-villas">Explore Autumn Villas <ArrowRight /></Link></Button><Button asChild variant="outline" size="lg"><a href="tel:+919646952999">Speak to an advisor</a></Button></motion.div>
+            <motion.p variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-5 max-w-xl text-sm leading-7 text-foreground sm:text-base sm:leading-8 font-medium bg-background/50 backdrop-blur-sm p-4 rounded-lg inline-block">Verified open plots, strategic land developments and refined luxury homes across Shamshabad, Maheshwaram and the Future City corridor.</motion.p>
+            <motion.div variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-7 flex flex-wrap gap-3"><Button asChild variant="brand" size="lg"><Link to="/projects/autumn-villas">Explore Autumn Villas <ArrowRight /></Link></Button><Button asChild variant="secondary" size="lg"><a href="tel:+919646952999">Speak to an advisor</a></Button></motion.div>
           </motion.div>
         </div>
       </section>

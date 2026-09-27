@@ -1,17 +1,21 @@
 import { motion } from "framer-motion";
-import heroImg from "@/assets/south-hyderabad-hero.jpg";
+import heroImg from "@/assets/investment-corridor2.jpg";
 
 export function AnimatedPropertyHero() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden bg-background" aria-hidden="true">
+    <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
       <motion.div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-        style={{ backgroundImage: `url(${heroImg})` }}
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.6 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/90" />
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="w-full h-full"
+      >
+        <img
+          src={heroImg}
+          alt="Hero background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </motion.div>
     </div>
   );
 }
