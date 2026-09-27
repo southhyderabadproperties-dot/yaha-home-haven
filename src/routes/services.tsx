@@ -77,7 +77,7 @@ const services = [
 function ServicesPage() {
   return (
     <>
-      <PageIntro eyebrow="Our Services" title={<>Comprehensive <span className="text-[#FC913A]">real estate</span> solutions.</>}>
+      <PageIntro eyebrow="Our Services" title={<><span className="text-[#FC913A]">Comprehensive</span> real estate solutions.</>}>
         <p>From finding your dream home to strategic land investments, we provide end-to-end guidance for all your property needs.</p>
       </PageIntro>
 
