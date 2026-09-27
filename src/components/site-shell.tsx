@@ -11,14 +11,12 @@ const navItems = [
   { label: "Contact Us", to: "/contact" as const },
 ];
 
+import logoImg from "@/assets/logo.jpg";
+
 export function Brand({ compact = false }: { compact?: boolean }) {
   return (
     <Link to="/" className="group flex min-w-0 items-center gap-3" aria-label="South Hyderabad Properties home">
-      <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-md bg-primary text-primary-foreground shadow-brand">
-        <span className="absolute bottom-0 left-0 h-5 w-3 bg-brand-orange" />
-        <span className="absolute bottom-0 left-3 h-7 w-3 bg-primary-foreground/90" />
-        <span className="absolute bottom-0 right-1 h-9 w-3 bg-brand-orange" />
-      </span>
+      <img src={logoImg} alt="South Hyderabad Properties Logo" className="h-12 w-12 shrink-0 rounded-full object-contain shadow-md transition-transform group-hover:scale-105" />
       {!compact && (
         <span className="min-w-0 leading-none">
           <strong className="block truncate font-display text-[15px] font-extrabold text-foreground">South Hyderabad</strong>
