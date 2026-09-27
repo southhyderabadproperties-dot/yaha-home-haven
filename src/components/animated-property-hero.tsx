@@ -6,7 +6,7 @@ export function AnimatedPropertyHero() {
         muted
         loop
         playsInline
-        className="hidden md:block w-full h-full object-cover"
+        className="hidden md:block w-full h-full object-contain object-top"
       >
         <source src="/Upscaler-2K%20-%20UHD-just_change_only_the_text_tiru.mp4" type="video/mp4" />
       </video>
