@@ -14,14 +14,15 @@ const navItems = [
 
 import logoImg from "@/assets/logo.jpg";
 
-export function Brand({ compact = false }: { compact?: boolean }) {
+export function Brand({ compact = false, theme = "light" }: { compact?: boolean; theme?: "light" | "dark" }) {
+  const isDark = theme === "dark";
   return (
     <Link to="/" className="group flex min-w-0 items-center gap-3" aria-label="South Hyderabad Properties home">
       <img src={logoImg} alt="South Hyderabad Properties Logo" className="h-12 w-12 shrink-0 rounded-full object-contain shadow-md transition-transform group-hover:scale-105" />
       {!compact && (
         <span className="min-w-0 leading-none">
-          <strong className="block truncate font-display text-[15px] font-extrabold text-foreground">South Hyderabad</strong>
-          <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-primary">Properties</span>
+          <strong className={`block truncate font-display text-[15px] font-extrabold ${isDark ? 'text-white' : 'text-foreground'}`}>South Hyderabad</strong>
+          <span className={`mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] ${isDark ? 'text-white/80' : 'text-primary'}`}>Properties</span>
         </span>
       )}
     </Link>
@@ -92,7 +93,7 @@ export function SiteFooter() {
     <footer className="bg-brand-navy text-primary-foreground">
       <div className="page-wrap grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_1fr]">
         <div>
-          <div><Brand /></div>
+          <div><Brand theme="dark" /></div>
           <p className="mt-5 max-w-md text-sm leading-7 text-primary-foreground/70">Premium plots, land developments and luxury homes across South Hyderabad’s fastest-growing corridors.</p>
         </div>
         <div>
