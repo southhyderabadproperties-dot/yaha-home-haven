@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const draw = {
+const draw: Variants = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (delay: number) => ({
     pathLength: 1,
@@ -9,7 +9,7 @@ const draw = {
   }),
 };
 
-const rise = {
+const rise: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: (delay: number) => ({ opacity: 1, y: 0, transition: { delay, duration: 0.8, ease: "easeOut" } }),
 };
