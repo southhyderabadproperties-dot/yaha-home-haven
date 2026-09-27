@@ -117,11 +117,11 @@ export function SiteFooter() {
 
 export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
   return (
-    <section className="bg-brand-soft pt-20 pb-16 sm:pt-28 sm:pb-20">
+    <section className="bg-gradient-to-br from-[#1763cf] to-[#124da1] pt-20 pb-16 sm:pt-28 sm:pb-20">
       <div className="page-wrap max-w-4xl text-center">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight text-foreground sm:text-6xl">{title}</h1>
-        <div className="mx-auto mt-5 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">{children}</div>
+        <p className="font-bold uppercase tracking-widest text-[#FC913A]">{eyebrow}</p>
+        <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight text-white sm:text-6xl">{title}</h1>
+        <div className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">{children}</div>
       </div>
     </section>
   );
