@@ -6,7 +6,7 @@ export function AnimatedPropertyHero() {
         muted
         loop
         playsInline
-        className="hidden md:block w-full h-full object-contain object-top"
+        className="hidden md:block w-full h-full object-contain object-top origin-top scale-90"
       >
         <source src="/remove_that_logo_show_up_the.mp4" type="video/mp4" />
       </video>
