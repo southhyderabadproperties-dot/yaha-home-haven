@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Building2, Home, LandPlot, MapPin, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 
-import heroImage from "@/assets/south-hyderabad-hero.jpg";
+import { AnimatedPropertyHero } from "@/components/animated-property-hero";
 import { PropertyCarousel } from "@/components/property-ui";
 import { Button } from "@/components/ui/button";
 
@@ -27,18 +27,16 @@ function Index() {
 
   return (
     <div>
-      <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-brand-soft">
-        <img src={heroImage} alt="Modern villas in a landscaped South Hyderabad community" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-linear-to-r from-brand-navy/95 via-brand-navy/72 to-brand-navy/10" />
-        <div className="page-wrap relative flex min-h-[calc(100svh-5rem)] items-center py-16">
-          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75 }} className="max-w-3xl text-primary-foreground">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] backdrop-blur"><MapPin className="h-4 w-4 text-brand-orange" /> South Hyderabad · Telangana</p>
-            <h1 className="mt-7 font-display text-5xl font-extrabold leading-[1.02] sm:text-7xl lg:text-8xl">Space to grow.<br/><span className="text-brand-orange">Places to belong.</span></h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-primary-foreground/80 sm:text-lg">Verified open plots, strategic land developments and refined luxury homes across Shamshabad, Maheshwaram and the Future City corridor.</p>
-            <div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="orange" size="lg"><Link to="/projects/autumn-villas">Explore Autumn Villas <ArrowRight /></Link></Button><Button asChild variant="light" size="lg"><a href="tel:+919646952999">Speak to an advisor</a></Button></div>
+      <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-background">
+        <AnimatedPropertyHero />
+        <div className="page-wrap relative flex min-h-[calc(100svh-5rem)] items-start pt-14 pb-[23rem] sm:pt-20 sm:pb-[25rem] lg:pt-24">
+          <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }} className="max-w-3xl text-foreground">
+            <motion.p variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0 } }} className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary backdrop-blur"><MapPin className="h-4 w-4 text-brand-orange" /> South Hyderabad · Telangana</motion.p>
+            <motion.h1 variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-6 font-display text-4xl font-extrabold leading-[1.04] sm:text-6xl lg:text-7xl">Space to grow.<br/><span className="text-brand-orange">Places to belong.</span></motion.h1>
+            <motion.p variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">Verified open plots, strategic land developments and refined luxury homes across Shamshabad, Maheshwaram and the Future City corridor.</motion.p>
+            <motion.div variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }} className="mt-7 flex flex-wrap gap-3"><Button asChild variant="brand" size="lg"><Link to="/projects/autumn-villas">Explore Autumn Villas <ArrowRight /></Link></Button><Button asChild variant="outline" size="lg"><a href="tel:+919646952999">Speak to an advisor</a></Button></motion.div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 right-0 hidden bg-background px-8 py-5 text-foreground shadow-xl sm:block"><p className="text-xs font-bold uppercase tracking-widest text-primary">Current spotlight</p><p className="mt-1 font-display font-bold">ORR Exit 14 · Future City</p></div>
       </section>
 
       <section className="relative z-10 -mt-1 bg-background py-8 shadow-xl sm:-mt-10 sm:mx-auto sm:max-w-6xl sm:rounded-md sm:px-7">

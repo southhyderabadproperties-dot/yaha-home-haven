@@ -11,3 +11,4 @@
 
 ## Project architecture
 - Keep shared marketing-site chrome and reusable property presentation in `src/components`; each major content area remains a separate TanStack route for SEO and sharing.
+- Keep the homepage property panorama as a reusable animated SVG component so its layered motion remains lightweight and resolution-independent.
