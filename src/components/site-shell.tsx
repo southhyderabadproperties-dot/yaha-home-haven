@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About Us", to: "/about" as const },
+  { label: "Services", to: "/services" as const },
   { label: "Blog", to: "/blog" as const },
   { label: "Contact Us", to: "/contact" as const },
 ];
@@ -78,11 +79,11 @@ export function SiteHeader() {
   );
 }
 
-function NavLink({ label, to, active }: { label: string; to: "/" | "/about" | "/blog" | "/contact"; active: boolean }) {
+function NavLink({ label, to, active }: { label: string; to: "/" | "/about" | "/services" | "/blog" | "/contact"; active: boolean }) {
   return <Link to={to} className={`nav-link ${active ? "nav-link-active" : ""}`}>{label}</Link>;
 }
 
-function MobileLink({ label, to, onClick }: { label: string; to: "/" | "/about" | "/blog" | "/contact" | "/projects/autumn-villas"; onClick: () => void }) {
+function MobileLink({ label, to, onClick }: { label: string; to: "/" | "/about" | "/services" | "/blog" | "/contact" | "/projects/autumn-villas"; onClick: () => void }) {
   return <Link to={to} onClick={onClick} className="rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent">{label}</Link>;
 }
 
