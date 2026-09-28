@@ -69,8 +69,7 @@ export function SiteHeader() {
         <nav className="border-t border-border bg-background px-5 py-5 lg:hidden" aria-label="Mobile navigation">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.slice(0, 2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
-            <p className="px-3 pb-1 pt-3 text-xs font-bold uppercase tracking-widest text-muted-foreground">Projects</p>
-            <MobileLink label="Autumn Luxury Villas Thummaloor" to="/projects/autumn-villas-thummaloor" onClick={close} />
+            <details className="group"><summary className="flex items-center justify-between rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" /></summary><div className="flex flex-col gap-1 pl-4 pb-2"><MobileLink label="Autumn Luxury Villas Thummaloor" to="/projects/autumn-villas-thummaloor" onClick={close} /></div></details>
             {navItems.slice(2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
             <Button asChild variant="brand" className="mt-3 w-full"><a href="tel:+919646952999"><Phone /> Call +91 96469 52999</a></Button>
           </div>
@@ -138,3 +137,5 @@ export function CtaBand() {
     </section>
   );
 }
+
+
