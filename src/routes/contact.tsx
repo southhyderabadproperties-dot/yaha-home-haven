@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+ï»¿import { createFileRoute } from "@tanstack/react-router";
 import { Clock3, Facebook, Instagram, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -43,7 +43,7 @@ function ContactPage() {
             {[
               {icon:Phone,label:"Call us",value:"+91 96469 52999",href:"tel:+919646952999"},
               {icon:Mail,label:"Email us",value:"southhyderabadproperties@gmail.com",href:"mailto:southhyderabadproperties@gmail.com"},
-              {icon:MapPin,label:"Our focus",value:"Shamshabad · Maheshwaram · South Hyderabad"},
+              {icon:MapPin,label:"Our focus",value:"Shamshabad Â· Maheshwaram Â· South Hyderabad"},
               {icon:Clock3,label:"Response",value:"We aim to respond within one business day"}
             ].map(({icon:Icon,label,value,href})=>
               <div className="flex gap-4" key={label}>
@@ -79,7 +79,7 @@ function ContactPage() {
           <div className="relative px-6">
             <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-orange text-brand-orange-foreground shadow-brand"><MapPin/></span>
             <h2 className="mt-5 font-display text-2xl font-extrabold">South Hyderabad growth corridor</h2>
-            <p className="mt-2 text-muted-foreground">Shamshabad · Maheshwaram · Thummaloor · ORR Exit 14</p>
+            <p className="mt-2 text-muted-foreground">Shamshabad Â· Maheshwaram Â· Thummaloor Â· ORR Exit 14</p>
           </div>
         </div>
       </div>
