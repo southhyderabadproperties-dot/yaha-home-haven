@@ -80,15 +80,27 @@ export function SiteHeader() {
         <nav className="border-t border-border bg-background px-5 py-5 lg:hidden" aria-label="Mobile navigation">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.slice(0, 2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
-            <details className="group"><summary className="flex items-center justify-between rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" /></summary><div className="flex flex-col gap-1 pl-4 pb-2">
-              <MobileLink label="Autumn Luxury Villas - Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} />
-              <MobileLink label="Anvay Avillas - Kongara Kalan" to="/projects/anvay-avillas-kongara-kalan" onClick={close} />
-              <MobileLink label="Vertex Florenza - Tukkuguda" to="/projects/vertex-florenza-tukkuguda" onClick={close} />
-              <MobileLink label="Vertex Viva Calista - Tukkuguda" to="/projects/vertex-viva-calista-tukkuguda" onClick={close} />
-              <MobileLink label="Riddhi Laxman County - Tukkuguda, Mankhal" to="/projects/riddhi-laxman-county-tukkuguda" onClick={close} />
-              <MobileLink label="Kavuri Hills Lemon Leaf - Tukkuguda, Mankhal" to="/projects/kavuri-hills-lemon-leaf-tukkuguda" onClick={close} />
-              <MobileLink label="Kavuri Forest Nest - Immaguda, Tukkuguda" to="/projects/kavuri-forest-nest-immaguda" onClick={close} />
-            </div></details>
+            <details className="group">
+                <summary className="flex items-center justify-between rounded-md px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="flex flex-col gap-1 pl-3 pr-2 py-3 mt-1 border-l-2 border-brand-orange/20 ml-2 mb-2">
+                {[
+                  { name: "Autumn Luxury Villas", loc: "Maheshwaram", to: "/projects/autumn-villas-maheshwaram" },
+                  { name: "Anvay Avillas", loc: "Kongara Kalan", to: "/projects/anvay-avillas-kongara-kalan" },
+                  { name: "Vertex Florenza", loc: "Tukkuguda", to: "/projects/vertex-florenza-tukkuguda" },
+                  { name: "Vertex Viva Calista", loc: "Tukkuguda", to: "/projects/vertex-viva-calista-tukkuguda" },
+                  { name: "Riddhi Laxman County", loc: "Tukkuguda, Mankhal", to: "/projects/riddhi-laxman-county-tukkuguda" },
+                  { name: "Kavuri Hills Lemon Leaf", loc: "Tukkuguda, Mankhal", to: "/projects/kavuri-hills-lemon-leaf-tukkuguda" },
+                  { name: "Kavuri Forest Nest", loc: "Immaguda, Tukkuguda", to: "/projects/kavuri-forest-nest-immaguda" },
+                ].map(p => (
+                  <Link key={p.to} to={p.to} className="group/item flex flex-col gap-0.5 rounded-lg p-3 transition-colors hover:bg-brand-soft active:bg-brand-soft" onClick={close}>
+                    <span className="font-display text-[15px] font-semibold text-foreground transition-colors group-hover/item:text-brand-orange">{p.name}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{p.loc}</span>
+                  </Link>
+                ))}
+                </div>
+              </details>
             {navItems.slice(2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
             <Button asChild variant="brand" className="mt-3 w-full"><a href="tel:+919646952999"><Phone /> Call +91 96469 52999</a></Button>
           </div>
