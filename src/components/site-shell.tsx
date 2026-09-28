@@ -46,29 +46,22 @@ export function SiteHeader() {
             <button className={`nav-link flex items-center gap-1 ${pathname.startsWith("/projects") ? "nav-link-active" : ""}`}>
               Projects <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
             </button>
-            <div className="invisible absolute left-1/2 top-[68px] w-56 -translate-x-1/2 translate-y-2 rounded-md border border-border bg-popover p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              <Link to="/projects/autumn-villas-maheshwaram" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Autumn Luxury Villas - Maheshwaram
-              </Link>
-              <Link to="/projects/anvay-avillas-kongara-kalan" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Anvay Avillas - Kongara Kalan
-              </Link>
-              <Link to="/projects/vertex-florenza-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Vertex Florenza - Tukkuguda
-              </Link>
-              <Link to="/projects/vertex-viva-calista-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Vertex Viva Calista - Tukkuguda
-              </Link>
-              <Link to="/projects/riddhi-laxman-county-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Riddhi Laxman County - Tukkuguda, Mankhal
-              </Link>
-              <Link to="/projects/kavuri-hills-lemon-leaf-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Kavuri Hills Lemon Leaf - Tukkuguda, Mankhal
-              </Link>
-              <Link to="/projects/kavuri-forest-nest-immaguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Kavuri Forest Nest - Immaguda, Tukkuguda
-              </Link>
-            </div>
+            <div className="invisible absolute left-1/2 top-[68px] w-72 -translate-x-1/2 translate-y-2 rounded-xl border border-border/80 bg-background/95 p-2.5 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                {[
+                  { name: "Autumn Luxury Villas", loc: "Maheshwaram", to: "/projects/autumn-villas-maheshwaram" },
+                  { name: "Anvay Avillas", loc: "Kongara Kalan", to: "/projects/anvay-avillas-kongara-kalan" },
+                  { name: "Vertex Florenza", loc: "Tukkuguda", to: "/projects/vertex-florenza-tukkuguda" },
+                  { name: "Vertex Viva Calista", loc: "Tukkuguda", to: "/projects/vertex-viva-calista-tukkuguda" },
+                  { name: "Riddhi Laxman County", loc: "Tukkuguda, Mankhal", to: "/projects/riddhi-laxman-county-tukkuguda" },
+                  { name: "Kavuri Hills Lemon Leaf", loc: "Tukkuguda, Mankhal", to: "/projects/kavuri-hills-lemon-leaf-tukkuguda" },
+                  { name: "Kavuri Forest Nest", loc: "Immaguda, Tukkuguda", to: "/projects/kavuri-forest-nest-immaguda" },
+                ].map(p => (
+                  <Link key={p.to} to={p.to} className="group/item flex flex-col gap-0.5 rounded-lg p-3 transition-colors hover:bg-brand-soft" onClick={close}>
+                    <span className="font-display text-[15px] font-semibold text-foreground transition-colors group-hover/item:text-brand-orange">{p.name}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{p.loc}</span>
+                  </Link>
+                ))}
+              </div>
           </div>
           {navItems.slice(2).map((item) => (
             <NavLink key={item.to} {...item} active={pathname === item.to} />
@@ -88,7 +81,7 @@ export function SiteHeader() {
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.slice(0, 2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
             <details className="group"><summary className="flex items-center justify-between rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" /></summary><div className="flex flex-col gap-1 pl-4 pb-2">
-              <MobileLink label="Autumn Luxury Villas - Maheshwaram Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} />
+              <MobileLink label="Autumn Luxury Villas - Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} />
               <MobileLink label="Anvay Avillas - Kongara Kalan" to="/projects/anvay-avillas-kongara-kalan" onClick={close} />
               <MobileLink label="Vertex Florenza - Tukkuguda" to="/projects/vertex-florenza-tukkuguda" onClick={close} />
               <MobileLink label="Vertex Viva Calista - Tukkuguda" to="/projects/vertex-viva-calista-tukkuguda" onClick={close} />
