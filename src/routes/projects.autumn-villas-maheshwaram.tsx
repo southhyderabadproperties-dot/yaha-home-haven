@@ -84,7 +84,26 @@ function AutumnVillasPage() {
         </div>
       </div>
     </section>
-    <section className="section-pad bg-brand-soft"><div className="page-wrap"><div className="max-w-2xl"><p className="eyebrow">Everyday, elevated</p><h2 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">A 30,000 SFT clubhouse at the heart of it all.</h2></div><div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">{amenities.map(({icon:Icon,label})=><div className="bg-background p-7" key={label}><Icon className="h-7 w-7 text-brand-orange"/><p className="mt-5 font-display font-bold leading-6">{label}</p></div>)}</div></div></section>
+    <section className="section-pad bg-brand-navy text-primary-foreground relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('@/assets/clubhouse.jpg')] opacity-[0.03] mix-blend-overlay bg-cover bg-center" />
+      <div className="page-wrap relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="eyebrow text-brand-orange">Everyday, elevated</p>
+          <h2 className="mt-4 font-display text-4xl font-extrabold sm:text-5xl lg:text-6xl text-white">A 30,000 SFT clubhouse<br/>at the heart of it all.</h2>
+          <p className="mt-6 text-lg text-primary-foreground/70">Experience world-class amenities designed to bring resort-style luxury to your daily life.</p>
+        </div>
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {amenities.map(({icon:Icon,label})=> (
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl hover:shadow-brand-orange/20 hover:border-brand-orange/30" key={label}>
+              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange transition-colors duration-300 group-hover:bg-brand-orange group-hover:text-brand-navy">
+                <Icon className="h-8 w-8"/>
+              </div>
+              <p className="font-display text-xl font-bold leading-tight text-white">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     <CtaBand />
   </>;
 }
