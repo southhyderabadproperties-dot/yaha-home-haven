@@ -24,7 +24,7 @@ const amenities = [
   { icon: Waves, label: "Swimming pool & changing rooms", img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=600&auto=format&fit=crop" },
   { icon: PartyPopper, label: "Party hall", img: "/party-hall.jpg" },
   { icon: Dumbbell, label: "Badminton & basketball courts", img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop" },
-  { icon: Flower2, label: "Meditation & yoga room", img: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=600&auto=format&fit=crop" },
+  { icon: Flower2, label: "Meditation & yoga room", img: "/yoga-room.png" },
   { icon: BriefcaseBusiness, label: "Work lounges", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop" },
   { icon: BedDouble, label: "Guest rooms", img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=600&auto=format&fit=crop" },
   { icon: Baby, label: "Children’s play area", img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop" }
