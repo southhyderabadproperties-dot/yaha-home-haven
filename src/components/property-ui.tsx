@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 import { Button } from "@/components/ui/button";
 import autumnVilla from "@/assets/autumn-villa.jpg";
@@ -29,7 +30,14 @@ export function VerticalPropertyCard({ property, priority = false }: { property:
 }
 
 export function PropertyCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
+  const autoplayRef = useRef(Autoplay({ delay: 3200, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true }, [autoplayRef.current]);
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) autoplayRef.current.stop();
+  }, []);
+
   const prev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const next = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
