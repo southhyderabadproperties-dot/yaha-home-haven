@@ -113,7 +113,7 @@ function Index() {
                   <h3 className="mt-1 font-prestige text-3xl font-semibold text-prestige-deep">Luxury properties</h3>
                   <p className="mt-2 max-w-md font-prestige-body text-sm leading-6 text-prestige-green">Contemporary villa living, designed around space and community.</p>
                 </div>
-                <Link to="/projects/autumn-villas" className="hidden shrink-0 border-b border-prestige-gold pb-1 font-prestige-body text-[10px] font-bold uppercase tracking-[0.16em] text-prestige-green transition-colors hover:text-prestige-deep sm:block">Discover more</Link>
+                <Link to="/projects/autumn-villas-thummaloor" className="hidden shrink-0 border-b border-prestige-gold pb-1 font-prestige-body text-[10px] font-bold uppercase tracking-[0.16em] text-prestige-green transition-colors hover:text-prestige-deep sm:block">Discover more</Link>
               </div>
             </motion.article>
           </div>

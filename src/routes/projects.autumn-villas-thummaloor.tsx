@@ -6,7 +6,7 @@ import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/projects/autumn-villas")({
+export const Route = createFileRoute("/projects/autumn-villas-thummaloor-thummaloor")({
   head: () => ({ meta: [
     { title: "Autumn Luxury Villas, Thummaloor | South Hyderabad Properties" },
     { name: "description", content: "Explore Autumn Luxury Villas at Thummaloor, ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse." },

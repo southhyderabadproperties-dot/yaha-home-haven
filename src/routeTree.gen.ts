@@ -14,7 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ProjectsAutumnVillasRouteImport } from './routes/projects.autumn-villas'
+import { Route as ProjectsAutumnVillasThummaloorRouteImport } from './routes/projects.autumn-villas-thummaloor'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,11 +41,12 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsAutumnVillasRoute = ProjectsAutumnVillasRouteImport.update({
-  id: '/projects/autumn-villas',
-  path: '/projects/autumn-villas',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const ProjectsAutumnVillasThummaloorRoute =
+  ProjectsAutumnVillasThummaloorRouteImport.update({
+    id: '/projects/autumn-villas-thummaloor',
+    path: '/projects/autumn-villas-thummaloor',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,7 +54,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/projects/autumn-villas': typeof ProjectsAutumnVillasRoute
+  '/projects/autumn-villas-thummaloor': typeof ProjectsAutumnVillasThummaloorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +62,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/projects/autumn-villas': typeof ProjectsAutumnVillasRoute
+  '/projects/autumn-villas-thummaloor': typeof ProjectsAutumnVillasThummaloorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +71,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/projects/autumn-villas': typeof ProjectsAutumnVillasRoute
+  '/projects/autumn-villas-thummaloor': typeof ProjectsAutumnVillasThummaloorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,7 +81,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
-    | '/projects/autumn-villas'
+    | '/projects/autumn-villas-thummaloor'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -88,7 +89,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
-    | '/projects/autumn-villas'
+    | '/projects/autumn-villas-thummaloor'
   id:
     | '__root__'
     | '/'
@@ -96,7 +97,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
-    | '/projects/autumn-villas'
+    | '/projects/autumn-villas-thummaloor'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,7 +106,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
-  ProjectsAutumnVillasRoute: typeof ProjectsAutumnVillasRoute
+  ProjectsAutumnVillasThummaloorRoute: typeof ProjectsAutumnVillasThummaloorRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,11 +146,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/autumn-villas': {
-      id: '/projects/autumn-villas'
-      path: '/projects/autumn-villas'
-      fullPath: '/projects/autumn-villas'
-      preLoaderRoute: typeof ProjectsAutumnVillasRouteImport
+    '/projects/autumn-villas-thummaloor': {
+      id: '/projects/autumn-villas-thummaloor'
+      path: '/projects/autumn-villas-thummaloor'
+      fullPath: '/projects/autumn-villas-thummaloor'
+      preLoaderRoute: typeof ProjectsAutumnVillasThummaloorRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -161,7 +162,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
-  ProjectsAutumnVillasRoute: ProjectsAutumnVillasRoute,
+  ProjectsAutumnVillasThummaloorRoute: ProjectsAutumnVillasThummaloorRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
