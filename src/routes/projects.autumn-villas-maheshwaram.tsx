@@ -20,7 +20,15 @@ export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
 });
 
 const facts = [{big:"23",small:"Acres"},{big:"182",small:"Exclusive units"},{big:"3 & 4",small:"BHK duplex villas"},{big:"30,000",small:"SFT clubhouse"}];
-const amenities = [{icon:Waves,label:"Swimming pool & changing rooms"},{icon:PartyPopper,label:"Party lawn"},{icon:Dumbbell,label:"Badminton & basketball courts"},{icon:Flower2,label:"Meditation & yoga room"},{icon:BriefcaseBusiness,label:"Work lounges"},{icon:BedDouble,label:"Guest rooms"},{icon:Baby,label:"Children’s play area"}];
+const amenities = [
+  { icon: Waves, label: "Swimming pool & changing rooms", img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=600&auto=format&fit=crop" },
+  { icon: PartyPopper, label: "Party lawn", img: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop" },
+  { icon: Dumbbell, label: "Badminton & basketball courts", img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop" },
+  { icon: Flower2, label: "Meditation & yoga room", img: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=600&auto=format&fit=crop" },
+  { icon: BriefcaseBusiness, label: "Work lounges", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop" },
+  { icon: BedDouble, label: "Guest rooms", img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=600&auto=format&fit=crop" },
+  { icon: Baby, label: "Children’s play area", img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop" }
+];
 
 function FactCard({ fact }: { fact: { big: string; small: string } }) {
   const ref = useRef(null);
@@ -93,12 +101,17 @@ function AutumnVillasPage() {
           <p className="mt-6 text-lg text-primary-foreground/70">Experience world-class amenities designed to bring resort-style luxury to your daily life.</p>
         </div>
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {amenities.map(({icon:Icon,label})=> (
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl hover:shadow-brand-orange/20 hover:border-brand-orange/30" key={label}>
-              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange transition-colors duration-300 group-hover:bg-brand-orange group-hover:text-brand-navy">
-                <Icon className="h-8 w-8"/>
+          {amenities.map(({icon:Icon,label,img})=> (
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl hover:shadow-brand-orange/20 hover:border-brand-orange/30" key={label}>
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img src={img} alt={label} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
-              <p className="font-display text-xl font-bold leading-tight text-white">{label}</p>
+              <div className="p-6 relative">
+                <div className="absolute -top-8 right-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-navy border border-white/10 text-brand-orange shadow-xl transition-colors duration-300 group-hover:bg-brand-orange group-hover:text-brand-navy">
+                  <Icon className="h-8 w-8"/>
+                </div>
+                <p className="mt-4 font-display text-xl font-bold leading-tight text-white pr-4">{label}</p>
+              </div>
             </div>
           ))}
         </div>
