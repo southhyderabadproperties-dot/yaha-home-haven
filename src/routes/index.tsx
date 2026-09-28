@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Home, LandPlot, MapPin, Search, ShieldCheck, MessageCircle, Facebook, Instagram } from "lucide-react";
+import { ArrowRight, MapPin, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 
 import { AnimatedPropertyHero } from "@/components/animated-property-hero";
@@ -61,7 +61,7 @@ function Index() {
               <em className="font-normal">for every kind of move.</em>
             </h2>
             <p className="mt-8 max-w-md font-prestige-body text-lg font-light leading-8 text-prestige-green">We bring documentation-first advice and a clear view of South Hyderabad’s evolving infrastructure to every property conversation.</p>
-            <Button asChild variant="ghost" className="mt-8 h-auto gap-5 p-0 font-prestige-body text-xs font-bold uppercase tracking-[0.14em] text-prestige-deep hover:bg-transparent hover:text-prestige-green">
+            <Button asChild variant="ghost" className="group mt-8 h-auto gap-5 p-0 font-prestige-body text-xs font-bold uppercase tracking-[0.14em] text-prestige-deep hover:bg-transparent hover:text-prestige-green">
               <Link to="/about">
                 <span className="border-b border-prestige-gold pb-1">View our philosophy</span>
                 <span className="grid h-9 w-9 place-items-center rounded-full border border-prestige-gold transition-transform duration-300 group-hover:translate-x-1"><ArrowRight className="h-4 w-4" /></span>
