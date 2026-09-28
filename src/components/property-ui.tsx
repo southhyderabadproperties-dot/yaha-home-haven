@@ -9,9 +9,9 @@ import clubhouse from "@/assets/clubhouse.jpg";
 import openPlots from "@/assets/open-plots.jpg";
 
 export const properties = [
-  { title: "Autumn Luxury Villas Thummaloor", location: "Thummaloor · ORR Exit 14", type: "3 & 4 BHK Villas", image: autumnVilla, href: "/projects/autumn-villas-thummaloor" as const },
+  { title: "Autumn Luxury Villas Maheshwaram", location: "Thummaloor · ORR Exit 14", type: "3 & 4 BHK Villas", image: autumnVilla, href: "/projects/autumn-villas-maheshwaram" as const },
   { title: "Future City Open Plots", location: "Maheshwaram Corridor", type: "Premium Plots", image: openPlots, href: "/contact" as const },
-  { title: "The Club at Autumn", location: "Thummaloor", type: "Lifestyle Hub", image: clubhouse, href: "/projects/autumn-villas-thummaloor" as const },
+  { title: "The Club at Autumn", location: "Thummaloor", type: "Lifestyle Hub", image: clubhouse, href: "/projects/autumn-villas-maheshwaram" as const },
 ];
 
 export function VerticalPropertyCard({ property, priority = false }: { property: (typeof properties)[number]; priority?: boolean }) {
