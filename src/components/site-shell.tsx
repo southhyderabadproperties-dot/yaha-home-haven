@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+﻿import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Facebook, Instagram, Mail, Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
@@ -48,25 +48,25 @@ export function SiteHeader() {
             </button>
             <div className="invisible absolute left-1/2 top-[68px] w-56 -translate-x-1/2 translate-y-2 rounded-md border border-border bg-popover p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link to="/projects/autumn-villas-maheshwaram" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Autumn Luxury Villas
+                Autumn Luxury Villas - Maheshwaram
               </Link>
               <Link to="/projects/anvay-avillas-kongara-kalan" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Anvay Avillas
+                Anvay Avillas - Kongara Kalan
               </Link>
               <Link to="/projects/vertex-florenza-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Vertex Florenza
+                Vertex Florenza - Tukkuguda
               </Link>
               <Link to="/projects/vertex-viva-calista-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Vertex Viva Calista
+                Vertex Viva Calista - Tukkuguda
               </Link>
               <Link to="/projects/riddhi-laxman-county-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Riddhi Laxman County
+                Riddhi Laxman County - Tukkuguda, Mankhal
               </Link>
               <Link to="/projects/kavuri-hills-lemon-leaf-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Kavuri Hills Lemon Leaf
+                Kavuri Hills Lemon Leaf - Tukkuguda, Mankhal
               </Link>
               <Link to="/projects/kavuri-forest-nest-immaguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Kavuri Forest Nest
+                Kavuri Forest Nest - Immaguda, Tukkuguda
               </Link>
             </div>
           </div>
@@ -88,13 +88,13 @@ export function SiteHeader() {
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.slice(0, 2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
             <details className="group"><summary className="flex items-center justify-between rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" /></summary><div className="flex flex-col gap-1 pl-4 pb-2">
-              <MobileLink label="Autumn Luxury Villas Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} />
-              <MobileLink label="Anvay Avillas" to="/projects/anvay-avillas-kongara-kalan" onClick={close} />
-              <MobileLink label="Vertex Florenza" to="/projects/vertex-florenza-tukkuguda" onClick={close} />
-              <MobileLink label="Vertex Viva Calista" to="/projects/vertex-viva-calista-tukkuguda" onClick={close} />
-              <MobileLink label="Riddhi Laxman County" to="/projects/riddhi-laxman-county-tukkuguda" onClick={close} />
-              <MobileLink label="Kavuri Hills Lemon Leaf" to="/projects/kavuri-hills-lemon-leaf-tukkuguda" onClick={close} />
-              <MobileLink label="Kavuri Forest Nest" to="/projects/kavuri-forest-nest-immaguda" onClick={close} />
+              <MobileLink label="Autumn Luxury Villas - Maheshwaram Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} />
+              <MobileLink label="Anvay Avillas - Kongara Kalan" to="/projects/anvay-avillas-kongara-kalan" onClick={close} />
+              <MobileLink label="Vertex Florenza - Tukkuguda" to="/projects/vertex-florenza-tukkuguda" onClick={close} />
+              <MobileLink label="Vertex Viva Calista - Tukkuguda" to="/projects/vertex-viva-calista-tukkuguda" onClick={close} />
+              <MobileLink label="Riddhi Laxman County - Tukkuguda, Mankhal" to="/projects/riddhi-laxman-county-tukkuguda" onClick={close} />
+              <MobileLink label="Kavuri Hills Lemon Leaf - Tukkuguda, Mankhal" to="/projects/kavuri-hills-lemon-leaf-tukkuguda" onClick={close} />
+              <MobileLink label="Kavuri Forest Nest - Immaguda, Tukkuguda" to="/projects/kavuri-forest-nest-immaguda" onClick={close} />
             </div></details>
             {navItems.slice(2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
             <Button asChild variant="brand" className="mt-3 w-full"><a href="tel:+919646952999"><Phone /> Call +91 96469 52999</a></Button>
@@ -119,7 +119,7 @@ export function SiteFooter() {
       <div className="page-wrap grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_1fr]">
         <div>
           <div><Brand theme="dark" /></div>
-          <p className="mt-5 max-w-md text-sm leading-7 text-primary-foreground/70">Premium plots, land developments and luxury homes across South Hyderabad’s fastest-growing corridors.</p>
+          <p className="mt-5 max-w-md text-sm leading-7 text-primary-foreground/70">Premium plots, land developments and luxury homes across South Hyderabadâ€™s fastest-growing corridors.</p>
         </div>
         <div>
           <p className="footer-title">Quick links</p>
@@ -136,7 +136,7 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50">© 2026 South Hyderabad Properties. All rights reserved.</div>
+      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50">Â© 2026 South Hyderabad Properties. All rights reserved.</div>
     </footer>
   );
 }
@@ -163,5 +163,7 @@ export function CtaBand() {
     </section>
   );
 }
+
+
 
 
