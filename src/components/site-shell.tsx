@@ -48,7 +48,25 @@ export function SiteHeader() {
             </button>
             <div className="invisible absolute left-1/2 top-[68px] w-56 -translate-x-1/2 translate-y-2 rounded-md border border-border bg-popover p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link to="/projects/autumn-villas-maheshwaram" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
-                Autumn Luxury Villas Maheshwaram
+                Autumn Luxury Villas
+              </Link>
+              <Link to="/projects/anvay-avillas-kongara-kalan" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
+                Anvay Avillas
+              </Link>
+              <Link to="/projects/vertex-florenza-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
+                Vertex Florenza
+              </Link>
+              <Link to="/projects/vertex-viva-calista-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
+                Vertex Viva Calista
+              </Link>
+              <Link to="/projects/riddhi-laxman-county-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
+                Riddhi Laxman County
+              </Link>
+              <Link to="/projects/kavuri-hills-lemon-leaf-tukkuguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
+                Kavuri Hills Lemon Leaf
+              </Link>
+              <Link to="/projects/kavuri-forest-nest-immaguda" className="block rounded-sm px-4 py-3 text-sm font-semibold text-popover-foreground hover:bg-accent" onClick={close}>
+                Kavuri Forest Nest
               </Link>
             </div>
           </div>
@@ -69,7 +87,15 @@ export function SiteHeader() {
         <nav className="border-t border-border bg-background px-5 py-5 lg:hidden" aria-label="Mobile navigation">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.slice(0, 2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
-            <details className="group"><summary className="flex items-center justify-between rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" /></summary><div className="flex flex-col gap-1 pl-4 pb-2"><MobileLink label="Autumn Luxury Villas Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} /></div></details>
+            <details className="group"><summary className="flex items-center justify-between rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">Projects <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" /></summary><div className="flex flex-col gap-1 pl-4 pb-2">
+              <MobileLink label="Autumn Luxury Villas Maheshwaram" to="/projects/autumn-villas-maheshwaram" onClick={close} />
+              <MobileLink label="Anvay Avillas" to="/projects/anvay-avillas-kongara-kalan" onClick={close} />
+              <MobileLink label="Vertex Florenza" to="/projects/vertex-florenza-tukkuguda" onClick={close} />
+              <MobileLink label="Vertex Viva Calista" to="/projects/vertex-viva-calista-tukkuguda" onClick={close} />
+              <MobileLink label="Riddhi Laxman County" to="/projects/riddhi-laxman-county-tukkuguda" onClick={close} />
+              <MobileLink label="Kavuri Hills Lemon Leaf" to="/projects/kavuri-hills-lemon-leaf-tukkuguda" onClick={close} />
+              <MobileLink label="Kavuri Forest Nest" to="/projects/kavuri-forest-nest-immaguda" onClick={close} />
+            </div></details>
             {navItems.slice(2).map((item) => <MobileLink key={item.to} {...item} onClick={close} />)}
             <Button asChild variant="brand" className="mt-3 w-full"><a href="tel:+919646952999"><Phone /> Call +91 96469 52999</a></Button>
           </div>
@@ -83,7 +109,7 @@ function NavLink({ label, to, active }: { label: string; to: "/" | "/about" | "/
   return <Link to={to} className={`nav-link ${active ? "nav-link-active" : ""}`}>{label}</Link>;
 }
 
-function MobileLink({ label, to, onClick }: { label: string; to: "/" | "/about" | "/services" | "/blog" | "/contact" | "/projects/autumn-villas-maheshwaram"; onClick: () => void }) {
+function MobileLink({ label, to, onClick }: { label: string; to: string; onClick: () => void }) {
   return <Link to={to} onClick={onClick} className="rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent">{label}</Link>;
 }
 

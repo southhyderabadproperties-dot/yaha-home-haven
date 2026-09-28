@@ -10,8 +10,13 @@ import openPlots from "@/assets/open-plots.jpg";
 
 export const properties = [
   { title: "Autumn Luxury Villas Maheshwaram", location: "Thummaloor · ORR Exit 14", type: "3 & 4 BHK Villas", image: autumnVilla, href: "/projects/autumn-villas-maheshwaram" as const },
+  { title: "Anvay Avillas", location: "Kongara Kalan", type: "3 & 4 BHK Villas", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/anvay-avillas-kongara-kalan" as const },
+  { title: "Vertex Florenza", location: "Tukkuguda", type: "4 & 5 BHK Villas", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/vertex-florenza-tukkuguda" as const },
+  { title: "Vertex Viva Calista", location: "Tukkuguda", type: "3, 4 & 5 BHK Villas", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/vertex-viva-calista-tukkuguda" as const },
+  { title: "Riddhi Laxman County", location: "Tukkuguda", type: "4 BHK Triplex", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/riddhi-laxman-county-tukkuguda" as const },
+  { title: "Kavuri Hills Lemon Leaf", location: "Mankhal", type: "Plots", image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/kavuri-hills-lemon-leaf-tukkuguda" as const },
+  { title: "Kavuri Forest Nest", location: "Immaguda", type: "3 to 4.5 BHK Villas", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/kavuri-forest-nest-immaguda" as const },
   { title: "Future City Open Plots", location: "Maheshwaram Corridor", type: "Premium Plots", image: openPlots, href: "/contact" as const },
-  { title: "The Club at Autumn", location: "Thummaloor", type: "Lifestyle Hub", image: clubhouse, href: "/projects/autumn-villas-maheshwaram" as const },
 ];
 
 export function VerticalPropertyCard({ property, priority = false }: { property: (typeof properties)[number]; priority?: boolean }) {

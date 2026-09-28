@@ -14,7 +14,13 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ProjectsAutumnVillasThummaloorRouteImport } from './routes/projects.autumn-villas-thummaloor'
+import { Route as ProjectsAnvayAvillasKongaraKalanRouteImport } from './routes/projects.anvay-avillas-kongara-kalan'
+import { Route as ProjectsAutumnVillasMaheshwaramRouteImport } from './routes/projects.autumn-villas-maheshwaram'
+import { Route as ProjectsKavuriForestNestImmagudaRouteImport } from './routes/projects.kavuri-forest-nest-immaguda'
+import { Route as ProjectsKavuriHillsLemonLeafTukkugudaRouteImport } from './routes/projects.kavuri-hills-lemon-leaf-tukkuguda'
+import { Route as ProjectsRiddhiLaxmanCountyTukkugudaRouteImport } from './routes/projects.riddhi-laxman-county-tukkuguda'
+import { Route as ProjectsVertexFlorenzaTukkugudaRouteImport } from './routes/projects.vertex-florenza-tukkuguda'
+import { Route as ProjectsVertexVivaCalistaTukkugudaRouteImport } from './routes/projects.vertex-viva-calista-tukkuguda'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,10 +47,46 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsAutumnVillasThummaloorRoute =
-  ProjectsAutumnVillasThummaloorRouteImport.update({
-    id: '/projects/autumn-villas-thummaloor',
-    path: '/projects/autumn-villas-thummaloor',
+const ProjectsAnvayAvillasKongaraKalanRoute =
+  ProjectsAnvayAvillasKongaraKalanRouteImport.update({
+    id: '/projects/anvay-avillas-kongara-kalan',
+    path: '/projects/anvay-avillas-kongara-kalan',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsAutumnVillasMaheshwaramRoute =
+  ProjectsAutumnVillasMaheshwaramRouteImport.update({
+    id: '/projects/autumn-villas-maheshwaram',
+    path: '/projects/autumn-villas-maheshwaram',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsKavuriForestNestImmagudaRoute =
+  ProjectsKavuriForestNestImmagudaRouteImport.update({
+    id: '/projects/kavuri-forest-nest-immaguda',
+    path: '/projects/kavuri-forest-nest-immaguda',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsKavuriHillsLemonLeafTukkugudaRoute =
+  ProjectsKavuriHillsLemonLeafTukkugudaRouteImport.update({
+    id: '/projects/kavuri-hills-lemon-leaf-tukkuguda',
+    path: '/projects/kavuri-hills-lemon-leaf-tukkuguda',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsRiddhiLaxmanCountyTukkugudaRoute =
+  ProjectsRiddhiLaxmanCountyTukkugudaRouteImport.update({
+    id: '/projects/riddhi-laxman-county-tukkuguda',
+    path: '/projects/riddhi-laxman-county-tukkuguda',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsVertexFlorenzaTukkugudaRoute =
+  ProjectsVertexFlorenzaTukkugudaRouteImport.update({
+    id: '/projects/vertex-florenza-tukkuguda',
+    path: '/projects/vertex-florenza-tukkuguda',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsVertexVivaCalistaTukkugudaRoute =
+  ProjectsVertexVivaCalistaTukkugudaRouteImport.update({
+    id: '/projects/vertex-viva-calista-tukkuguda',
+    path: '/projects/vertex-viva-calista-tukkuguda',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -54,7 +96,13 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/projects/autumn-villas-thummaloor': typeof ProjectsAutumnVillasThummaloorRoute
+  '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
+  '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
+  '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
+  '/projects/kavuri-hills-lemon-leaf-tukkuguda': typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
+  '/projects/riddhi-laxman-county-tukkuguda': typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
+  '/projects/vertex-florenza-tukkuguda': typeof ProjectsVertexFlorenzaTukkugudaRoute
+  '/projects/vertex-viva-calista-tukkuguda': typeof ProjectsVertexVivaCalistaTukkugudaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,7 +110,13 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/projects/autumn-villas-thummaloor': typeof ProjectsAutumnVillasThummaloorRoute
+  '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
+  '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
+  '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
+  '/projects/kavuri-hills-lemon-leaf-tukkuguda': typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
+  '/projects/riddhi-laxman-county-tukkuguda': typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
+  '/projects/vertex-florenza-tukkuguda': typeof ProjectsVertexFlorenzaTukkugudaRoute
+  '/projects/vertex-viva-calista-tukkuguda': typeof ProjectsVertexVivaCalistaTukkugudaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,7 +125,13 @@ export interface FileRoutesById {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/projects/autumn-villas-thummaloor': typeof ProjectsAutumnVillasThummaloorRoute
+  '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
+  '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
+  '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
+  '/projects/kavuri-hills-lemon-leaf-tukkuguda': typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
+  '/projects/riddhi-laxman-county-tukkuguda': typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
+  '/projects/vertex-florenza-tukkuguda': typeof ProjectsVertexFlorenzaTukkugudaRoute
+  '/projects/vertex-viva-calista-tukkuguda': typeof ProjectsVertexVivaCalistaTukkugudaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,7 +141,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
-    | '/projects/autumn-villas-thummaloor'
+    | '/projects/anvay-avillas-kongara-kalan'
+    | '/projects/autumn-villas-maheshwaram'
+    | '/projects/kavuri-forest-nest-immaguda'
+    | '/projects/kavuri-hills-lemon-leaf-tukkuguda'
+    | '/projects/riddhi-laxman-county-tukkuguda'
+    | '/projects/vertex-florenza-tukkuguda'
+    | '/projects/vertex-viva-calista-tukkuguda'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,7 +155,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
-    | '/projects/autumn-villas-thummaloor'
+    | '/projects/anvay-avillas-kongara-kalan'
+    | '/projects/autumn-villas-maheshwaram'
+    | '/projects/kavuri-forest-nest-immaguda'
+    | '/projects/kavuri-hills-lemon-leaf-tukkuguda'
+    | '/projects/riddhi-laxman-county-tukkuguda'
+    | '/projects/vertex-florenza-tukkuguda'
+    | '/projects/vertex-viva-calista-tukkuguda'
   id:
     | '__root__'
     | '/'
@@ -97,7 +169,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
-    | '/projects/autumn-villas-thummaloor'
+    | '/projects/anvay-avillas-kongara-kalan'
+    | '/projects/autumn-villas-maheshwaram'
+    | '/projects/kavuri-forest-nest-immaguda'
+    | '/projects/kavuri-hills-lemon-leaf-tukkuguda'
+    | '/projects/riddhi-laxman-county-tukkuguda'
+    | '/projects/vertex-florenza-tukkuguda'
+    | '/projects/vertex-viva-calista-tukkuguda'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,7 +184,13 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
-  ProjectsAutumnVillasThummaloorRoute: typeof ProjectsAutumnVillasThummaloorRoute
+  ProjectsAnvayAvillasKongaraKalanRoute: typeof ProjectsAnvayAvillasKongaraKalanRoute
+  ProjectsAutumnVillasMaheshwaramRoute: typeof ProjectsAutumnVillasMaheshwaramRoute
+  ProjectsKavuriForestNestImmagudaRoute: typeof ProjectsKavuriForestNestImmagudaRoute
+  ProjectsKavuriHillsLemonLeafTukkugudaRoute: typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
+  ProjectsRiddhiLaxmanCountyTukkugudaRoute: typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
+  ProjectsVertexFlorenzaTukkugudaRoute: typeof ProjectsVertexFlorenzaTukkugudaRoute
+  ProjectsVertexVivaCalistaTukkugudaRoute: typeof ProjectsVertexVivaCalistaTukkugudaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -146,11 +230,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/autumn-villas-thummaloor': {
-      id: '/projects/autumn-villas-thummaloor'
-      path: '/projects/autumn-villas-thummaloor'
-      fullPath: '/projects/autumn-villas-thummaloor'
-      preLoaderRoute: typeof ProjectsAutumnVillasThummaloorRouteImport
+    '/projects/anvay-avillas-kongara-kalan': {
+      id: '/projects/anvay-avillas-kongara-kalan'
+      path: '/projects/anvay-avillas-kongara-kalan'
+      fullPath: '/projects/anvay-avillas-kongara-kalan'
+      preLoaderRoute: typeof ProjectsAnvayAvillasKongaraKalanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/autumn-villas-maheshwaram': {
+      id: '/projects/autumn-villas-maheshwaram'
+      path: '/projects/autumn-villas-maheshwaram'
+      fullPath: '/projects/autumn-villas-maheshwaram'
+      preLoaderRoute: typeof ProjectsAutumnVillasMaheshwaramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/kavuri-forest-nest-immaguda': {
+      id: '/projects/kavuri-forest-nest-immaguda'
+      path: '/projects/kavuri-forest-nest-immaguda'
+      fullPath: '/projects/kavuri-forest-nest-immaguda'
+      preLoaderRoute: typeof ProjectsKavuriForestNestImmagudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/kavuri-hills-lemon-leaf-tukkuguda': {
+      id: '/projects/kavuri-hills-lemon-leaf-tukkuguda'
+      path: '/projects/kavuri-hills-lemon-leaf-tukkuguda'
+      fullPath: '/projects/kavuri-hills-lemon-leaf-tukkuguda'
+      preLoaderRoute: typeof ProjectsKavuriHillsLemonLeafTukkugudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/riddhi-laxman-county-tukkuguda': {
+      id: '/projects/riddhi-laxman-county-tukkuguda'
+      path: '/projects/riddhi-laxman-county-tukkuguda'
+      fullPath: '/projects/riddhi-laxman-county-tukkuguda'
+      preLoaderRoute: typeof ProjectsRiddhiLaxmanCountyTukkugudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/vertex-florenza-tukkuguda': {
+      id: '/projects/vertex-florenza-tukkuguda'
+      path: '/projects/vertex-florenza-tukkuguda'
+      fullPath: '/projects/vertex-florenza-tukkuguda'
+      preLoaderRoute: typeof ProjectsVertexFlorenzaTukkugudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/vertex-viva-calista-tukkuguda': {
+      id: '/projects/vertex-viva-calista-tukkuguda'
+      path: '/projects/vertex-viva-calista-tukkuguda'
+      fullPath: '/projects/vertex-viva-calista-tukkuguda'
+      preLoaderRoute: typeof ProjectsVertexVivaCalistaTukkugudaRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -162,7 +288,16 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
-  ProjectsAutumnVillasThummaloorRoute: ProjectsAutumnVillasThummaloorRoute,
+  ProjectsAnvayAvillasKongaraKalanRoute: ProjectsAnvayAvillasKongaraKalanRoute,
+  ProjectsAutumnVillasMaheshwaramRoute: ProjectsAutumnVillasMaheshwaramRoute,
+  ProjectsKavuriForestNestImmagudaRoute: ProjectsKavuriForestNestImmagudaRoute,
+  ProjectsKavuriHillsLemonLeafTukkugudaRoute:
+    ProjectsKavuriHillsLemonLeafTukkugudaRoute,
+  ProjectsRiddhiLaxmanCountyTukkugudaRoute:
+    ProjectsRiddhiLaxmanCountyTukkugudaRoute,
+  ProjectsVertexFlorenzaTukkugudaRoute: ProjectsVertexFlorenzaTukkugudaRoute,
+  ProjectsVertexVivaCalistaTukkugudaRoute:
+    ProjectsVertexVivaCalistaTukkugudaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
