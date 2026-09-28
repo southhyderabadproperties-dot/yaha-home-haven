@@ -60,7 +60,7 @@ const services = [
   {
     title: "Property Resale",
     description: "End-to-end assistance in selling your property at the best market price.",
-    image: "/services/service-survey.jpg",
+    image: "/services/service-resale.png",
   },
   {
     title: "Property Consulting",
