@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+﻿import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -9,13 +9,13 @@ import clubhouse from "@/assets/clubhouse.jpg";
 import openPlots from "@/assets/open-plots.jpg";
 
 export const properties = [
-  { title: "Autumn Luxury Villas Maheshwaram", location: "Thummaloor · ORR Exit 14", type: "3 & 4 BHK Villas", image: autumnVilla, href: "/projects/autumn-villas-maheshwaram" as const },
-  { title: "Anvay Avillas", location: "Kongara Kalan", type: "3 & 4 BHK Villas", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/anvay-avillas-kongara-kalan" as const },
-  { title: "Vertex Florenza", location: "Tukkuguda", type: "4 & 5 BHK Villas", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/vertex-florenza-tukkuguda" as const },
-  { title: "Vertex Viva Calista", location: "Tukkuguda", type: "3, 4 & 5 BHK Villas", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/vertex-viva-calista-tukkuguda" as const },
-  { title: "Riddhi Laxman County", location: "Tukkuguda", type: "4 BHK Triplex", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/riddhi-laxman-county-tukkuguda" as const },
-  { title: "Kavuri Hills Lemon Leaf", location: "Mankhal", type: "Plots", image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/kavuri-hills-lemon-leaf-tukkuguda" as const },
-  { title: "Kavuri Forest Nest", location: "Immaguda", type: "3 to 4.5 BHK Villas", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", href: "/projects/kavuri-forest-nest-immaguda" as const },
+  { title: "Autumn Luxury Villas Maheshwaram", location: "Thummaloor Â· ORR Exit 14", type: "3 & 4 BHK Villas", image: autumnVilla, href: "/projects/autumn-villas-maheshwaram" as const },
+  { title: "Anvay Avillas", location: "Kongara Kalan", type: "3 & 4 BHK Villas", image: "https://housing-images.n7net.in/01c16c28/f1ae1b3dd6c98d33f953663d68cba202/v0/large/4_bhk_villa-for-sale-kongara_kalan_1-Hyderabad-outside_view.jpg", href: "/projects/anvay-avillas-kongara-kalan" as const },
+  { title: "Vertex Florenza", location: "Tukkuguda", type: "4 & 5 BHK Villas", image: "https://vertexviva.com/blog/wp-content/uploads/2025/12/A-Villa-at-Apartment-Cost-Vertex-Florenza.png", href: "/projects/vertex-florenza-tukkuguda" as const },
+  { title: "Vertex Viva Calista", location: "Tukkuguda", type: "3, 4 & 5 BHK Villas", image: "https://www.hyderabadprojects.com/uploads/project/1768385950_e41c3c4b434dc41bfbeb.png", href: "/projects/vertex-viva-calista-tukkuguda" as const },
+  { title: "Riddhi Laxman County", location: "Tukkuguda", type: "4 BHK Triplex", image: "https://im.proptiger.com/1/3136686/6/laxman-county-elevation-129948866.jpeg", href: "/projects/riddhi-laxman-county-tukkuguda" as const },
+  { title: "Kavuri Hills Lemon Leaf", location: "Mankhal", type: "Plots", image: "https://is1-3.housingcdn.com/012c1500/83cdbaa3f25097acc8a7ad46a0c17007/v2/medium.jpeg", href: "/projects/kavuri-hills-lemon-leaf-tukkuguda" as const },
+  { title: "Kavuri Forest Nest", location: "Immaguda", type: "3 to 4.5 BHK Villas", image: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/JLL_Hyderabad_Kavuri%20Forest%20Nest_3706_EXT_2.png", href: "/projects/kavuri-forest-nest-immaguda" as const },
   { title: "Future City Open Plots", location: "Maheshwaram Corridor", type: "Premium Plots", image: openPlots, href: "/contact" as const },
 ];
 
@@ -64,3 +64,4 @@ export function PropertyCarousel() {
     </div>
   );
 }
+
