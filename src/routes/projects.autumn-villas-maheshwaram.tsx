@@ -35,7 +35,7 @@ function FactCard({ fact }: { fact: { big: string; small: string } }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   return (
     <div ref={ref}>
-      <p className="font-display text-3xl font-extrabold text-brand-orange sm:text-4xl flex items-center justify-start">
+      <p className="font-display text-3xl font-extrabold text-[#FC913A] sm:text-4xl flex items-center justify-start">
         <SlotCounter value={isInView ? fact.big : "0"} animateUnchanged={false} />
       </p>
       <p className="mt-1 text-sm text-primary-foreground/70">{fact.small}</p>
