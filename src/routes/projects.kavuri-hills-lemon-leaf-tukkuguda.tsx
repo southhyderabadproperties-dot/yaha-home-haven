@@ -22,10 +22,10 @@ export const Route = createFileRoute("/projects/kavuri-hills-lemon-leaf-tukkugud
 
 const facts = [{big:"20",small:"Acres"},{big:"208",small:"Exclusive plots"},{big:"HMDA",small:"Approved layout"},{big:"100%",small:"Vaastu compliant"}];
 const amenities = [
-  { icon: Droplets, label: "24*7 Water Supply", img: "https://images.unsplash.com/photo-1548820863-718e2652c7c5?q=80&w=600&auto=format&fit=crop" },
-  { icon: CloudRain, label: "Storm Water Drains", img: "https://images.unsplash.com/photo-1614088921876-0f83dd7b1f63?q=80&w=600&auto=format&fit=crop" },
-  { icon: Sprout, label: "Rain Water Harvesting", img: "https://images.unsplash.com/photo-1534260933201-6893c8d1933c?q=80&w=600&auto=format&fit=crop" },
-  { icon: ShieldCheck, label: "24*7 Security", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=600&auto=format&fit=crop" }
+  { icon: Droplets, label: "24*7 Water Supply", img: clubhouseImage },
+  { icon: CloudRain, label: "Storm Water Drains", img: "/projects/kavuri/2.jpg" },
+  { icon: Sprout, label: "Rain Water Harvesting", img: "/projects/kavuri/3.jpg" },
+  { icon: ShieldCheck, label: "24*7 Security", img: "/projects/kavuri/1.png" }
 ];
 
 function FactCard({ fact }: { fact: { big: string; small: string } }) {
