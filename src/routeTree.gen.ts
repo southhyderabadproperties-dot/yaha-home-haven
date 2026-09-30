@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ProjectsAnvayAvillasKongaraKalanRouteImport } from './routes/projects.anvay-avillas-kongara-kalan'
 import { Route as ProjectsAutumnVillasMaheshwaramRouteImport } from './routes/projects.autumn-villas-maheshwaram'
 import { Route as ProjectsKavuriForestNestImmagudaRouteImport } from './routes/projects.kavuri-forest-nest-immaguda'
@@ -46,6 +47,11 @@ const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const ProjectsAnvayAvillasKongaraKalanRoute =
   ProjectsAnvayAvillasKongaraKalanRouteImport.update({
@@ -93,9 +99,10 @@ const ProjectsVertexVivaCalistaTukkugudaRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
   '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
   '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
@@ -107,9 +114,10 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
   '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
   '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
@@ -122,9 +130,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
   '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
   '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
+    | '/blog/$slug'
     | '/projects/anvay-avillas-kongara-kalan'
     | '/projects/autumn-villas-maheshwaram'
     | '/projects/kavuri-forest-nest-immaguda'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
+    | '/blog/$slug'
     | '/projects/anvay-avillas-kongara-kalan'
     | '/projects/autumn-villas-maheshwaram'
     | '/projects/kavuri-forest-nest-immaguda'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
+    | '/blog/$slug'
     | '/projects/anvay-avillas-kongara-kalan'
     | '/projects/autumn-villas-maheshwaram'
     | '/projects/kavuri-forest-nest-immaguda'
@@ -181,7 +193,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
   ProjectsAnvayAvillasKongaraKalanRoute: typeof ProjectsAnvayAvillasKongaraKalanRoute
@@ -229,6 +241,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/projects/anvay-avillas-kongara-kalan': {
       id: '/projects/anvay-avillas-kongara-kalan'
@@ -282,10 +301,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
   ProjectsAnvayAvillasKongaraKalanRoute: ProjectsAnvayAvillasKongaraKalanRoute,
