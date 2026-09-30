@@ -12,10 +12,11 @@ export const Route = createFileRoute("/blog/$slug")({
     return post;
   },
   head: ({ loaderData }) => ({ meta: [
-    { title: `${loaderData?.title ?? "Article"} | South Hyderabad Properties` },
-    { name: "description", content: loaderData?.excerpt ?? "Property insights from South Hyderabad Properties." },
-    { property: "og:title", content: loaderData?.title ?? "Article" },
-    { property: "og:description", content: loaderData?.excerpt ?? "Property insights from South Hyderabad." },
+    { title: loaderData?.seo?.metaTitle ?? `${loaderData?.title ?? "Article"} | South Hyderabad Properties` },
+    { name: "description", content: loaderData?.seo?.metaDescription ?? loaderData?.excerpt ?? "Property insights from South Hyderabad Properties." },
+    ...(loaderData?.seo?.focusKeyword ? [{ name: "keywords", content: loaderData.seo.focusKeyword }] : []),
+    { property: "og:title", content: loaderData?.seo?.metaTitle ?? loaderData?.title ?? "Article" },
+    { property: "og:description", content: loaderData?.seo?.metaDescription ?? loaderData?.excerpt ?? "Property insights from South Hyderabad." },
     { property: "og:type", content: "article" },
     { name: "twitter:card", content: "summary_large_image" },
     ...(loaderData?.mainImage ? [
