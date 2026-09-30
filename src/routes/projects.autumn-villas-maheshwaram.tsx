@@ -2,7 +2,8 @@
 import { ArrowDownToLine, ArrowRight, Baby, BedDouble, BriefcaseBusiness, Dumbbell, Flower2, MapPin, PartyPopper, Waves, CheckCircle2, TrendingUp, Wallet } from "lucide-react";
 import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useInView, AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 import villaImage from "@/assets/autumn-villa.jpg";
 import clubhouseImage from "@/assets/clubhouse.jpg";
@@ -12,7 +13,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
   head: () => ({ meta: [
     { title: "Autumn Luxury Villas, Maheshwaram | South Hyderabad Properties" },
-    { name: "description", content: "Explore Autumn Luxury Villas at Maheshwaram, ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse." },
+    { name: "description", content: "Explore Autumn Luxury Villas at Maheshwaram – ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse." },
     { property: "og:title", content: "Autumn Luxury Villas €” Maheshwaram" },
     { property: "og:description", content: "182 premium duplex villas in South Hyderabad's Future City corridor." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
@@ -43,13 +44,48 @@ function FactCard({ fact }: { fact: { big: string; small: string } }) {
   );
 }
 
+
+const heroImages = [
+  "/projects/autumn/1.jpg",
+  "/projects/autumn/2.jpg",
+  "/projects/autumn/3.jpg"
+];
+
+function GallerySlideshow() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-xl">
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={index}
+          src={heroImages[index]}
+          alt="Autumn Luxury Villas"
+          initial={{ x: "100%", opacity: 0.8 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100%", opacity: 0.8 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+      </AnimatePresence>
+    </div>
+  );
+}
+
 function AutumnVillasPage() {
   return <>
     <section className="relative min-h-[82svh] overflow-hidden bg-brand-navy"><img src={villaImage} alt="Autumn Luxury Villas contemporary duplex home" width={1088} height={1920} className="absolute inset-0 h-full w-full object-cover object-center"/><div className="absolute inset-0 bg-linear-to-r from-brand-navy/95 via-brand-navy/70 to-transparent"/><div className="page-wrap relative flex min-h-[82svh] items-center py-20"><div className="max-w-3xl text-primary-foreground"><p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange"><MapPin className="h-4 w-4"/>Maheshwaram Â· ORR Exit 14</p><h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.03] sm:text-7xl">Autumn<br/>Luxury Villas</h1><p className="mt-6 max-w-xl text-lg leading-8 text-primary-foreground/75">A private world of expansive duplex villas, crafted for the future of South Hyderabad living.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="orange" size="lg"><Link to="/contact">Enquire now <ArrowRight/></Link></Button><Button asChild variant="light" size="lg"><a href="mailto:southhyderabadproperties@gmail.com?subject=Autumn%20Villas%20Brochure"><ArrowDownToLine/> Request brochure</a></Button></div></div></div></section>
     <section className="bg-primary py-9 text-primary-foreground"><div className="page-wrap grid grid-cols-2 gap-8 lg:grid-cols-4">{facts.map(f=><FactCard key={f.small} fact={f} />)}</div></section>
-    <section className="section-pad"><div className="page-wrap grid gap-14 lg:grid-cols-[1.05fr_0.95fr]"><div><p className="eyebrow">Future City corridor</p><h2 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">A landmark address with room for every ambition.</h2><p className="mt-6 leading-8 text-muted-foreground">Set across 23 acres at Maheshwaram, Autumn brings together 182 exclusive premium units with the convenience of ORR Exit 14 and the promise of the Future City corridor.</p><div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{[["3 BHK","3,035 Sq.ft."],["4 BHK","4,035 Sq.ft."],["Plot sizes","267 & 300 Sq. Yards"],["Largest plot","400 Sq. Yards"]].map(([title,value])=><div className="bg-background p-6" key={title}><p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{title}</p><p className="mt-2 font-display text-xl font-extrabold">{value}</p></div>)}</div></div><div className="image-card aspect-[9/16] max-h-[720px]"><img src={clubhouseImage} alt="Autumn Villas clubhouse and swimming pool" width={1088} height={1920} loading="lazy"/></div></div></section>
+    <section className="pt-16 pb-6 sm:py-28"><div className="page-wrap grid gap-10 lg:gap-14 lg:grid-cols-[1.05fr_0.95fr]"><div><p className="eyebrow">Future City corridor</p><h2 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">A landmark address with room for every ambition.</h2><p className="mt-6 leading-8 text-muted-foreground">Set across 23 acres at Maheshwaram, Autumn brings together 182 exclusive premium units with the convenience of ORR Exit 14 and the promise of the Future City corridor.</p><div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{[["3 BHK","3,035 Sq.ft."],["4 BHK","4,035 Sq.ft."],["Plot sizes","267 & 300 Sq. Yards"],["Largest plot","400 Sq. Yards"]].map(([title,value])=><div className="bg-background p-6" key={title}><p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{title}</p><p className="mt-2 font-display text-xl font-extrabold">{value}</p></div>)}</div></div><div className="image-card aspect-[4/3] sm:aspect-[16/10] max-h-[600px]"><GallerySlideshow /></div></div></section>
     
-    <section className="section-pad bg-background border-y border-border">
+    <section className="pt-6 pb-16 sm:py-28 bg-background border-y border-border">
       <div className="page-wrap">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <p className="eyebrow text-brand-orange">Premium Features</p>
