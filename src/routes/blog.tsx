@@ -47,6 +47,7 @@ function BlogPage() {
                       </div>
                       <h2 className="mt-4 font-display text-2xl font-extrabold leading-tight group-hover:text-primary">{post.title}</h2>
                       {post.excerpt && <p className="mt-3 text-sm leading-7 text-muted-foreground">{post.excerpt}</p>}
+                      {post.author && <p className="mt-2 text-xs font-semibold text-muted-foreground">By {post.author}</p>}
                       <span className="mt-5 flex items-center gap-2 text-sm font-bold text-primary">Read insight <ArrowUpRight className="h-4 w-4" /></span>
                     </div>
                   </Link>
