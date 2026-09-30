@@ -40,6 +40,7 @@ function PostPage() {
       <article className="page-wrap max-w-3xl py-16 sm:py-24">
         <Link to="/blog" className="flex items-center gap-2 text-sm font-bold text-primary"><ArrowLeft className="h-4 w-4" /> All articles</Link>
         <p className="mt-8 text-xs font-bold uppercase tracking-widest text-primary">{post.category} {post.publishedAt && <span className="text-muted-foreground">· {formatDate(post.publishedAt)}</span>}</p>
+        {post.author && <p className="mt-3 text-sm font-semibold text-muted-foreground">By {post.author}</p>}
         <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight sm:text-5xl">{post.title}</h1>
         {post.mainImage && (
           <img className="mt-10 w-full rounded-xl" src={urlFor(post.mainImage).width(1400).auto("format").url()} alt={post.mainImage.alt ?? post.title} />
