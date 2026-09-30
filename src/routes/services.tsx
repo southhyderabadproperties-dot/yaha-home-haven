@@ -40,7 +40,7 @@ const services = [
   {
     title: "Farm Lands",
     description: "Serene farm lands perfect for weekend getaways or agricultural use.",
-    image: "/services/service-agricultural.jpg",
+    image: "/services/service-farmlands.png",
   },
   {
     title: "Agricultural & Investment Lands",
