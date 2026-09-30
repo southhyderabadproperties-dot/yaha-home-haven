@@ -121,27 +121,46 @@ function MobileLink({ label, to, onClick }: { label: string; to: string; onClick
 export function SiteFooter() {
   return (
     <footer className="bg-brand-navy text-primary-foreground">
-      <div className="page-wrap grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_1fr]">
-        <div>
-          <div><Brand theme="dark" /></div>
-          <p className="mt-5 max-w-md text-sm leading-7 text-primary-foreground/70">Premium plots, land developments and luxury homes across South Hyderabadâ€™s fastest-growing corridors.</p>
-        </div>
-        <div>
-          <p className="footer-title">Quick links</p>
-          <div className="mt-5 grid gap-3 text-sm text-primary-foreground/70">
-            <Link to="/about">About Us</Link><Link to="/projects/autumn-villas-maheshwaram">Autumn Villas Maheshwaram</Link><Link to="/blog">Insights</Link><Link to="/contact">Contact Us</Link>
+      <div className="page-wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
+          <div className="md:col-span-2 lg:col-span-1">
+            <div><Brand theme="dark" /></div>
+            <p className="mt-5 max-w-md text-sm leading-7 text-primary-foreground/70">Premium plots, land developments and luxury homes across South Hyderabad’s fastest-growing corridors.</p>
+          </div>
+          <div>
+            <p className="footer-title">Company</p>
+            <div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/70">
+              <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
+              <Link to="/about" className="hover:text-brand-orange transition-colors">About Us</Link>
+              <Link to="/services" className="hover:text-brand-orange transition-colors">Services</Link>
+              <Link to="/blog" className="hover:text-brand-orange transition-colors">Insights</Link>
+              <Link to="/contact" className="hover:text-brand-orange transition-colors">Contact Us</Link>
+            </div>
+          </div>
+          <div>
+            <p className="footer-title">Our Projects</p>
+            <div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/70">
+              <Link to="/projects/autumn-villas-maheshwaram" className="hover:text-brand-orange transition-colors">Autumn Luxury Villas</Link>
+              <Link to="/projects/anvay-avillas-kongara-kalan" className="hover:text-brand-orange transition-colors">Anvay Avillas</Link>
+              <Link to="/projects/vertex-florenza-tukkuguda" className="hover:text-brand-orange transition-colors">Vertex Florenza</Link>
+              <Link to="/projects/vertex-viva-calista-tukkuguda" className="hover:text-brand-orange transition-colors">Vertex Viva Calista</Link>
+              <Link to="/projects/riddhi-laxman-county-tukkuguda" className="hover:text-brand-orange transition-colors">Riddhi Laxman County</Link>
+              <Link to="/projects/kavuri-hills-lemon-leaf-tukkuguda" className="hover:text-brand-orange transition-colors">Kavuri Lemon Leaf</Link>
+              <Link to="/projects/kavuri-forest-nest-immaguda" className="hover:text-brand-orange transition-colors">Kavuri Forest Nest</Link>
+            </div>
+          </div>
+          <div>
+            <p className="footer-title">Start a conversation</p>
+            <div className="mt-5 flex flex-col gap-4 text-sm text-primary-foreground/80">
+              <a href="tel:+919646952999" className="flex items-center gap-3 hover:text-brand-orange transition-colors"><Phone className="h-4 w-4 text-brand-orange" /> +91 96469 52999</a>
+              <a href="mailto:southhyderabadproperties@gmail.com" className="flex items-start gap-3 break-all hover:text-brand-orange transition-colors"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" /> southhyderabadproperties@gmail.com</a>
+              <div className="flex gap-3 pt-2">
+                <a aria-label="Instagram" href="https://instagram.com/yahaproperties" target="_blank" rel="noreferrer" className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"><Instagram /></a>
+                <a aria-label="Facebook" href="https://www.facebook.com/share/1E9URqKEay/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"><Facebook /></a>
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <p className="footer-title">Start a conversation</p>
-          <div className="mt-5 grid gap-4 text-sm text-primary-foreground/80">
-            <a href="tel:+919646952999" className="flex items-center gap-3"><Phone className="h-4 w-4 text-brand-orange" /> +91 96469 52999</a>
-            <a href="mailto:southhyderabadproperties@gmail.com" className="flex items-start gap-3 break-all"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" /> southhyderabadproperties@gmail.com</a>
-            <div className="flex gap-3 pt-2"><a aria-label="Instagram" href="#" className="social-button"><Instagram /></a><a aria-label="Facebook" href="#" className="social-button"><Facebook /></a></div>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50">Â© 2026 South Hyderabad Properties. All rights reserved.</div>
+        <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50">Â© 2026 South Hyderabad Properties. All rights reserved.</div>
     </footer>
   );
 }
