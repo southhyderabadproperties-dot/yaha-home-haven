@@ -13,7 +13,7 @@ export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
   head: () => ({ meta: [
     { title: "Autumn Luxury Villas, Maheshwaram | South Hyderabad Properties" },
     { name: "description", content: "Explore Autumn Luxury Villas at Maheshwaram, ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse." },
-    { property: "og:title", content: "Autumn Luxury Villas â€” Maheshwaram" },
+    { property: "og:title", content: "Autumn Luxury Villas €” Maheshwaram" },
     { property: "og:description", content: "182 premium duplex villas in South Hyderabad's Future City corridor." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: AutumnVillasPage,
@@ -27,7 +27,7 @@ const amenities = [
   { icon: Flower2, label: "Meditation & yoga room", img: "/yoga-room.png" },
   { icon: BriefcaseBusiness, label: "Work lounges", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop" },
   { icon: BedDouble, label: "Guest rooms", img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=600&auto=format&fit=crop" },
-  { icon: Baby, label: "Childrenâ€™s play area", img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop" }
+  { icon: Baby, label: "Children€™s play area", img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop" }
 ];
 
 function FactCard({ fact }: { fact: { big: string; small: string } }) {
@@ -60,8 +60,8 @@ function AutumnVillasPage() {
           {[
             "23 Acres Premium Villa Community",
             "Only 182 Exclusive Villas",
-            "Plot Sizes: 220â€“550+ Sq. Yards",
-            "Built-up Area: 2,640â€“5,500+ Sq. Ft.",
+            "Plot Sizes: 220–550+ Sq. Yards",
+            "Built-up Area: 2,640–5,500+ Sq. Ft.",
             "30,000 Sq. Ft. Clubhouse",
             "25+ Lifestyle Amenities",
             "Spacious & Premium Villa Designs",
@@ -80,11 +80,11 @@ function AutumnVillasPage() {
             <div className="relative grid gap-8 sm:grid-cols-2">
               <div>
                 <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange"><Wallet className="h-5 w-5" /> Starting Price</p>
-                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">â‚¹1.85 Cr</p>
+                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">₹1.85 Cr</p>
               </div>
               <div className="sm:border-l sm:border-white/10 sm:pl-8">
                 <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange"><TrendingUp className="h-5 w-5" /> Launch Price</p>
-                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">â‚¹6,999<span className="text-xl text-white/70">/Sq.Ft.</span></p>
+                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">₹6,999<span className="text-xl text-white/70">/Sq.Ft.</span></p>
                 <p className="mt-2 text-sm text-white/60 font-medium uppercase tracking-wider">Negotiable</p>
               </div>
             </div>

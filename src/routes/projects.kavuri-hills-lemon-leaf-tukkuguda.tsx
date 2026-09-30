@@ -1,5 +1,5 @@
 ﻿import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDownToLine, ArrowRight, Baby, BedDouble, BriefcaseBusiness, Dumbbell, Flower2, MapPin, PartyPopper, Waves, CheckCircle2, TrendingUp, Wallet } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, Baby, BedDouble, BriefcaseBusiness, Dumbbell, Flower2, MapPin, PartyPopper, Waves, CheckCircle2, TrendingUp, Wallet, Map } from "lucide-react";
 import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/projects/kavuri-hills-lemon-leaf-tukkugud
   head: () => ({ meta: [
     { title: "Kavuri Hills Lemon Leaf | South Hyderabad Properties" },
     { name: "description", content: "Explore Kavuri Hills Lemon Leaf at Maheshwaram, ORR Exit 14: Plots across Premium acres with a 30,000 SFT clubhouse." },
-    { property: "og:title", content: "Kavuri Hills Lemon Leaf â€” Maheshwaram" },
+    { property: "og:title", content: "Kavuri Hills Lemon Leaf €” Maheshwaram" },
     { property: "og:description", content: "Exclusive premium duplex villas in South Hyderabad's Future City corridor." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: KavuriVillasPage,
@@ -60,8 +60,8 @@ function KavuriVillasPage() {
           {[
             "Premium Acres Premium Villa Community",
             "Only Exclusive Exclusive Villas",
-            "Plot Sizes: 220â€“550+ Sq. Yards",
-            "Built-up Area: 2,640â€“5,500+ Sq. Ft.",
+            "Plot Sizes: 220–550+ Sq. Yards",
+            "Built-up Area: 2,640–5,500+ Sq. Ft.",
             "30,000 Sq. Ft. Clubhouse",
             "25+ Lifestyle Amenities",
             "Spacious & Premium Villa Designs",
@@ -80,12 +80,12 @@ function KavuriVillasPage() {
             <div className="relative grid gap-8 sm:grid-cols-2">
               <div>
                 <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange"><Wallet className="h-5 w-5" /> Starting Price</p>
-                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">â‚¹41.99 L to â‚¹47.66 L</p>
+                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">₹41.99 L</p>
               </div>
               <div className="sm:border-l sm:border-white/10 sm:pl-8">
-                <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange"><TrendingUp className="h-5 w-5" /> Launch Price</p>
-                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">197 to 1,300 sq. yards</p>
-                <p className="mt-2 text-sm text-white/60 font-medium uppercase tracking-wider">Negotiable</p>
+                <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange"><Map className="h-5 w-5" /> Plot Sizes</p>
+                <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">197 – 1,300 Sq.Yds.</p>
+                <p className="mt-2 text-sm text-white/60 font-medium uppercase tracking-wider">HMDA Approved</p>
               </div>
             </div>
           </div>
