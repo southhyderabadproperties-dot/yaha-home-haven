@@ -115,6 +115,8 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+import { ExitIntentPopup } from "../components/exit-intent-popup";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -124,6 +126,7 @@ function RootComponent() {
         <SiteHeader />
         <main><Outlet /></main>
         <SiteFooter />
+        <ExitIntentPopup />
       </div>
     </QueryClientProvider>
   );
