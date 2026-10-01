@@ -1,3 +1,6 @@
+
+const fs = require("fs");
+let content = `
 import { useRef, useEffect } from "react";
 
 export function AnimatedPropertyHero() {
@@ -49,3 +52,7 @@ export function AnimatedPropertyHero() {
     </div>
   );
 }
+`;
+fs.writeFileSync("src/components/animated-property-hero.tsx", content.trim(), "utf8");
+console.log("Updated AnimatedPropertyHero");
+

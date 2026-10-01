@@ -43,7 +43,7 @@ function Index() {
         </form>
       </section>
 
-      <section className="section-pad overflow-hidden bg-prestige-cream">
+      <section className="section-pad bg-prestige-cream">
         <div className="page-wrap grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
           <motion.div
             className="lg:sticky lg:top-32 lg:col-span-5"
