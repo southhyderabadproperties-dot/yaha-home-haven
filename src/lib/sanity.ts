@@ -37,13 +37,6 @@ export const formatDate = (d?: string) =>
 
 const POST_FIELDS = `_id,title,"slug":slug.current,author,category,publishedAt,excerpt,mainImage,seo`;
 
-export const getPosts = () =>
-  sanityClient.fetch<PostSummary[]>(
-    `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){${POST_FIELDS}}`,
-  );
+export const getPosts = async () => { try { return await sanityClient.fetch<PostSummary[]>(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc){${POST_FIELDS}}`); } catch (e) { console.error(e); return []; } };
 
-export const getPost = (slug: string) =>
-  sanityClient.fetch<Post | null>(
-    `*[_type == "post" && slug.current == $slug][0]{${POST_FIELDS},body}`,
-    { slug },
-  );
+export const getPost = async (slug: string) => { try { return await sanityClient.fetch<Post | null>(`*[_type == "post" && slug.current == $slug][0]{${POST_FIELDS},body}`, { slug }); } catch (e) { console.error(e); return null; } };
