@@ -85,7 +85,33 @@ function RiddhiVillasPage() {
   return <>
     <section className="relative min-h-[82svh] overflow-hidden bg-brand-navy"><img src="https://im.proptiger.com/1/3136686/6/laxman-county-elevation-129948866.jpeg" alt="Riddhi Laxman County contemporary duplex home" width={1088} height={1920} className="absolute inset-0 h-full w-full object-cover object-center"/><div className="absolute inset-0 bg-linear-to-r from-brand-navy/95 via-brand-navy/70 to-transparent"/><div className="page-wrap relative flex min-h-[82svh] items-center py-20"><div className="max-w-3xl text-primary-foreground"><p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange"><MapPin className="h-4 w-4"/>Tukkuguda, Mankhal</p><h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.03] sm:text-7xl">Riddhi<br/>Laxman County</h1><p className="mt-6 max-w-xl text-lg leading-8 text-primary-foreground/75">A private world of expansive duplex villas, crafted for the future of South Hyderabad living.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="orange" size="lg"><Link to="/contact">Enquire now <ArrowRight/></Link></Button><Button asChild variant="light" size="lg"><a href="mailto:southhyderabadproperties@gmail.com?subject=Riddhi%20Laxman%20County%20Brochure"><ArrowDownToLine/> Request brochure</a></Button></div></div></div></section>
     <section className="bg-primary py-9 text-primary-foreground"><div className="page-wrap grid grid-cols-2 gap-8 lg:grid-cols-4">{facts.map(f=><FactCard key={f.small} fact={f} />)}</div></section>
-    <section className="pt-16 pb-6 sm:py-28"><div className="page-wrap grid gap-10 lg:gap-14 lg:grid-cols-[1.05fr_0.95fr]"><div><p className="eyebrow">Future City corridor</p><h2 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">A landmark address with room for every ambition.</h2><p className="mt-6 leading-8 text-muted-foreground">Set across 6.25 acres at Tukkuguda, Riddhi Laxman County brings together 58 exclusive premium units with the convenience of ORR Exit 14 and the promise of the Future City corridor.</p><div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{[["3 BHK","3,035 Sq.ft."],["4 BHK","4,035 Sq.ft."],["Plot sizes","267 & 300 Sq. Yards"],["Largest plot","400 Sq. Yards"]].map(([title,value])=><div className="bg-background p-6" key={title}><p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{title}</p><p className="mt-2 font-display text-xl font-extrabold">{value}</p></div>)}</div></div><div className="image-card aspect-[4/3] sm:aspect-[16/10] max-h-[600px]"><GallerySlideshow /></div></div></section>
+    <section className="pt-20 pb-16 sm:py-32 bg-prestige-cream relative border-y border-prestige-gold/20 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-prestige-gold/5 rounded-l-full blur-3xl mix-blend-multiply opacity-50" />
+        <div className="page-wrap grid gap-10 lg:gap-14 lg:grid-cols-[1.05fr_0.95fr] relative z-10">
+          <div className="pr-0 lg:pr-8">
+            <div className="flex items-center gap-4">
+              <span className="h-px w-12 bg-prestige-gold" />
+              <p className="font-prestige-body text-[10px] font-bold uppercase tracking-[0.32em] text-prestige-green">Future City corridor</p>
+            </div>
+            <h2 className="mt-7 font-prestige text-4xl font-semibold leading-tight text-prestige-deep sm:text-5xl">A landmark address with room for every ambition.</h2>
+            <p className="mt-6 font-prestige-body text-lg font-light leading-8 text-prestige-green">Set across 6.25 acres at Tukkuguda, Riddhi Laxman County brings together 58 exclusive premium units with the convenience of ORR Exit 14 and the promise of the Future City corridor.</p>
+            <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-prestige-gold/20 bg-prestige-gold/20 sm:grid-cols-2">
+              {[["3 BHK","3,035 Sq.ft."],["4 BHK","4,035 Sq.ft."],["Plot sizes","267 & 300 Sq. Yards"],["Largest plot","400 Sq. Yards"]].map(([title,value])=>
+                <div className="bg-prestige-cream p-6 transition-colors hover:bg-white" key={title}>
+                  <p className="font-prestige-body text-[10px] font-bold uppercase tracking-[0.2em] text-prestige-gold">{title}</p>
+                  <p className="mt-2 font-prestige text-2xl font-medium text-prestige-deep">{value}</p>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="relative">
+            <span className="pointer-events-none absolute -inset-3 hidden border border-prestige-gold/30 lg:block opacity-70" />
+            <div className="image-card aspect-[4/3] sm:aspect-[16/10] max-h-[600px] bg-prestige-deep/5 overflow-hidden">
+              <GallerySlideshow />
+            </div>
+          </div>
+        </div>
+      </section>
     
     <section className="pt-6 pb-16 sm:py-28 bg-background border-y border-border">
       <div className="page-wrap">
