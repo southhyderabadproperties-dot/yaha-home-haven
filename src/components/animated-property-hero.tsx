@@ -8,7 +8,7 @@ export function AnimatedPropertyHero() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           desktopRef.current?.play().catch(() => {});
           mobileRef.current?.play().catch(() => {});
         } else {
