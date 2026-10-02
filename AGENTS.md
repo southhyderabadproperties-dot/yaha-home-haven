@@ -1,4 +1,5 @@
 <!-- LOVABLE:BEGIN -->
+
 > [!IMPORTANT]
 > This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
 > published git history — force pushing, or rebasing/amending/squashing commits
@@ -7,8 +8,10 @@
 >
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
+
 <!-- LOVABLE:END -->
 
 ## Project architecture
+
 - Keep shared marketing-site chrome and reusable property presentation in `src/components`; each major content area remains a separate TanStack route for SEO and sharing.
 - Keep the homepage property panorama as a reusable animated SVG component so its layered motion remains lightweight and resolution-independent.

@@ -16,7 +16,7 @@ export function AnimatedPropertyHero() {
           mobileRef.current?.pause();
         }
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
     if (containerRef.current) {

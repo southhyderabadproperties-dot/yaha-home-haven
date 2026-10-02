@@ -5,7 +5,11 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Our Services | South Hyderabad Properties" },
-      { name: "description", content: "Comprehensive real estate services in South Hyderabad, from premium residential properties and villas to investment consulting." },
+      {
+        name: "description",
+        content:
+          "Comprehensive real estate services in South Hyderabad, from premium residential properties and villas to investment consulting.",
+      },
     ],
   }),
   component: ServicesPage,
@@ -14,7 +18,8 @@ export const Route = createFileRoute("/services")({
 const services = [
   {
     title: "Residential Properties",
-    description: "Premium residential properties in South Hyderabad's most sought-after neighborhoods.",
+    description:
+      "Premium residential properties in South Hyderabad's most sought-after neighborhoods.",
     image: "/services/service-gated.jpg",
   },
   {
@@ -77,15 +82,28 @@ const services = [
 function ServicesPage() {
   return (
     <>
-      <PageIntro eyebrow="Our Services" title={<><span className="text-[#FC913A]">Comprehensive</span> real estate solutions.</>}>
-        <p>From finding your dream home to strategic land investments, we provide end-to-end guidance for all your property needs.</p>
+      <PageIntro
+        eyebrow="Our Services"
+        title={
+          <>
+            <span className="text-[#FC913A]">Comprehensive</span> real estate solutions.
+          </>
+        }
+      >
+        <p>
+          From finding your dream home to strategic land investments, we provide end-to-end guidance
+          for all your property needs.
+        </p>
       </PageIntro>
 
       <section className="section-pad bg-background">
         <div className="page-wrap">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, idx) => (
-              <div key={idx} className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:shadow-md">
+              <div
+                key={idx}
+                className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:shadow-md"
+              >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={service.image}

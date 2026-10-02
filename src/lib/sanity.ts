@@ -33,10 +33,31 @@ export type PostSummary = {
 export type Post = PostSummary & { body?: unknown[] };
 
 export const formatDate = (d?: string) =>
-  d ? new Date(d).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" }) : "";
+  d
+    ? new Date(d).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })
+    : "";
 
 const POST_FIELDS = `_id,title,"slug":slug.current,author,category,publishedAt,excerpt,mainImage,seo`;
 
-export const getPosts = async () => { try { return await sanityClient.fetch<PostSummary[]>(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc){${POST_FIELDS}}`); } catch (e) { console.error(e); return []; } };
+export const getPosts = async () => {
+  try {
+    return await sanityClient.fetch<PostSummary[]>(
+      `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){${POST_FIELDS}}`,
+    );
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
+};
 
-export const getPost = async (slug: string) => { try { return await sanityClient.fetch<Post | null>(`*[_type == "post" && slug.current == $slug][0]{${POST_FIELDS},body}`, { slug }); } catch (e) { console.error(e); return null; } };
+export const getPost = async (slug: string) => {
+  try {
+    return await sanityClient.fetch<Post | null>(
+      `*[_type == "post" && slug.current == $slug][0]{${POST_FIELDS},body}`,
+      { slug },
+    );
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+};

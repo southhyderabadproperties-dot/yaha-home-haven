@@ -1,6 +1,6 @@
 # Yaha Home Haven
 
-take reference theme from this website  https://www.yahaproperties.in/
+take reference theme from this website https://www.yahaproperties.in/
 
 This project was built with [Lovable](https://lovable.dev).
 
