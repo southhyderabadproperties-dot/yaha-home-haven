@@ -267,19 +267,19 @@ function Index() {
               </Link>
             </Button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="rounded-md bg-primary p-6 sm:p-7 text-primary-foreground">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="rounded-md bg-primary p-6 text-primary-foreground sm:p-7">
               <ShieldCheck className="h-8 w-8 text-brand-orange" />
-              <p className="mt-6 sm:mt-10 font-display text-xl sm:text-2xl font-extrabold">
+              <p className="mt-6 break-words font-display text-xl font-extrabold sm:mt-10 sm:text-2xl">
                 Verified opportunities
               </p>
               <p className="mt-2 text-sm text-primary-foreground/70">
                 Clarity-first property discovery.
               </p>
             </div>
-            <div className="sm:mt-10 rounded-md bg-brand-orange p-6 sm:p-7 text-brand-orange-foreground">
+            <div className="rounded-md bg-brand-orange p-6 text-brand-orange-foreground sm:mt-10 sm:p-7">
               <MapPin className="h-8 w-8" />
-              <p className="mt-6 sm:mt-10 font-display text-xl sm:text-2xl font-extrabold">
+              <p className="mt-6 break-words font-display text-xl font-extrabold sm:mt-10 sm:text-2xl">
                 Local focus
               </p>
               <p className="mt-2 text-sm text-brand-orange-foreground/75">
