@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 
 import { CtaBand } from "@/components/site-shell";
 import { formatDate, getPost, urlFor } from "@/lib/sanity";
+import { breadcrumbSchema, jsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
@@ -11,8 +12,27 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return post;
   },
-  head: ({ loaderData }) => ({
+  head: ({ loaderData, params }) => ({
+    links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+    scripts: [
+      jsonLd({
+        "@type": "BlogPosting",
+        headline: loaderData?.title,
+        description: loaderData?.seo?.metaDescription ?? loaderData?.excerpt,
+        datePublished: loaderData?.publishedAt,
+        author: { "@type": "Person", name: loaderData?.author ?? "South Hyderabad Properties" },
+        publisher: { "@type": "Organization", name: "South Hyderabad Properties" },
+        keywords: loaderData?.seo?.focusKeyword,
+        mainEntityOfPage: `/blog/${params.slug}`,
+      }),
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: loaderData?.title ?? "Article", path: `/blog/${params.slug}` },
+      ]),
+    ],
     meta: [
+      { property: "og:url", content: `/blog/${params.slug}` },
       {
         title:
           loaderData?.seo?.metaTitle ??
@@ -103,7 +123,8 @@ function PostPage() {
                     <img
                       className="rounded-xl"
                       src={urlFor(value).width(1200).auto("format").url()}
-                      alt=""
+                      alt={(value as { alt?: string }).alt ?? post.title}
+                      loading="lazy"
                     />
                   ),
                 },

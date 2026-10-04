@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteFooter, SiteHeader } from "../components/site-shell";
+import { organizationSchema } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -98,6 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/logo.jpg", type: "image/jpeg" },
     ],
+    scripts: [organizationSchema()],
   }),
   shellComponent: RootShell,
   component: RootComponent,

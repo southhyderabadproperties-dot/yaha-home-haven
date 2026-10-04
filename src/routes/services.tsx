@@ -9,6 +9,13 @@ export const Route = createFileRoute("/services")({
     meta: [
       { property: "og:url", content: "/services" },
       { title: "Our Services | South Hyderabad Properties" },
+      { property: "og:title", content: "Real Estate Services in South Hyderabad" },
+      {
+        property: "og:description",
+        content: "Villas, apartments, open plots, farm lands, resale and investment guidance.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         name: "description",
         content:
