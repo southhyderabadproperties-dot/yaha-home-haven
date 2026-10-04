@@ -1,12 +1,16 @@
 import { createFileRoute, Link, Outlet, useMatch } from "@tanstack/react-router";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
+import { breadcrumbSchema } from "@/lib/seo";
 
 import { CtaBand, PageIntro } from "@/components/site-shell";
 import { formatDate, getPosts, urlFor } from "@/lib/sanity";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/blog" }],
+    scripts: [breadcrumbSchema([{ name: "Home", path: "/" }, { name: "South Hyderabad Property Insights", path: "/blog" }])],
     meta: [
+      { property: "og:url", content: "/blog" },
       { title: "South Hyderabad Property Insights | Blog" },
       {
         name: "description",

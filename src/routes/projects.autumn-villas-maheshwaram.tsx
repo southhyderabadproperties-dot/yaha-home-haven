@@ -18,6 +18,7 @@ import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import villaImage from "@/assets/autumn-villa.jpg";
 import clubhouseImage from "@/assets/clubhouse.jpg";
@@ -26,7 +27,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/autumn-villas-maheshwaram" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Autumn Luxury Villas, Maheshwaram", path: "/projects/autumn-villas-maheshwaram" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Autumn Luxury Villas, Maheshwaram", url: "/projects/autumn-villas-maheshwaram", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/autumn-villas-maheshwaram" },
       { title: "Autumn Luxury Villas, Maheshwaram | South Hyderabad Properties" },
       {
         name: "description",

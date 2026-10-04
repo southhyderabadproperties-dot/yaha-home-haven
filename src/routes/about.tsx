@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Eye, Handshake, Lightbulb, ShieldCheck } from "lucide-react";
+import { breadcrumbSchema } from "@/lib/seo";
 
 import heroImage from "@/assets/about-us-hero.jpg";
 import { CtaBand, PageIntro } from "@/components/site-shell";
@@ -7,7 +8,10 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/about" }],
+    scripts: [breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }])],
     meta: [
+      { property: "og:url", content: "/about" },
       { title: "About Us | South Hyderabad Properties" },
       {
         name: "description",

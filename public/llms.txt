@@ -1,0 +1,24 @@
+# South Hyderabad Properties
+
+> Real estate advisors helping buyers and sellers find verified villas, apartments, open plots, HMDA/DTCP approved layouts, farm lands and investment land across South Hyderabad, Telangana, India — Tukkuguda, Shamshabad, Maheshwaram, Kongara Kalan, Adibatla, Kandukur, Immaguda and the Hyderabad Future City corridor.
+
+Contact: +91 96469 52999 · southhyderabadproperties@gmail.com
+
+## Main pages
+- [Home](/): Overview, property search and featured projects
+- [About us](/about): Who we are, our values and leadership
+- [Services](/services): Residential, villas, apartments, open plots, farm lands, commercial, rentals, resale, consulting and investment guidance
+- [Blog](/blog): Market insights and buyer guides for South Hyderabad
+- [Contact](/contact): Enquiry form, phone and email
+
+## Projects
+- [Autumn Luxury Villas, Maheshwaram](/projects/autumn-villas-maheshwaram)
+- [Anvay Avillas, Kongara Kalan](/projects/anvay-avillas-kongara-kalan)
+- [Vertex Florenza, Tukkuguda](/projects/vertex-florenza-tukkuguda)
+- [Vertex Viva Calista, Tukkuguda](/projects/vertex-viva-calista-tukkuguda)
+- [Riddhi Laxman County, Tukkuguda](/projects/riddhi-laxman-county-tukkuguda)
+- [Kavuri's Lemon Leaf, Tukkuguda](/projects/kavuri-hills-lemon-leaf-tukkuguda)
+- [Kavuri Forest Nest, Immaguda](/projects/kavuri-forest-nest-immaguda)
+
+## Optional
+- [Sitemap](/sitemap.xml)

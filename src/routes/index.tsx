@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
+import { jsonLd } from "@/lib/seo";
 
 import { AnimatedPropertyHero } from "@/components/animated-property-hero";
 import { PropertyCarousel } from "@/components/property-ui";
@@ -12,7 +13,10 @@ import luxuryPropertyImage from "@/assets/autumn-villa.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [jsonLd({ "@type": "WebSite", name: "South Hyderabad Properties", url: "/" })],
     meta: [
+      { property: "og:url", content: "/" },
       { title: "South Hyderabad Properties | Plots, Land & Luxury Villas" },
       {
         name: "description",
@@ -41,6 +45,10 @@ function Index() {
   return (
     <div>
       <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
+        <h1 className="sr-only">
+          South Hyderabad Properties: open plots, villas, apartments and land in Shamshabad,
+          Maheshwaram and Tukkuguda
+        </h1>
         <AnimatedPropertyHero />
       </section>
 
@@ -156,7 +164,8 @@ function Index() {
                   <div className="aspect-[3/4] overflow-hidden bg-prestige-deep/10">
                     <img
                       src={item.image}
-                      alt=""
+                      alt={`${item.title} in South Hyderabad`}
+                      loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     />
                   </div>
@@ -185,7 +194,8 @@ function Index() {
                 <div className="aspect-[16/9] overflow-hidden bg-prestige-deep">
                   <img
                     src={luxuryPropertyImage}
-                    alt=""
+                    alt="Luxury villa community in South Hyderabad"
+                    loading="lazy"
                     className="h-full w-full object-cover object-[center_58%] transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                 </div>

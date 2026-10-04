@@ -19,6 +19,7 @@ import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
@@ -26,7 +27,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/riddhi-laxman-county-tukkuguda")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/riddhi-laxman-county-tukkuguda" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Riddhi Laxman County", path: "/projects/riddhi-laxman-county-tukkuguda" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Riddhi Laxman County", url: "/projects/riddhi-laxman-county-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/riddhi-laxman-county-tukkuguda" },
       { title: "Riddhi Laxman County | South Hyderabad Properties" },
       {
         name: "description",

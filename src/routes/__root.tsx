@@ -8,11 +8,12 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteFooter, SiteHeader } from "../components/site-shell";
+import { organizationSchema } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -98,6 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/logo.jpg", type: "image/jpeg" },
     ],
+    scripts: [organizationSchema()],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -119,7 +121,9 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-import { ExitIntentPopup } from "../components/exit-intent-popup";
+const ExitIntentPopup = lazy(() =>
+  import("../components/exit-intent-popup").then((m) => ({ default: m.ExitIntentPopup })),
+);
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -132,7 +136,9 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
-        <ExitIntentPopup />
+        <Suspense fallback={null}>
+          <ExitIntentPopup />
+        </Suspense>
       </div>
     </QueryClientProvider>
   );

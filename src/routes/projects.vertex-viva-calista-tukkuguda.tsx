@@ -19,6 +19,7 @@ import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
@@ -26,7 +27,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/vertex-viva-calista-tukkuguda")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/vertex-viva-calista-tukkuguda" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Vertex Viva Calista", path: "/projects/vertex-viva-calista-tukkuguda" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Vertex Viva Calista", url: "/projects/vertex-viva-calista-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/vertex-viva-calista-tukkuguda" },
       { title: "Vertex Viva Calista | South Hyderabad Properties" },
       {
         name: "description",
