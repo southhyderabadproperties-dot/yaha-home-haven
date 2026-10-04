@@ -23,6 +23,7 @@ import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
@@ -30,7 +31,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/kavuri-hills-lemon-leaf-tukkuguda")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/kavuri-hills-lemon-leaf-tukkuguda" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Kavuri's Lemon Leaf", path: "/projects/kavuri-hills-lemon-leaf-tukkuguda" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Kavuri's Lemon Leaf", url: "/projects/kavuri-hills-lemon-leaf-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/kavuri-hills-lemon-leaf-tukkuguda" },
       { title: "Kavuri's Lemon Leaf | South Hyderabad Properties" },
       {
         name: "description",

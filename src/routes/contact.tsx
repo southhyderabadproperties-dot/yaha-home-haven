@@ -1,6 +1,7 @@
 ﻿import { createFileRoute } from "@tanstack/react-router";
 import { Clock3, Facebook, Instagram, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
+import { jsonLd } from "@/lib/seo";
 
 import { PageIntro } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,10 @@ import { Textarea } from "@/components/ui/textarea";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [jsonLd({ "@type": "ContactPage", name: "Contact South Hyderabad Properties", url: "/contact" })],
     meta: [
+      { property: "og:url", content: "/contact" },
       { title: "Contact South Hyderabad Properties" },
       {
         name: "description",

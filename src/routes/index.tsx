@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Search, ShieldCheck } from "lucide-react";
 import { useState } from "react";
+import { jsonLd } from "@/lib/seo";
 
 import { AnimatedPropertyHero } from "@/components/animated-property-hero";
 import { PropertyCarousel } from "@/components/property-ui";
@@ -12,7 +13,10 @@ import luxuryPropertyImage from "@/assets/autumn-villa.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [jsonLd({ "@type": "WebSite", name: "South Hyderabad Properties", url: "/" })],
     meta: [
+      { property: "og:url", content: "/" },
       { title: "South Hyderabad Properties | Plots, Land & Luxury Villas" },
       {
         name: "description",

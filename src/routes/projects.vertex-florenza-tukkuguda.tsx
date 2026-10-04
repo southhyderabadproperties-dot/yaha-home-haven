@@ -19,6 +19,7 @@ import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
@@ -26,7 +27,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/vertex-florenza-tukkuguda")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/vertex-florenza-tukkuguda" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Vertex Florenza", path: "/projects/vertex-florenza-tukkuguda" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Vertex Florenza", url: "/projects/vertex-florenza-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/vertex-florenza-tukkuguda" },
       { title: "Vertex Florenza | South Hyderabad Properties" },
       {
         name: "description",

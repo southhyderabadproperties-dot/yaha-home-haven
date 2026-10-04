@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro, CtaBand } from "@/components/site-shell";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/services" }],
+    scripts: [breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Our Services", path: "/services" }])],
     meta: [
+      { property: "og:url", content: "/services" },
       { title: "Our Services | South Hyderabad Properties" },
       {
         name: "description",

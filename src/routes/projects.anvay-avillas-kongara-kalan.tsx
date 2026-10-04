@@ -19,6 +19,7 @@ import SlotCounter from "react-slot-counter";
 import { useRef } from "react";
 import { useInView, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
@@ -26,7 +27,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/anvay-avillas-kongara-kalan")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/anvay-avillas-kongara-kalan" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Anvay Avillas (Anvaya Icon City)", path: "/projects/anvay-avillas-kongara-kalan" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Anvay Avillas (Anvaya Icon City)", url: "/projects/anvay-avillas-kongara-kalan", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/anvay-avillas-kongara-kalan" },
       { title: "Anvay Avillas (Anvaya Icon City) | South Hyderabad Properties" },
       {
         name: "description",

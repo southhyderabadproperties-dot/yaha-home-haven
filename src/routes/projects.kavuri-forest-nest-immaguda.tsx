@@ -18,6 +18,7 @@ import {
 import SlotCounter from "react-slot-counter";
 import { useRef, useState, useEffect } from "react";
 import { useInView, motion, AnimatePresence } from "framer-motion";
+import { jsonLd, breadcrumbSchema } from "@/lib/seo";
 
 import clubhouseImage from "@/assets/clubhouse.jpg";
 import { CtaBand } from "@/components/site-shell";
@@ -25,7 +26,16 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/projects/kavuri-forest-nest-immaguda")({
   head: () => ({
+    links: [{ rel: "canonical", href: "/projects/kavuri-forest-nest-immaguda" }],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Kavuri Forest Nest", path: "/projects/kavuri-forest-nest-immaguda" },
+      ]),
+      jsonLd({ "@type": "Residence", name: "Kavuri Forest Nest", url: "/projects/kavuri-forest-nest-immaguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+    ],
     meta: [
+      { property: "og:url", content: "/projects/kavuri-forest-nest-immaguda" },
       { title: "Kavuri Forest Nest | South Hyderabad Properties" },
       {
         name: "description",
