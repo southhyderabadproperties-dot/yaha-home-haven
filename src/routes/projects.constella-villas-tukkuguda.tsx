@@ -42,7 +42,14 @@ export const Route = createFileRoute("/projects/constella-villas-tukkuguda")({
   component: ConstellaVillasPage,
 });
 
-const GALLERY_IMAGES = ["/projects/constella/image-1.webp", "/projects/constella/image-3.webp"];
+const GALLERY_IMAGES = [
+  "/projects/constella/image-1.webp",
+  "/projects/constella/image-3.webp",
+  "/projects/constella/gallery-1.png",
+  "/projects/constella/gallery-2.png",
+  "/projects/constella/gallery-3.png",
+  "/projects/constella/gallery-4.png",
+];
 
 function GallerySlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
