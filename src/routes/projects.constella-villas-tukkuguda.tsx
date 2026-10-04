@@ -43,12 +43,14 @@ export const Route = createFileRoute("/projects/constella-villas-tukkuguda")({
 });
 
 const GALLERY_IMAGES = [
-  "/projects/constella/image-1.webp",
-  "/projects/constella/image-3.webp",
   "/projects/constella/gallery-1.png",
   "/projects/constella/gallery-2.png",
   "/projects/constella/gallery-3.png",
   "/projects/constella/gallery-4.png",
+  "/projects/constella/club.jpg",
+  "/projects/constella/courtyard.png",
+  "/projects/constella/green.png",
+  "/projects/constella/security.png",
 ];
 
 function GallerySlideshow() {
@@ -113,26 +115,10 @@ function FactCard({ fact }: { fact: { small: string; large: string; desc: string
 }
 
 const amenities = [
-  {
-    icon: Dumbbell,
-    label: "25,000+ sq ft Clubhouse",
-    img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    icon: Waves,
-    label: "Private Courtyards",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    icon: Wind,
-    label: "70% Open Green Cover",
-    img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb65?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    icon: ShieldCheck,
-    label: "Gated Security",
-    img: "https://images.unsplash.com/photo-1557992260-ec58e38d363c?q=80&w=1374&auto=format&fit=crop",
-  },
+  { icon: Dumbbell, label: "25,000+ sq ft Clubhouse", img: "/projects/constella/club.jpg" },
+  { icon: Waves, label: "Private Courtyards", img: "/projects/constella/courtyard.png" },
+  { icon: Wind, label: "70% Open Green Cover", img: "/projects/constella/green.png" },
+  { icon: ShieldCheck, label: "Gated Security", img: "/projects/constella/security.png" },
 ];
 
 function ConstellaVillasPage() {
