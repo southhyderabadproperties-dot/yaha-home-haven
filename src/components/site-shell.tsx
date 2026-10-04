@@ -359,7 +359,7 @@ export function SiteFooter() {
             <div className="flex gap-3 pt-2">
               <a
                 aria-label="Instagram"
-                href="https://instagram.com/yahaproperties"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
@@ -368,7 +368,7 @@ export function SiteFooter() {
               </a>
               <a
                 aria-label="Facebook"
-                href="https://www.facebook.com/share/1E9URqKEay/?mibextid=wwXIfr"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"

@@ -111,7 +111,7 @@ function ContactPage() {
             </div>
             <div className="mt-8 flex gap-3">
               <a
-                href="https://instagram.com/yahaproperties"
+                href="#"
                 aria-label="Instagram"
                 className="social-button border-border text-primary"
                 target="_blank"
@@ -120,7 +120,7 @@ function ContactPage() {
                 <Instagram />
               </a>
               <a
-                href="https://www.facebook.com/share/1E9URqKEay/?mibextid=wwXIfr"
+                href="#"
                 aria-label="Facebook"
                 className="social-button border-border text-primary"
                 target="_blank"
