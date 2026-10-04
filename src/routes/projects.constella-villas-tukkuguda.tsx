@@ -11,12 +11,12 @@ import {
   Wind,
   ShieldCheck,
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useEffect, useState } from "react";
+import { useInView, AnimatePresence, motion } from "framer-motion";
+// fixed
 
 import { Button } from "@/components/ui/button";
-import { CtaBand } from "@/components/property-ui";
+import { CtaBand } from "@/components/site-shell";
 
 import bannerImg from "@/../public/projects/constella/image-2.webp";
 
@@ -46,7 +46,8 @@ const GALLERY_IMAGES = ["/projects/constella/image-1.webp", "/projects/constella
 
 function GallerySlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { ref, inView } = useInView({ threshold: 0, rootMargin: "200px" });
+  const ref = React.useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
     if (!inView || GALLERY_IMAGES.length <= 1) return;

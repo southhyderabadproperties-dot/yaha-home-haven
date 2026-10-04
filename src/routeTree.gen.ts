@@ -19,6 +19,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ProjectsAnvayAvillasKongaraKalanRouteImport } from './routes/projects.anvay-avillas-kongara-kalan'
 import { Route as ProjectsAutumnVillasMaheshwaramRouteImport } from './routes/projects.autumn-villas-maheshwaram'
+import { Route as ProjectsConstellaVillasTukkugudaRouteImport } from './routes/projects.constella-villas-tukkuguda'
 import { Route as ProjectsKavuriForestNestImmagudaRouteImport } from './routes/projects.kavuri-forest-nest-immaguda'
 import { Route as ProjectsKavuriHillsLemonLeafTukkugudaRouteImport } from './routes/projects.kavuri-hills-lemon-leaf-tukkuguda'
 import { Route as ProjectsRiddhiLaxmanCountyTukkugudaRouteImport } from './routes/projects.riddhi-laxman-county-tukkuguda'
@@ -77,6 +78,12 @@ const ProjectsAutumnVillasMaheshwaramRoute =
     path: '/projects/autumn-villas-maheshwaram',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProjectsConstellaVillasTukkugudaRoute =
+  ProjectsConstellaVillasTukkugudaRouteImport.update({
+    id: '/projects/constella-villas-tukkuguda',
+    path: '/projects/constella-villas-tukkuguda',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProjectsKavuriForestNestImmagudaRoute =
   ProjectsKavuriForestNestImmagudaRouteImport.update({
     id: '/projects/kavuri-forest-nest-immaguda',
@@ -119,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
   '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
+  '/projects/constella-villas-tukkuguda': typeof ProjectsConstellaVillasTukkugudaRoute
   '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
   '/projects/kavuri-hills-lemon-leaf-tukkuguda': typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
   '/projects/riddhi-laxman-county-tukkuguda': typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
@@ -136,6 +144,7 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
   '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
+  '/projects/constella-villas-tukkuguda': typeof ProjectsConstellaVillasTukkugudaRoute
   '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
   '/projects/kavuri-hills-lemon-leaf-tukkuguda': typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
   '/projects/riddhi-laxman-county-tukkuguda': typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
@@ -154,6 +163,7 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/projects/anvay-avillas-kongara-kalan': typeof ProjectsAnvayAvillasKongaraKalanRoute
   '/projects/autumn-villas-maheshwaram': typeof ProjectsAutumnVillasMaheshwaramRoute
+  '/projects/constella-villas-tukkuguda': typeof ProjectsConstellaVillasTukkugudaRoute
   '/projects/kavuri-forest-nest-immaguda': typeof ProjectsKavuriForestNestImmagudaRoute
   '/projects/kavuri-hills-lemon-leaf-tukkuguda': typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
   '/projects/riddhi-laxman-county-tukkuguda': typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/projects/anvay-avillas-kongara-kalan'
     | '/projects/autumn-villas-maheshwaram'
+    | '/projects/constella-villas-tukkuguda'
     | '/projects/kavuri-forest-nest-immaguda'
     | '/projects/kavuri-hills-lemon-leaf-tukkuguda'
     | '/projects/riddhi-laxman-county-tukkuguda'
@@ -190,6 +201,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/projects/anvay-avillas-kongara-kalan'
     | '/projects/autumn-villas-maheshwaram'
+    | '/projects/constella-villas-tukkuguda'
     | '/projects/kavuri-forest-nest-immaguda'
     | '/projects/kavuri-hills-lemon-leaf-tukkuguda'
     | '/projects/riddhi-laxman-county-tukkuguda'
@@ -207,6 +219,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/projects/anvay-avillas-kongara-kalan'
     | '/projects/autumn-villas-maheshwaram'
+    | '/projects/constella-villas-tukkuguda'
     | '/projects/kavuri-forest-nest-immaguda'
     | '/projects/kavuri-hills-lemon-leaf-tukkuguda'
     | '/projects/riddhi-laxman-county-tukkuguda'
@@ -224,6 +237,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProjectsAnvayAvillasKongaraKalanRoute: typeof ProjectsAnvayAvillasKongaraKalanRoute
   ProjectsAutumnVillasMaheshwaramRoute: typeof ProjectsAutumnVillasMaheshwaramRoute
+  ProjectsConstellaVillasTukkugudaRoute: typeof ProjectsConstellaVillasTukkugudaRoute
   ProjectsKavuriForestNestImmagudaRoute: typeof ProjectsKavuriForestNestImmagudaRoute
   ProjectsKavuriHillsLemonLeafTukkugudaRoute: typeof ProjectsKavuriHillsLemonLeafTukkugudaRoute
   ProjectsRiddhiLaxmanCountyTukkugudaRoute: typeof ProjectsRiddhiLaxmanCountyTukkugudaRoute
@@ -303,6 +317,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsAutumnVillasMaheshwaramRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/constella-villas-tukkuguda': {
+      id: '/projects/constella-villas-tukkuguda'
+      path: '/projects/constella-villas-tukkuguda'
+      fullPath: '/projects/constella-villas-tukkuguda'
+      preLoaderRoute: typeof ProjectsConstellaVillasTukkugudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects/kavuri-forest-nest-immaguda': {
       id: '/projects/kavuri-forest-nest-immaguda'
       path: '/projects/kavuri-forest-nest-immaguda'
@@ -361,6 +382,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProjectsAnvayAvillasKongaraKalanRoute: ProjectsAnvayAvillasKongaraKalanRoute,
   ProjectsAutumnVillasMaheshwaramRoute: ProjectsAutumnVillasMaheshwaramRoute,
+  ProjectsConstellaVillasTukkugudaRoute: ProjectsConstellaVillasTukkugudaRoute,
   ProjectsKavuriForestNestImmagudaRoute: ProjectsKavuriForestNestImmagudaRoute,
   ProjectsKavuriHillsLemonLeafTukkugudaRoute:
     ProjectsKavuriHillsLemonLeafTukkugudaRoute,
