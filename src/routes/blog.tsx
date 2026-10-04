@@ -8,7 +8,12 @@ import { formatDate, getPosts, urlFor } from "@/lib/sanity";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     links: [{ rel: "canonical", href: "/blog" }],
-    scripts: [breadcrumbSchema([{ name: "Home", path: "/" }, { name: "South Hyderabad Property Insights", path: "/blog" }])],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "South Hyderabad Property Insights", path: "/blog" },
+      ]),
+    ],
     meta: [
       { property: "og:url", content: "/blog" },
       { title: "South Hyderabad Property Insights | Blog" },

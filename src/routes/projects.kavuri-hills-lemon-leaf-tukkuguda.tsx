@@ -37,7 +37,12 @@ export const Route = createFileRoute("/projects/kavuri-hills-lemon-leaf-tukkugud
         { name: "Home", path: "/" },
         { name: "Kavuri's Lemon Leaf", path: "/projects/kavuri-hills-lemon-leaf-tukkuguda" },
       ]),
-      jsonLd({ "@type": "Residence", name: "Kavuri's Lemon Leaf", url: "/projects/kavuri-hills-lemon-leaf-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+      jsonLd({
+        "@type": "Residence",
+        name: "Kavuri's Lemon Leaf",
+        url: "/projects/kavuri-hills-lemon-leaf-tukkuguda",
+        address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
+      }),
     ],
     meta: [
       { property: "og:url", content: "/projects/kavuri-hills-lemon-leaf-tukkuguda" },

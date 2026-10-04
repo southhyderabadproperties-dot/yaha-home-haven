@@ -25,6 +25,13 @@ export const properties = [
     href: "/projects/anvay-avillas-kongara-kalan" as const,
   },
   {
+    title: "Constella Villas",
+    location: "Tukkuguda",
+    type: "4 & 5 BHK Courtyard Villas",
+    image: "/projects/constella/image-1.webp",
+    href: "/projects/constella-villas-tukkuguda" as const,
+  },
+  {
     title: "Vertex Florenza",
     location: "Tukkuguda",
     type: "4 & 5 BHK Villas",

@@ -11,7 +11,13 @@ import { Textarea } from "@/components/ui/textarea";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     links: [{ rel: "canonical", href: "/contact" }],
-    scripts: [jsonLd({ "@type": "ContactPage", name: "Contact South Hyderabad Properties", url: "/contact" })],
+    scripts: [
+      jsonLd({
+        "@type": "ContactPage",
+        name: "Contact South Hyderabad Properties",
+        url: "/contact",
+      }),
+    ],
     meta: [
       { property: "og:url", content: "/contact" },
       { title: "Contact South Hyderabad Properties" },

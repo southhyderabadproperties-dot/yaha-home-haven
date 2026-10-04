@@ -33,7 +33,12 @@ export const Route = createFileRoute("/projects/riddhi-laxman-county-tukkuguda")
         { name: "Home", path: "/" },
         { name: "Riddhi Laxman County", path: "/projects/riddhi-laxman-county-tukkuguda" },
       ]),
-      jsonLd({ "@type": "Residence", name: "Riddhi Laxman County", url: "/projects/riddhi-laxman-county-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+      jsonLd({
+        "@type": "Residence",
+        name: "Riddhi Laxman County",
+        url: "/projects/riddhi-laxman-county-tukkuguda",
+        address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
+      }),
     ],
     meta: [
       { property: "og:url", content: "/projects/riddhi-laxman-county-tukkuguda" },

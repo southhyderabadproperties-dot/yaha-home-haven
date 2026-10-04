@@ -33,7 +33,12 @@ export const Route = createFileRoute("/projects/vertex-viva-calista-tukkuguda")(
         { name: "Home", path: "/" },
         { name: "Vertex Viva Calista", path: "/projects/vertex-viva-calista-tukkuguda" },
       ]),
-      jsonLd({ "@type": "Residence", name: "Vertex Viva Calista", url: "/projects/vertex-viva-calista-tukkuguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+      jsonLd({
+        "@type": "Residence",
+        name: "Vertex Viva Calista",
+        url: "/projects/vertex-viva-calista-tukkuguda",
+        address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
+      }),
     ],
     meta: [
       { property: "og:url", content: "/projects/vertex-viva-calista-tukkuguda" },

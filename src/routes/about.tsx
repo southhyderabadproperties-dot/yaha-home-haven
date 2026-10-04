@@ -9,7 +9,12 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/about")({
   head: () => ({
     links: [{ rel: "canonical", href: "/about" }],
-    scripts: [breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }])],
+    scripts: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/about" },
+      ]),
+    ],
     meta: [
       { property: "og:url", content: "/about" },
       { title: "About Us | South Hyderabad Properties" },

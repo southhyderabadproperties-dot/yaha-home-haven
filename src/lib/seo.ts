@@ -5,6 +5,7 @@ export const SITE_EMAIL = "southhyderabadproperties@gmail.com";
 export const projectPages = [
   { path: "/projects/autumn-villas-maheshwaram", name: "Autumn Luxury Villas, Maheshwaram" },
   { path: "/projects/anvay-avillas-kongara-kalan", name: "Anvay Avillas, Kongara Kalan" },
+  { path: "/projects/constella-villas-tukkuguda", name: "Constella Villas, Tukkuguda" },
   { path: "/projects/vertex-florenza-tukkuguda", name: "Vertex Florenza, Tukkuguda" },
   { path: "/projects/vertex-viva-calista-tukkuguda", name: "Vertex Viva Calista, Tukkuguda" },
   { path: "/projects/riddhi-laxman-county-tukkuguda", name: "Riddhi Laxman County, Tukkuguda" },
@@ -37,7 +38,12 @@ export const organizationSchema = () =>
       "Immaguda",
       "South Hyderabad",
     ],
-    address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressRegion: "Telangana", addressCountry: "IN" },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Hyderabad",
+      addressRegion: "Telangana",
+      addressCountry: "IN",
+    },
     sameAs: ["https://www.facebook.com/share/1E9URqKEay/"],
   });
 

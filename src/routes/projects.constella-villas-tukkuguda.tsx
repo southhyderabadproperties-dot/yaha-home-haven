@@ -1,170 +1,157 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowDownToLine,
   ArrowRight,
-  Baby,
-  BedDouble,
-  BriefcaseBusiness,
-  Dumbbell,
-  Flower2,
   MapPin,
-  PartyPopper,
-  Waves,
   CheckCircle2,
-  TrendingUp,
   Wallet,
+  Maximize,
+  Dumbbell,
+  Waves,
+  Wind,
+  ShieldCheck,
 } from "lucide-react";
-import SlotCounter from "react-slot-counter";
-import { useRef } from "react";
-import { useInView, AnimatePresence, motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { jsonLd, breadcrumbSchema } from "@/lib/seo";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-import villaImage from "@/assets/autumn-villa.jpg";
-import clubhouseImage from "@/assets/clubhouse.jpg";
-import { CtaBand } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
+import { CtaBand } from "@/components/property-ui";
 
-export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
+import bannerImg from "@/../public/projects/constella/image-2.webp";
+
+export const Route = createFileRoute("/projects/constella-villas-tukkuguda")({
   head: () => ({
-    links: [{ rel: "canonical", href: "/projects/autumn-villas-maheshwaram" }],
-    scripts: [
-      breadcrumbSchema([
-        { name: "Home", path: "/" },
-        { name: "Autumn Luxury Villas, Maheshwaram", path: "/projects/autumn-villas-maheshwaram" },
-      ]),
-      jsonLd({
-        "@type": "Residence",
-        name: "Autumn Luxury Villas, Maheshwaram",
-        url: "/projects/autumn-villas-maheshwaram",
-        address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
-      }),
-    ],
     meta: [
-      { property: "og:url", content: "/projects/autumn-villas-maheshwaram" },
-      { title: "Autumn Luxury Villas, Maheshwaram | South Hyderabad Properties" },
+      { title: "Constella by Speed Infra | South Hyderabad Properties" },
       {
         name: "description",
         content:
-          "Explore Autumn Luxury Villas at Maheshwaram – ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse.",
+          "Explore Constella by Speed Infra at Tukkuguda, ORR Exit 14: Ultra Luxury 4 & 5 BHK Courtyard Villas starting from ₹4.88 Cr.",
       },
-      { property: "og:title", content: "Autumn Luxury Villas €” Maheshwaram" },
+      { property: "og:title", content: "Constella by Speed Infra | Tukkuguda" },
       {
         property: "og:description",
-        content: "182 premium duplex villas in South Hyderabad's Future City corridor.",
+        content:
+          "Ultra Luxury Villas for Sale in Hyderabad | 4 & 5 BHK Courtyard Villas in a 27-acre gated community.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: AutumnVillasPage,
+  component: ConstellaVillasPage,
 });
 
-const facts = [
-  { big: "23", small: "Acres" },
-  { big: "182", small: "Exclusive units" },
-  { big: "3 & 4", small: "BHK duplex villas" },
-  { big: "30,000", small: "SFT clubhouse" },
-];
-const amenities = [
-  {
-    icon: Waves,
-    label: "Swimming pool & changing rooms",
-    img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=600&auto=format&fit=crop",
-  },
-  { icon: PartyPopper, label: "Party hall", img: "/party-hall.jpg" },
-  {
-    icon: Dumbbell,
-    label: "Badminton & basketball courts",
-    img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop",
-  },
-  { icon: Flower2, label: "Meditation & yoga room", img: "/yoga-room.png" },
-  {
-    icon: BriefcaseBusiness,
-    label: "Work lounges",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    icon: BedDouble,
-    label: "Guest rooms",
-    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    icon: Baby,
-    label: "Children€™s play area",
-    img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop",
-  },
-];
-
-function FactCard({ fact }: { fact: { big: string; small: string } }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  return (
-    <div ref={ref}>
-      <p className="font-display text-3xl font-extrabold text-[#FC913A] sm:text-4xl flex items-center justify-start">
-        <SlotCounter value={isInView ? fact.big : "0"} animateUnchanged={false} />
-      </p>
-      <p className="mt-1 text-sm text-primary-foreground/70">{fact.small}</p>
-    </div>
-  );
-}
-
-const heroImages = ["/projects/autumn/1.jpg", "/projects/autumn/2.jpg", "/projects/autumn/3.jpg"];
+const GALLERY_IMAGES = ["/projects/constella/image-1.webp", "/projects/constella/image-3.webp"];
 
 function GallerySlideshow() {
-  const [index, setIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const { ref, inView } = useInView({ threshold: 0, rootMargin: "200px" });
 
   useEffect(() => {
+    if (!inView || GALLERY_IMAGES.length <= 1) return;
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % heroImages.length);
+      setCurrentIndex((prev) => (prev + 1) % GALLERY_IMAGES.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [inView]);
 
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-xl">
-      <AnimatePresence initial={false}>
+    <div ref={ref} className="relative h-full w-full bg-brand-navy">
+      <AnimatePresence mode="popLayout" initial={false}>
         <motion.img
-          key={index}
-          src={heroImages[index]}
-          alt="Autumn Luxury Villas"
-          initial={{ x: "100%", opacity: 0.8 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "-100%", opacity: 0.8 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          key={currentIndex}
+          src={GALLERY_IMAGES[currentIndex]}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading={currentIndex === 0 ? "eager" : "lazy"}
+          alt="Constella Villas layout"
         />
       </AnimatePresence>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+        {GALLERY_IMAGES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "w-8 bg-brand-orange" : "w-2 bg-white/50 hover:bg-white/80"}`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
-function AutumnVillasPage() {
+const facts = [
+  { small: "Location", large: "Tukkuguda", desc: "1 min from Nehru ORR Exit 14" },
+  { small: "Land area", large: "27 Acres", desc: "Premium gated community" },
+  { small: "Configuration", large: "4 & 5 BHK", desc: "Courtyard Villas" },
+  { small: "Status", large: "Pre-launch", desc: "Enquire for availability" },
+];
+
+function FactCard({ fact }: { fact: { small: string; large: string; desc: string } }) {
+  return (
+    <div>
+      <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50">
+        {fact.small}
+      </p>
+      <p className="mt-2 font-display text-3xl font-extrabold sm:text-4xl">{fact.large}</p>
+      <p className="mt-2 text-sm text-brand-orange">{fact.desc}</p>
+    </div>
+  );
+}
+
+const amenities = [
+  {
+    icon: Dumbbell,
+    label: "25,000+ sq ft Clubhouse",
+    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/clubhouse.png",
+  },
+  {
+    icon: Waves,
+    label: "Private Courtyards",
+    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/pool.png",
+  },
+  {
+    icon: Wind,
+    label: "70% Open Green Cover",
+    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/park.png",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Gated Security",
+    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/security.png",
+  },
+];
+
+function ConstellaVillasPage() {
   return (
     <>
       <section className="relative min-h-[82svh] overflow-hidden bg-brand-navy">
         <img
-          src={villaImage}
-          alt="Autumn Luxury Villas contemporary duplex home"
-          width={1088}
-          height={1920}
+          src={bannerImg}
+          alt="Constella Villas courtyard home"
+          width={1920}
+          height={1080}
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-brand-navy/95 via-brand-navy/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/70 to-transparent" />
         <div className="page-wrap relative flex min-h-[82svh] items-center py-20">
           <div className="max-w-3xl text-primary-foreground">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange">
-              <MapPin className="h-4 w-4" />
-              Maheshwaram Â· ORR Exit 14
+              <MapPin className="h-4 w-4" /> Near RGI Airport, Tukkuguda
             </p>
             <h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.03] sm:text-7xl">
-              Autumn
+              Constella by
               <br />
-              Luxury Villas
+              Speed Infra
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-primary-foreground/75">
-              A private world of expansive duplex villas, crafted for the future of South Hyderabad
-              living.
+              A 27-acre gated community offering ultra-luxury courtyard villas, just 1 minute away
+              from Nehru ORR Exit 14. Designed for those who live remarkably.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="orange" size="lg">
@@ -173,7 +160,7 @@ function AutumnVillasPage() {
                 </Link>
               </Button>
               <Button asChild variant="light" size="lg">
-                <a href="mailto:southhyderabadproperties@gmail.com?subject=Autumn%20Villas%20Brochure">
+                <a href="mailto:southhyderabadproperties@gmail.com?subject=Constella%20Villas%20Brochure">
                   <ArrowDownToLine /> Request brochure
                 </a>
               </Button>
@@ -181,6 +168,7 @@ function AutumnVillasPage() {
           </div>
         </div>
       </section>
+
       <section className="bg-primary py-9 text-primary-foreground">
         <div className="page-wrap grid grid-cols-2 gap-8 lg:grid-cols-4">
           {facts.map((f) => (
@@ -188,6 +176,7 @@ function AutumnVillasPage() {
           ))}
         </div>
       </section>
+
       <section className="pt-20 pb-16 sm:py-32 bg-prestige-cream relative border-y border-prestige-gold/20 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-prestige-gold/5 rounded-l-full blur-3xl mix-blend-multiply opacity-50" />
         <div className="page-wrap grid gap-10 lg:gap-14 lg:grid-cols-[1.05fr_0.95fr] relative z-10">
@@ -195,22 +184,24 @@ function AutumnVillasPage() {
             <div className="flex items-center gap-4">
               <span className="h-px w-12 bg-prestige-gold" />
               <p className="font-prestige-body text-[10px] font-bold uppercase tracking-[0.32em] text-prestige-green">
-                Future City corridor
+                Tukkuguda corridor
               </p>
             </div>
             <h2 className="mt-7 font-prestige text-4xl font-semibold leading-tight text-prestige-deep sm:text-5xl">
-              A landmark address with room for every ambition.
+              Live the Spirit of Openness Within.
             </h2>
             <p className="mt-6 font-prestige-body text-lg font-light leading-8 text-prestige-green">
-              Set across 23 acres at Maheshwaram, Autumn brings together 182 exclusive premium units
-              with the convenience of ORR Exit 14 and the promise of the Future City corridor.
+              Constella by Speed Infra is a 27-acre, zoning-protected enclave offering ultra-luxury
+              villas in Hyderabad for discerning homeowners. This concept-led master plan revives
+              courtyard living through wider-façade, landscape-oriented villas to maximise light,
+              airflow and garden views.
             </p>
             <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-prestige-gold/20 bg-prestige-gold/20 sm:grid-cols-2">
               {[
-                ["3 BHK", "3,035 Sq.ft."],
-                ["4 BHK", "4,035 Sq.ft."],
-                ["Plot sizes", "267 & 300 Sq. Yards"],
-                ["Largest plot", "400 Sq. Yards"],
+                ["Area", "27 Acres"],
+                ["Villas", "4 & 5 BHK Courtyard"],
+                ["Location", "Tukkuguda"],
+                ["Starting Price", "₹4.88 Cr"],
               ].map(([title, value]) => (
                 <div className="bg-prestige-cream p-6 transition-colors hover:bg-white" key={title}>
                   <p className="font-prestige-body text-[10px] font-bold uppercase tracking-[0.2em] text-prestige-gold">
@@ -243,14 +234,14 @@ function AutumnVillasPage() {
 
           <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              "23 Acres Premium Villa Community",
-              "Only 182 Exclusive Villas",
-              "Plot Sizes: 220–550+ Sq. Yards",
-              "Built-up Area: 2,640–5,500+ Sq. Ft.",
-              "30,000 Sq. Ft. Clubhouse",
-              "25+ Lifestyle Amenities",
-              "Spacious & Premium Villa Designs",
-              "Bank Loan Assistance",
+              "27-Acre Award Winning Masterplan",
+              "Ultra Luxury G+2 Courtyard Villas",
+              "Expansive Landscape Oriented Villas",
+              "70% Open Green Cover",
+              "Height-restricted Low-rise Skyline",
+              "25,000+ Sq. Ft. Clubhouse",
+              "120 ft HMDA Master Plan Approach",
+              "Just 1 min from Nehru ORR Exit 14",
             ].map((item, i) => (
               <div
                 key={i}
@@ -271,18 +262,18 @@ function AutumnVillasPage() {
                     <Wallet className="h-5 w-5" /> Starting Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ₹1.85 Cr
+                    ₹4.88 Cr
                   </p>
                 </div>
                 <div className="sm:border-l sm:border-white/10 sm:pl-8">
                   <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
-                    <TrendingUp className="h-5 w-5" /> Launch Price
+                    <Maximize className="h-5 w-5" /> Villa Layout
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ₹6,999<span className="text-xl text-white/70">/Sq.Ft.</span>
+                    4 & 5 BHK
                   </p>
                   <p className="mt-2 text-sm text-white/60 font-medium uppercase tracking-wider">
-                    Negotiable
+                    Courtyard Villas
                   </p>
                 </div>
               </div>
@@ -290,19 +281,18 @@ function AutumnVillasPage() {
           </div>
         </div>
       </section>
+
       <section className="section-pad bg-brand-navy text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('@/assets/clubhouse.jpg')] opacity-[0.03] mix-blend-overlay bg-cover bg-center" />
         <div className="page-wrap relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="eyebrow text-brand-orange">Everyday, elevated</p>
+            <p className="eyebrow text-brand-orange">A Quiet Galaxy of</p>
             <h2 className="mt-4 font-display text-4xl font-extrabold sm:text-5xl lg:text-6xl text-white">
-              A 30,000 SFT clubhouse
-              <br />
-              at the heart of it all.
+              Only the Exceptional
             </h2>
             <p className="mt-6 text-lg text-primary-foreground/70">
-              Experience world-class amenities designed to bring resort-style luxury to your daily
-              life.
+              Constella’s vision, inspired by tradition, is rooted in space, spatial freedom, open
+              skies, and low-density living that restores balance to urban life.
             </p>
           </div>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

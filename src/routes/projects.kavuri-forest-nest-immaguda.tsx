@@ -32,7 +32,12 @@ export const Route = createFileRoute("/projects/kavuri-forest-nest-immaguda")({
         { name: "Home", path: "/" },
         { name: "Kavuri Forest Nest", path: "/projects/kavuri-forest-nest-immaguda" },
       ]),
-      jsonLd({ "@type": "Residence", name: "Kavuri Forest Nest", url: "/projects/kavuri-forest-nest-immaguda", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+      jsonLd({
+        "@type": "Residence",
+        name: "Kavuri Forest Nest",
+        url: "/projects/kavuri-forest-nest-immaguda",
+        address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
+      }),
     ],
     meta: [
       { property: "og:url", content: "/projects/kavuri-forest-nest-immaguda" },

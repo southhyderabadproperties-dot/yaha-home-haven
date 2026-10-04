@@ -87,6 +87,11 @@ export function SiteHeader() {
                   to: "/projects/anvay-avillas-kongara-kalan",
                 },
                 {
+                  name: "Constella Villas",
+                  loc: "Tukkuguda",
+                  to: "/projects/constella-villas-tukkuguda",
+                },
+                {
                   name: "Vertex Florenza",
                   loc: "Tukkuguda",
                   to: "/projects/vertex-florenza-tukkuguda",
@@ -174,6 +179,11 @@ export function SiteHeader() {
                     name: "Anvay Avillas",
                     loc: "Kongara Kalan",
                     to: "/projects/anvay-avillas-kongara-kalan",
+                  },
+                  {
+                    name: "Constella Villas",
+                    loc: "Tukkuguda",
+                    to: "/projects/constella-villas-tukkuguda",
                   },
                   {
                     name: "Vertex Florenza",
@@ -307,6 +317,12 @@ export function SiteFooter() {
               className="hover:text-brand-orange transition-colors"
             >
               Anvay Avillas
+            </Link>
+            <Link
+              to="/projects/constella-villas-tukkuguda"
+              className="hover:text-brand-orange transition-colors"
+            >
+              Constella Villas
             </Link>
             <Link
               to="/projects/vertex-florenza-tukkuguda"

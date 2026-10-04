@@ -33,7 +33,12 @@ export const Route = createFileRoute("/projects/anvay-avillas-kongara-kalan")({
         { name: "Home", path: "/" },
         { name: "Anvay Avillas (Anvaya Icon City)", path: "/projects/anvay-avillas-kongara-kalan" },
       ]),
-      jsonLd({ "@type": "Residence", name: "Anvay Avillas (Anvaya Icon City)", url: "/projects/anvay-avillas-kongara-kalan", address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" } }),
+      jsonLd({
+        "@type": "Residence",
+        name: "Anvay Avillas (Anvaya Icon City)",
+        url: "/projects/anvay-avillas-kongara-kalan",
+        address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
+      }),
     ],
     meta: [
       { property: "og:url", content: "/projects/anvay-avillas-kongara-kalan" },
