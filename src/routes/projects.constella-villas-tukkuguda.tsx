@@ -23,13 +23,13 @@ import bannerImg from "@/../public/projects/constella/image-2.webp";
 export const Route = createFileRoute("/projects/constella-villas-tukkuguda")({
   head: () => ({
     meta: [
-      { title: "Constella by Speed Infra | South Hyderabad Properties" },
+      { title: "Constella Villas | South Hyderabad Properties" },
       {
         name: "description",
         content:
-          "Explore Constella by Speed Infra at Tukkuguda, ORR Exit 14: Ultra Luxury 4 & 5 BHK Courtyard Villas starting from ₹4.88 Cr.",
+          "Explore Constella Villas at Tukkuguda, ORR Exit 14: Ultra Luxury 4 & 5 BHK Courtyard Villas starting from ₹4.88 Cr.",
       },
-      { property: "og:title", content: "Constella by Speed Infra | Tukkuguda" },
+      { property: "og:title", content: "Constella Villas | Tukkuguda" },
       {
         property: "og:description",
         content:
@@ -116,22 +116,22 @@ const amenities = [
   {
     icon: Dumbbell,
     label: "25,000+ sq ft Clubhouse",
-    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/clubhouse.png",
+    img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1470&auto=format&fit=crop",
   },
   {
     icon: Waves,
     label: "Private Courtyards",
-    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/pool.png",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1470&auto=format&fit=crop",
   },
   {
     icon: Wind,
     label: "70% Open Green Cover",
-    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/park.png",
+    img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb65?q=80&w=1470&auto=format&fit=crop",
   },
   {
     icon: ShieldCheck,
     label: "Gated Security",
-    img: "https://res.cloudinary.com/jll-global-gdim/image/upload/t_ip-resi-v2-property-detail-web/IN/Horizon/Resi/Prod/security.png",
+    img: "https://images.unsplash.com/photo-1557992260-ec58e38d363c?q=80&w=1374&auto=format&fit=crop",
   },
 ];
 
@@ -153,9 +153,7 @@ function ConstellaVillasPage() {
               <MapPin className="h-4 w-4" /> Near RGI Airport, Tukkuguda
             </p>
             <h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.03] sm:text-7xl">
-              Constella by
-              <br />
-              Speed Infra
+              Constella Villas
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-primary-foreground/75">
               A 27-acre gated community offering ultra-luxury courtyard villas, just 1 minute away
@@ -199,10 +197,10 @@ function ConstellaVillasPage() {
               Live the Spirit of Openness Within.
             </h2>
             <p className="mt-6 font-prestige-body text-lg font-light leading-8 text-prestige-green">
-              Constella by Speed Infra is a 27-acre, zoning-protected enclave offering ultra-luxury
-              villas in Hyderabad for discerning homeowners. This concept-led master plan revives
-              courtyard living through wider-façade, landscape-oriented villas to maximise light,
-              airflow and garden views.
+              Constella Villas is a 27-acre, zoning-protected enclave offering ultra-luxury villas
+              in Hyderabad for discerning homeowners. This concept-led master plan revives courtyard
+              living through wider-façade, landscape-oriented villas to maximise light, airflow and
+              garden views.
             </p>
             <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-prestige-gold/20 bg-prestige-gold/20 sm:grid-cols-2">
               {[
@@ -299,8 +297,8 @@ function ConstellaVillasPage() {
               Only the Exceptional
             </h2>
             <p className="mt-6 text-lg text-primary-foreground/70">
-              Constella’s vision, inspired by tradition, is rooted in space, spatial freedom, open
-              skies, and low-density living that restores balance to urban life.
+              Constella Villas vision, inspired by tradition, is rooted in space, spatial freedom,
+              open skies, and low-density living that restores balance to urban life.
             </p>
           </div>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
