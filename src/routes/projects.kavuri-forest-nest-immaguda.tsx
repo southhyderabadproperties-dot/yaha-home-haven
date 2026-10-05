@@ -283,16 +283,16 @@ function KavuriVillasPage() {
             <div className="relative overflow-hidden rounded-2xl bg-brand-navy p-8 sm:p-12 shadow-2xl">
               <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(var(--brand-orange)_1px,transparent_1px),linear-gradient(90deg,var(--brand-orange)_1px,transparent_1px)] [background-size:24px_24px]" />
               <div className="relative grid gap-8 sm:grid-cols-2">
-                <div>
-                  <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
+                <div className="text-center sm:text-left">
+                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
                     <Wallet className="h-5 w-5" /> Starting Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
                     ₹6,200/Sq.Ft.
                   </p>
                 </div>
-                <div className="sm:border-l sm:border-white/10 sm:pl-8">
-                  <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
+                <div className="sm:border-l sm:border-white/10 sm:pl-8 text-center sm:text-left">
+                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
                     <Maximize className="h-5 w-5" /> Villa Sizes
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
