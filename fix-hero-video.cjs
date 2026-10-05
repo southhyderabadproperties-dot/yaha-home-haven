@@ -1,4 +1,8 @@
-import { useRef, useEffect } from "react";
+const fs = require("fs");
+let file = fs.readFileSync("src/components/animated-property-hero.tsx", "utf8");
+
+// restore to its exact original code but fix the classes
+file = `import { useRef, useEffect } from "react";
 
 export function AnimatedPropertyHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,10 +46,13 @@ export function AnimatedPropertyHero() {
         muted
         loop
         playsInline
-        className="block md:hidden w-full h-full object-contain object-top pt-16"
+        className="block md:hidden w-full h-[85vh] object-contain object-bottom"
       >
         <source src="/hero-mobile.mp4" type="video/mp4" />
       </video>
     </div>
   );
 }
+`;
+
+fs.writeFileSync("src/components/animated-property-hero.tsx", file, "utf8");
