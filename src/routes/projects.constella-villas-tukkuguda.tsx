@@ -47,10 +47,6 @@ const GALLERY_IMAGES = [
   "/projects/constella/gallery-2.png",
   "/projects/constella/gallery-3.png",
   "/projects/constella/gallery-4.png",
-  "/projects/constella/club.jpg",
-  "/projects/constella/courtyard.png",
-  "/projects/constella/green.png",
-  "/projects/constella/security.png",
 ];
 
 function GallerySlideshow() {
