@@ -191,7 +191,10 @@ function ConstellaVillasPage() {
                 ["Location", "Tukkuguda"],
                 ["Starting Price", "₹4.88 Cr"],
               ].map(([title, value]) => (
-                <div className="bg-prestige-cream p-6 transition-colors hover:bg-white" key={title}>
+                <div
+                  className="bg-prestige-cream p-6 text-center sm:text-left transition-colors hover:bg-white"
+                  key={title}
+                >
                   <p className="font-prestige-body text-[10px] font-bold uppercase tracking-[0.2em] text-prestige-gold">
                     {title}
                   </p>
