@@ -42,7 +42,7 @@ export function AnimatedPropertyHero() {
         muted
         loop
         playsInline
-        className="block md:hidden w-full h-full object-contain object-top -mt-16"
+        className="block md:hidden w-full h-full object-contain object-bottom pb-8"
       >
         <source src="/hero-mobile.mp4" type="video/mp4" />
       </video>

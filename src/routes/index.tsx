@@ -59,7 +59,7 @@ function Index() {
         <AnimatedPropertyHero />
       </section>
 
-      <section className="relative z-10 -mt-[35vh] bg-background py-8 shadow-xl sm:-mt-10 sm:mx-auto sm:max-w-6xl sm:rounded-md sm:px-7">
+      <section className="relative z-10 -mt-2 bg-background py-8 shadow-xl sm:-mt-10 sm:mx-auto sm:max-w-6xl sm:rounded-md sm:px-7">
         <form
           onSubmit={(event) => {
             event.preventDefault();
