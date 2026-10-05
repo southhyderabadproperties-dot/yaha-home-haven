@@ -51,7 +51,7 @@ function Index() {
 
   return (
     <div>
-      <section className="relative h-[55vh] md:min-h-screen flex flex-col overflow-hidden bg-background">
+      <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
         <h1 className="sr-only">
           South Hyderabad Properties: open plots, villas, apartments and land in Shamshabad,
           Maheshwaram and Tukkuguda
@@ -59,7 +59,7 @@ function Index() {
         <AnimatedPropertyHero />
       </section>
 
-      <section className="relative z-10 -mt-1 bg-background py-8 shadow-xl sm:-mt-10 sm:mx-auto sm:max-w-6xl sm:rounded-md sm:px-7">
+      <section className="relative z-10 -mt-[35vh] bg-background py-8 shadow-xl sm:-mt-10 sm:mx-auto sm:max-w-6xl sm:rounded-md sm:px-7">
         <form
           onSubmit={(event) => {
             event.preventDefault();
