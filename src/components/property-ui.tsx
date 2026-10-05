@@ -112,7 +112,13 @@ export function VerticalPropertyCard({
   );
 }
 
-export function PropertyCarousel() {
+export function PropertyCarousel({
+  filterLocation,
+  filterType,
+}: {
+  filterLocation?: string | undefined;
+  filterType?: string | undefined;
+}) {
   const autoplayRef = useRef(
     Autoplay({ delay: 3200, stopOnInteraction: false, stopOnMouseEnter: true }),
   );
@@ -128,18 +134,37 @@ export function PropertyCarousel() {
   const prev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const next = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
+  const filtered = properties.filter((property) => {
+    if (filterLocation && !property.location.toLowerCase().includes(filterLocation.toLowerCase()))
+      return false;
+    if (filterType) {
+      const searchType = filterType.toLowerCase();
+      const pType = property.type.toLowerCase();
+      if (searchType.includes("villa") && !pType.includes("villa") && !pType.includes("triplex"))
+        return false;
+      if (searchType.includes("plot") && !pType.includes("plot")) return false;
+    }
+    return true;
+  });
+
   return (
     <div>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex -ml-5">
-          {properties.map((property, index) => (
-            <div
-              className="min-w-0 flex-[0_0_86%] pl-5 sm:flex-[0_0_46%] lg:flex-[0_0_31%]"
-              key={property.title}
-            >
-              <VerticalPropertyCard property={property} priority={index === 0} />
+          {filtered.length === 0 ? (
+            <div className="w-full pl-5 py-12 text-center text-lg text-brand-navy/60 font-medium">
+              No properties found for the selected criteria. Try adjusting your search!
             </div>
-          ))}
+          ) : (
+            filtered.map((property, index) => (
+              <div
+                className="min-w-0 flex-[0_0_86%] pl-5 sm:flex-[0_0_46%] lg:flex-[0_0_31%]"
+                key={property.title}
+              >
+                <VerticalPropertyCard property={property} priority={index === 0} />
+              </div>
+            ))
+          )}
         </div>
       </div>
       <div className="mt-7 flex justify-end gap-2">

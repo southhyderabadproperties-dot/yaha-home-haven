@@ -38,9 +38,16 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const navigate = useNavigate();
-  const [location, setLocation] = useState("Shamshabad");
+  const [location, setLocation] = useState("Tukkuguda");
   const [type, setType] = useState("Luxury Villas");
-  const go = () => navigate({ to: "/contact", search: { location, type } as never });
+  const [activeSearch, setActiveSearch] = useState<{ location?: string; type?: string } | null>(
+    null,
+  );
+
+  const go = () => {
+    setActiveSearch({ location, type });
+    document.getElementById("featured-properties")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div>
@@ -85,7 +92,6 @@ function Index() {
             >
               <option>Luxury Villas</option>
               <option>Open Plots</option>
-              <option>Land Development</option>
             </select>
           </label>
           <Button type="submit" variant="brand" size="lg" className="h-12">
@@ -222,7 +228,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="section-pad bg-brand-soft">
+      <section id="featured-properties" className="section-pad bg-brand-soft">
         <div className="page-wrap">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -235,7 +241,10 @@ function Index() {
               Selected opportunities across the region’s most promising growth pockets.
             </p>
           </div>
-          <PropertyCarousel />
+          <PropertyCarousel
+            filterLocation={activeSearch?.location}
+            filterType={activeSearch?.type}
+          />
         </div>
       </section>
 
