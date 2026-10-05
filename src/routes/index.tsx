@@ -51,7 +51,7 @@ function Index() {
 
   return (
     <div>
-      <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
+      <section className="relative h-[55vh] md:min-h-screen flex flex-col overflow-hidden bg-background">
         <h1 className="sr-only">
           South Hyderabad Properties: open plots, villas, apartments and land in Shamshabad,
           Maheshwaram and Tukkuguda
