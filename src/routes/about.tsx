@@ -134,8 +134,8 @@ function AboutPage() {
             <p className="mt-16 text-sm font-bold uppercase tracking-widest text-primary-foreground/65">
               Leadership
             </p>
-            <h2 className="mt-3 font-display text-3xl font-extrabold">Shaik Abdul Basha</h2>
-            <p className="mt-2 text-primary-foreground/70">Digital Strategy & Direction</p>
+            <h2 className="mt-3 font-display text-3xl font-extrabold">A. Srikanth</h2>
+            <p className="mt-2 text-primary-foreground/70">Senior Sales & CRM Executive</p>
           </div>
           <div className="self-center">
             <p className="eyebrow">Modern by design</p>
@@ -143,9 +143,8 @@ function AboutPage() {
               Better property marketing starts with better information.
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Under the digital strategy and direction of Shaik Abdul Basha, the company combines
-              local market insight with modern storytelling, focused digital discovery and
-              responsive communication.
+              Under the direction of A. Srikanth, the company combines local market insight with
+              modern storytelling, focused digital discovery and responsive communication.
             </p>
             <p className="mt-4 leading-8 text-muted-foreground">
               The aim is not simply to showcase property, but to help buyers understand location,
