@@ -82,7 +82,7 @@ function GallerySlideshow() {
           <button
             key={i}
             onClick={() => setCurrentIndex(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "w-8 bg-[#FC913A]" : "w-2 bg-white/50 hover:bg-white/80"}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "w-8 bg-brand-orange" : "w-2 bg-white/50 hover:bg-white/80"}`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
@@ -105,7 +105,7 @@ function FactCard({ fact }: { fact: { small: string; large: string; desc: string
         {fact.small}
       </p>
       <p className="mt-2 font-display text-3xl font-extrabold sm:text-4xl">{fact.large}</p>
-      <p className="mt-2 text-sm text-[#FC913A]">{fact.desc}</p>
+      <p className="mt-2 text-sm text-brand-orange">{fact.desc}</p>
     </div>
   );
 }
@@ -131,7 +131,7 @@ function ConstellaVillasPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/70 to-transparent" />
         <div className="page-wrap relative flex min-h-[82svh] items-center py-20">
           <div className="max-w-3xl text-primary-foreground">
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#FC913A]">
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange">
               <MapPin className="h-4 w-4" /> Near RGI Airport, Tukkuguda
             </p>
             <h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.03] sm:text-7xl">
@@ -217,7 +217,7 @@ function ConstellaVillasPage() {
       <section className="pt-6 pb-16 sm:py-28 bg-background border-y border-border">
         <div className="page-wrap">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <p className="eyebrow text-[#FC913A]">Premium Features</p>
+            <p className="eyebrow text-brand-orange">Premium Features</p>
             <h2 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">
               Project Highlights
             </h2>
@@ -236,9 +236,9 @@ function ConstellaVillasPage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-4 rounded-xl border border-border/50 bg-brand-soft/50 p-6 shadow-sm transition-all hover:shadow-md hover:border-[#FC913A]/30"
+                className="flex items-start gap-4 rounded-xl border border-border/50 bg-brand-soft/50 p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-orange/30"
               >
-                <CheckCircle2 className="h-6 w-6 shrink-0 text-[#FC913A]" />
+                <CheckCircle2 className="h-6 w-6 shrink-0 text-brand-orange" />
                 <p className="font-semibold leading-relaxed text-foreground">{item}</p>
               </div>
             ))}
@@ -246,10 +246,10 @@ function ConstellaVillasPage() {
 
           <div className="mt-16 mx-auto max-w-3xl">
             <div className="relative overflow-hidden rounded-2xl bg-brand-navy p-8 sm:p-12 shadow-2xl">
-              <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(#FC913A_1px,transparent_1px),linear-gradient(90deg,#FC913A_1px,transparent_1px)] [background-size:24px_24px]" />
+              <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(var(--brand-orange)_1px,transparent_1px),linear-gradient(90deg,var(--brand-orange)_1px,transparent_1px)] [background-size:24px_24px]" />
               <div className="relative grid gap-8 sm:grid-cols-2">
                 <div className="text-center sm:text-left">
-                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold uppercase tracking-widest text-[#FC913A]">
+                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
                     <Wallet className="h-5 w-5" /> Starting Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
@@ -257,7 +257,7 @@ function ConstellaVillasPage() {
                   </p>
                 </div>
                 <div className="sm:border-l sm:border-white/10 sm:pl-8 text-center sm:text-left">
-                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold uppercase tracking-widest text-[#FC913A]">
+                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold uppercase tracking-widest text-brand-orange">
                     <Maximize className="h-5 w-5" /> Villa Layout
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
@@ -277,7 +277,7 @@ function ConstellaVillasPage() {
         <div className="absolute inset-0 bg-[url('@/assets/clubhouse.jpg')] opacity-[0.03] mix-blend-overlay bg-cover bg-center" />
         <div className="page-wrap relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="eyebrow text-[#FC913A]">A Quiet Galaxy of</p>
+            <p className="eyebrow text-brand-orange">A Quiet Galaxy of</p>
             <h2 className="mt-4 font-display text-4xl font-extrabold sm:text-5xl lg:text-6xl text-white">
               Only the Exceptional
             </h2>
@@ -289,7 +289,7 @@ function ConstellaVillasPage() {
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {amenities.map(({ icon: Icon, label, img }) => (
               <div
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl hover:shadow-[#FC913A]/20 hover:border-[#FC913A]/30"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl hover:shadow-brand-orange/20 hover:border-brand-orange/30"
                 key={label}
               >
                 <div className="aspect-[4/3] w-full overflow-hidden">
@@ -301,7 +301,7 @@ function ConstellaVillasPage() {
                   />
                 </div>
                 <div className="p-6 relative">
-                  <div className="absolute -top-8 right-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-navy border border-white/10 text-[#FC913A] shadow-xl transition-colors duration-300 group-hover:bg-[#FC913A] group-hover:text-brand-navy">
+                  <div className="absolute -top-8 right-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-navy border border-white/10 text-brand-orange shadow-xl transition-colors duration-300 group-hover:bg-brand-orange group-hover:text-brand-navy">
                     <Icon className="h-8 w-8" />
                   </div>
                   <p className="mt-4 font-display text-xl font-bold leading-tight text-white pr-4">
