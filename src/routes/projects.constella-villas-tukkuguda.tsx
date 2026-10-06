@@ -107,7 +107,7 @@ function FactCard({ fact }: { fact: { small: string; large: string; desc: string
       <p className="mt-2 font-display text-3xl font-extrabold text-white sm:text-4xl">
         {fact.large}
       </p>
-      <p className="mt-2 text-sm text-brand-orange font-semibold">{fact.desc}</p>
+      <p className="mt-2 text-sm text-[#FF6B00] font-semibold">{fact.desc}</p>
     </div>
   );
 }
