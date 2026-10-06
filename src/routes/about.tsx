@@ -106,22 +106,37 @@ function AboutPage() {
                 icon: Eye,
                 title: "Transparent",
                 text: "Straightforward information and honest context at every stage.",
+                image: "/guides-transparent.png",
               },
               {
                 icon: ShieldCheck,
                 title: "Diligent",
                 text: "A careful, documentation-first view of every opportunity.",
+                image: "/guides-diligent.jpg",
               },
               {
                 icon: Handshake,
                 title: "Personal",
                 text: "Recommendations shaped around your goals, not a sales script.",
+                image: "/guides-personal.png",
               },
-            ].map(({ icon: Icon, title, text }) => (
-              <article className="rounded-md border border-border bg-background p-8" key={title}>
-                <Icon className="h-8 w-8 text-brand-orange" />
-                <h3 className="mt-8 font-display text-xl font-extrabold">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{text}</p>
+            ].map(({ icon: Icon, title, text, image }) => (
+              <article
+                className="overflow-hidden rounded-md border border-border bg-background flex flex-col group"
+                key={title}
+              >
+                <div className="h-48 w-full shrink-0 overflow-hidden bg-muted">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-8 flex-1">
+                  <Icon className="h-8 w-8 text-brand-orange" />
+                  <h3 className="mt-8 font-display text-xl font-extrabold">{title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">{text}</p>
+                </div>
               </article>
             ))}
           </div>
