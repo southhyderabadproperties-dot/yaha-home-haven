@@ -103,24 +103,24 @@ function AboutPage() {
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[
               {
-                icon: Eye,
                 title: "Transparent",
                 text: "Straightforward information and honest context at every stage.",
                 image: "/guides-transparent.png",
+                position: "object-center",
               },
               {
-                icon: ShieldCheck,
                 title: "Diligent",
                 text: "A careful, documentation-first view of every opportunity.",
                 image: "/guides-diligent.jpg",
+                position: "object-top",
               },
               {
-                icon: Handshake,
                 title: "Personal",
                 text: "Recommendations shaped around your goals, not a sales script.",
                 image: "/guides-personal.png",
+                position: "object-center",
               },
-            ].map(({ icon: Icon, title, text, image }) => (
+            ].map(({ title, text, image, position }) => (
               <article
                 className="overflow-hidden rounded-md border border-border bg-background flex flex-col group"
                 key={title}
@@ -129,12 +129,11 @@ function AboutPage() {
                   <img
                     src={image}
                     alt={title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`h-full w-full object-cover ${position} transition-transform duration-500 group-hover:scale-105`}
                   />
                 </div>
                 <div className="p-8 flex-1">
-                  <Icon className="h-8 w-8 text-brand-orange" />
-                  <h3 className="mt-8 font-display text-xl font-extrabold">{title}</h3>
+                  <h3 className="font-display text-xl font-extrabold">{title}</h3>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">{text}</p>
                 </div>
               </article>
