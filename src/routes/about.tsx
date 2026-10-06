@@ -73,13 +73,13 @@ function AboutPage() {
               opportunities across Tukkuguda, Shamshabad, Maheshwaram, Adibatla, Kandukur, Hyderabad
               Future City Corridor & nearby developing areas.
             </p>
-            <p className="mt-4 leading-8 text-muted-foreground">
+            <p className="mt-4 text-[15px] sm:text-lg leading-snug sm:leading-8 text-muted-foreground tracking-tight">
               We specialize in buying and selling Residential Properties, Villas,Apartments,
               residential plots, HMDA & DTCP approved layouts, open plots, resale plots and
               investment properties. Whether you're a first-time buyer or an experienced investor,
               our team is committed to helping you find the right property at the right price.
             </p>
-            <p className="mt-4 leading-8 text-muted-foreground">
+            <p className="mt-4 text-[15px] sm:text-lg leading-snug sm:leading-8 text-muted-foreground tracking-tight">
               If you own a Property or are planning to sell, we help you get the best possible
               market price through our local market expertise and extensive network of genuine
               buyers.
@@ -156,11 +156,11 @@ function AboutPage() {
             <h2 className="mt-3 font-display text-4xl font-extrabold">
               Better property marketing starts with better information.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-[15px] sm:text-lg leading-snug sm:leading-8 text-muted-foreground tracking-tight">
               Under the direction of A. Srikanth, the company combines local market insight with
               modern storytelling, focused digital discovery and responsive communication.
             </p>
-            <p className="mt-4 leading-8 text-muted-foreground">
+            <p className="mt-4 text-[15px] sm:text-lg leading-snug sm:leading-8 text-muted-foreground tracking-tight">
               The aim is not simply to showcase property, but to help buyers understand location,
               lifestyle and long-term relevance before taking the next step.
             </p>
