@@ -92,36 +92,53 @@ function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="section-pad bg-brand-soft">
-        <div className="page-wrap">
-          <div className="max-w-2xl">
-            <p className="eyebrow">What guides us</p>
-            <h2 className="mt-3 font-display text-4xl font-extrabold">
+      <section className="section-pad bg-prestige-deep text-prestige-cream relative overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-prestige-gold/5 via-transparent to-transparent"></div>
+
+        <div className="page-wrap relative z-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="font-prestige text-sm uppercase tracking-widest text-prestige-gold">
+              What guides us
+            </p>
+            <h2 className="mt-4 font-prestige text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Clarity is our most valuable amenity.
             </h2>
+            <p className="mt-5 font-prestige-body text-lg leading-8 text-prestige-cream/80">
+              We operate on a foundation of trust, careful diligence, and deeply personal
+              recommendations.
+            </p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {[
               {
                 icon: Eye,
                 title: "Transparent",
-                text: "Straightforward information and honest context at every stage.",
+                text: "Straightforward information and honest context at every stage of the journey.",
               },
               {
                 icon: ShieldCheck,
                 title: "Diligent",
-                text: "A careful, documentation-first view of every opportunity.",
+                text: "A careful, documentation-first view of every single opportunity we present.",
               },
               {
                 icon: Handshake,
                 title: "Personal",
-                text: "Recommendations shaped around your goals, not a sales script.",
+                text: "Recommendations shaped strictly around your goals, never a generic sales script.",
               },
             ].map(({ icon: Icon, title, text }) => (
-              <article className="rounded-md border border-border bg-background p-8" key={title}>
-                <Icon className="h-8 w-8 text-brand-orange" />
-                <h3 className="mt-8 font-display text-xl font-extrabold">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{text}</p>
+              <article
+                className="group relative rounded-xl border border-prestige-gold/20 bg-white/5 p-10 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-prestige-gold/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-prestige-gold/5"
+                key={title}
+              >
+                <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-full bg-prestige-gold/10 text-prestige-gold transition-colors duration-300 group-hover:bg-prestige-gold group-hover:text-prestige-deep">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-prestige text-2xl font-semibold tracking-wide text-white">
+                  {title}
+                </h3>
+                <p className="mt-4 font-prestige-body text-base leading-relaxed text-prestige-cream/80">
+                  {text}
+                </p>
               </article>
             ))}
           </div>
