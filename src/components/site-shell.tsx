@@ -412,7 +412,7 @@ export function PageIntro({
   children: ReactNode;
 }) {
   return (
-    <section className="bg-gradient-to-br from-[#1763cf] to-[#124da1] pt-20 pb-16 sm:pt-28 sm:pb-20">
+    <section className="bg-gradient-to-br from-[#1763cf] to-[#124da1] py-10 sm:py-16">
       <div className="page-wrap max-w-4xl text-center">
         <p className="font-bold uppercase tracking-widest text-[#FC913A]">{eyebrow}</p>
         <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight text-white sm:text-6xl">
