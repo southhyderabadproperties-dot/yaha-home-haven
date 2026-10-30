@@ -13,6 +13,7 @@ import { lazy, Suspense, useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteFooter, SiteHeader } from "../components/site-shell";
+import { FloatingContactButtons } from "../components/floating-contact-buttons";
 import { organizationSchema } from "../lib/seo";
 
 function NotFoundComponent() {
@@ -149,6 +150,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingContactButtons />
         <Suspense fallback={null}>
           <ExitIntentPopup />
         </Suspense>
