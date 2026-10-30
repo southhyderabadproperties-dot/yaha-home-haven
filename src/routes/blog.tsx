@@ -37,8 +37,8 @@ export const Route = createFileRoute("/blog")({
 
 function BlogPage() {
   const child = useMatch({ from: "/blog/$slug", shouldThrow: false });
-  if (child) return <Outlet />;
   const posts = Route.useLoaderData();
+  if (child) return <Outlet />;
   return (
     <>
       <PageIntro eyebrow="Property journal" title="Ideas for making your next move clearer.">
