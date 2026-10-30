@@ -1,4 +1,4 @@
-﻿import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Facebook, Instagram, Mail, Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
@@ -301,6 +301,9 @@ export function SiteFooter() {
             <Link to="/contact" className="hover:text-brand-orange transition-colors">
               Contact Us
             </Link>
+            <Link to="/privacy-policy" className="hover:text-brand-orange transition-colors">
+              Privacy Policy
+            </Link>
           </div>
         </div>
         <div>
@@ -395,8 +398,15 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50">
-        Â© 2026 South Hyderabad Properties. All rights reserved.
+      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span>© 2026 South Hyderabad Properties. All rights reserved.</span>
+        <span className="hidden sm:inline text-primary-foreground/30">•</span>
+        <Link
+          to="/privacy-policy"
+          className="hover:text-brand-orange transition-colors underline-offset-4 hover:underline"
+        >
+          Privacy Policy
+        </Link>
       </div>
     </footer>
   );

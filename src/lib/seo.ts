@@ -13,7 +13,7 @@ export const projectPages = [
   { path: "/projects/kavuri-forest-nest-immaguda", name: "Kavuri Forest Nest, Immaguda" },
 ];
 
-export const staticPages = ["/", "/about", "/services", "/blog", "/contact"];
+export const staticPages = ["/", "/about", "/services", "/blog", "/contact", "/privacy-policy"];
 
 export const jsonLd = (data: Record<string, unknown>) => ({
   type: "application/ld+json",
