@@ -8,7 +8,8 @@ export function FloatingContactButtons() {
   return (
     <aside
       aria-label="Quick contact options"
-      className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-40 flex flex-col items-end gap-3 pointer-events-none"
+      style={{ bottom: "max(120px, calc(env(safe-area-inset-bottom, 0px) + 7.5rem))" }}
+      className="fixed right-4 sm:right-6 z-40 flex flex-col items-end gap-3 pointer-events-none"
     >
       {/* Call Floating Button */}
       <div className="relative group flex items-center pointer-events-auto">
