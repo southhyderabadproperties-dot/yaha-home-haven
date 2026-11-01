@@ -272,7 +272,7 @@ function AutumnVillasPage() {
                     <Wallet className="h-5 w-5" /> Starting Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ?1.85 Cr
+                    ₹1.85 Cr
                   </p>
                 </div>
                 <div className="sm:border-l sm:border-white/10 sm:pl-8 text-center sm:text-left">
@@ -280,7 +280,7 @@ function AutumnVillasPage() {
                     <TrendingUp className="h-5 w-5" /> Launch Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ?6,999<span className="text-xl text-white/70">/Sq.Ft.</span>
+                    ₹6,999<span className="text-xl text-white/70">/Sq.Ft.</span>
                   </p>
                   <p className="mt-2 text-sm text-white/60 font-medium uppercase tracking-wider">
                     Negotiable
