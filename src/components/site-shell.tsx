@@ -77,7 +77,7 @@ export function SiteHeader() {
             <div className="invisible absolute left-1/2 top-[68px] w-72 -translate-x-1/2 translate-y-2 rounded-xl border border-border/80 bg-background/95 p-2.5 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               {[
                 {
-                  name: "Autumn Luxury Villas",
+                  name: "Autumn Villa",
                   loc: "Maheshwaram",
                   to: "/projects/autumn-villas-maheshwaram",
                 },
@@ -171,7 +171,7 @@ export function SiteHeader() {
               <div className="flex flex-col gap-1 pl-3 pr-2 py-3 mt-1 border-l-2 border-brand-orange/20 ml-2 mb-2">
                 {[
                   {
-                    name: "Autumn Luxury Villas",
+                    name: "Autumn Villa",
                     loc: "Maheshwaram",
                     to: "/projects/autumn-villas-maheshwaram",
                   },
@@ -313,7 +313,7 @@ export function SiteFooter() {
               to="/projects/autumn-villas-maheshwaram"
               className="hover:text-brand-orange transition-colors"
             >
-              Autumn Luxury Villas
+              Autumn Villa
             </Link>
             <Link
               to="/projects/anvay-avillas-kongara-kalan"

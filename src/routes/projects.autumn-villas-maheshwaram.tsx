@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowDownToLine,
   ArrowRight,
@@ -31,24 +31,24 @@ export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
     scripts: [
       breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Autumn Luxury Villas, Maheshwaram", path: "/projects/autumn-villas-maheshwaram" },
+        { name: "Autumn Villa, Maheshwaram", path: "/projects/autumn-villas-maheshwaram" },
       ]),
       jsonLd({
         "@type": "Residence",
-        name: "Autumn Luxury Villas, Maheshwaram",
+        name: "Autumn Villa, Maheshwaram",
         url: "/projects/autumn-villas-maheshwaram",
         address: { "@type": "PostalAddress", addressRegion: "Telangana", addressCountry: "IN" },
       }),
     ],
     meta: [
       { property: "og:url", content: "/projects/autumn-villas-maheshwaram" },
-      { title: "Autumn Luxury Villas, Maheshwaram | South Hyderabad Properties" },
+      { title: "Autumn Villa, Maheshwaram | South Hyderabad Properties" },
       {
         name: "description",
         content:
-          "Explore Autumn Luxury Villas at Maheshwaram – ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse.",
+          "Explore Autumn Villa at Maheshwaram � ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse.",
       },
-      { property: "og:title", content: "Autumn Luxury Villas €” Maheshwaram" },
+      { property: "og:title", content: "Autumn Villa �� Maheshwaram" },
       {
         property: "og:description",
         content: "182 premium duplex villas in South Hyderabad's Future City corridor.",
@@ -91,7 +91,7 @@ const amenities = [
   },
   {
     icon: Baby,
-    label: "Children€™s play area",
+    label: "Children��s play area",
     img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop",
   },
 ];
@@ -127,7 +127,7 @@ function GallerySlideshow() {
         <motion.img
           key={index}
           src={heroImages[index]}
-          alt="Autumn Luxury Villas"
+          alt="Autumn Villa"
           initial={{ x: "100%", opacity: 0.8 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0.8 }}
@@ -145,7 +145,7 @@ function AutumnVillasPage() {
       <section className="relative min-h-[82svh] overflow-hidden bg-brand-navy">
         <img
           src={villaImage}
-          alt="Autumn Luxury Villas contemporary duplex home"
+          alt="Autumn Villa contemporary duplex home"
           width={1088}
           height={1920}
           className="absolute inset-0 h-full w-full object-cover object-center"
@@ -155,12 +155,10 @@ function AutumnVillasPage() {
           <div className="max-w-3xl text-primary-foreground">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange">
               <MapPin className="h-4 w-4" />
-              Maheshwaram Â· ORR Exit 14
+              Maheshwaram · ORR Exit 14
             </p>
             <h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.03] sm:text-7xl">
-              Autumn
-              <br />
-              Luxury Villas
+              Autumn Villa
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-primary-foreground/75">
               A private world of expansive duplex villas, crafted for the future of South Hyderabad
@@ -248,8 +246,8 @@ function AutumnVillasPage() {
             {[
               "23 Acres Premium Villa Community",
               "Only 182 Exclusive Villas",
-              "Plot Sizes: 220–550+ Sq. Yards",
-              "Built-up Area: 2,640–5,500+ Sq. Ft.",
+              "Plot Sizes: 220�550+ Sq. Yards",
+              "Built-up Area: 2,640�5,500+ Sq. Ft.",
               "30,000 Sq. Ft. Clubhouse",
               "25+ Lifestyle Amenities",
               "Spacious & Premium Villa Designs",
@@ -274,7 +272,7 @@ function AutumnVillasPage() {
                     <Wallet className="h-5 w-5" /> Starting Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ₹1.85 Cr
+                    ?1.85 Cr
                   </p>
                 </div>
                 <div className="sm:border-l sm:border-white/10 sm:pl-8 text-center sm:text-left">
@@ -282,7 +280,7 @@ function AutumnVillasPage() {
                     <TrendingUp className="h-5 w-5" /> Launch Price
                   </p>
                   <p className="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ₹6,999<span className="text-xl text-white/70">/Sq.Ft.</span>
+                    ?6,999<span className="text-xl text-white/70">/Sq.Ft.</span>
                   </p>
                   <p className="mt-2 text-sm text-white/60 font-medium uppercase tracking-wider">
                     Negotiable

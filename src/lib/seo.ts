@@ -3,7 +3,7 @@ export const SITE_PHONE = "+91-96469-52999";
 export const SITE_EMAIL = "southhyderabadproperties@gmail.com";
 
 export const projectPages = [
-  { path: "/projects/autumn-villas-maheshwaram", name: "Autumn Luxury Villas, Maheshwaram" },
+  { path: "/projects/autumn-villas-maheshwaram", name: "Autumn Villa, Maheshwaram" },
   { path: "/projects/anvay-avillas-kongara-kalan", name: "Anvay Avillas, Kongara Kalan" },
   { path: "/projects/constella-villas-tukkuguda", name: "Constella Villas, Tukkuguda" },
   { path: "/projects/vertex-florenza-tukkuguda", name: "Vertex Florenza, Tukkuguda" },
