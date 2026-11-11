@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Facebook, Instagram, Mail, Menu, Phone, X, Youtube } from "lucide-react";
+import { ChevronDown, Mail, Menu, Phone, X } from "lucide-react";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -381,27 +382,27 @@ export function SiteFooter() {
                 href="https://www.instagram.com/southhyderabadproperties/"
                 target="_blank"
                 rel="noreferrer"
-                className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
+                className="social-button transition-all hover:scale-110 hover:border-[#E1306C] text-[#E1306C]"
               >
-                <Instagram />
+                <FaInstagram size={20} />
               </a>
               <a
                 aria-label="Facebook"
                 href="https://www.facebook.com/profile.php?id=61596433949909"
                 target="_blank"
                 rel="noreferrer"
-                className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
+                className="social-button transition-all hover:scale-110 hover:border-[#1877F2] text-[#1877F2]"
               >
-                <Facebook />
+                <FaFacebook size={20} />
               </a>
               <a
                 aria-label="YouTube"
                 href="https://www.youtube.com/@South_Hyderabad_Properties"
                 target="_blank"
                 rel="noreferrer"
-                className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
+                className="social-button transition-all hover:scale-110 hover:border-[#FF0000] text-[#FF0000]"
               >
-                <Youtube />
+                <FaYoutube size={20} />
               </a>
             </div>
           </div>

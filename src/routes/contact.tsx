@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock3, Facebook, Instagram, Mail, MapPin, Phone, Send, Youtube } from "lucide-react";
+import { Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { useState } from "react";
 import { jsonLd } from "@/lib/seo";
 
@@ -119,29 +120,29 @@ function ContactPage() {
               <a
                 href="https://www.instagram.com/southhyderabadproperties/"
                 aria-label="Instagram"
-                className="social-button border-border text-primary"
+                className="social-button transition-all hover:scale-110 border-[#E1306C] text-[#E1306C]"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Instagram />
+                <FaInstagram size={20} />
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61596433949909"
                 aria-label="Facebook"
-                className="social-button border-border text-primary"
+                className="social-button transition-all hover:scale-110 border-[#1877F2] text-[#1877F2]"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Facebook />
+                <FaFacebook size={20} />
               </a>
               <a
                 href="https://www.youtube.com/@South_Hyderabad_Properties"
                 aria-label="YouTube"
-                className="social-button border-border text-primary"
+                className="social-button transition-all hover:scale-110 border-[#FF0000] text-[#FF0000]"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Youtube />
+                <FaYoutube size={20} />
               </a>
             </div>
           </div>
