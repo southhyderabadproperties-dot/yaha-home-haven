@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        brand: "ios-liquid-btn text-white",
+        brand: "ios-liquid-btn text-primary font-bold",
         orange:
           "bg-brand-orange text-brand-orange-foreground shadow-brand hover:bg-brand-orange/90",
         light: "bg-primary-foreground text-primary shadow-brand hover:bg-primary-foreground/90",
@@ -31,7 +31,7 @@ const buttonVariants = cva(
     compoundVariants: [
       {
         variant: "brand",
-        class: "rounded-xl",
+        class: "rounded-2xl",
       },
     ],
     defaultVariants: {
