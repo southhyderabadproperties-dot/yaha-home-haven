@@ -11,7 +11,7 @@ import openPlots from "@/assets/open-plots.jpg";
 export const properties = [
   {
     title: "Autumn Luxury Villas Maheshwaram",
-    location: "Thummaloor Â· ORR Exit 14",
+    location: "Thummaloor · ORR Exit 14",
     type: "3 & 4 BHK Villas",
     image: autumnVilla,
     href: "/projects/autumn-villas-maheshwaram" as const,

@@ -159,7 +159,7 @@ export function SiteHeader() {
       </div>
       {open && (
         <nav
-          className="border-t border-border bg-background px-5 py-5 lg:hidden"
+          className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border bg-background px-5 py-5 lg:hidden"
           aria-label="Mobile navigation"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-1.5">

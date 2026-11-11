@@ -46,9 +46,9 @@ export const Route = createFileRoute("/projects/autumn-villas-maheshwaram")({
       {
         name: "description",
         content:
-          "Explore Autumn Villa at Maheshwaram � ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse.",
+          "Explore Autumn Villa at Maheshwaram — ORR Exit 14: 3 & 4 BHK duplex villas across 23 acres with a 30,000 SFT clubhouse.",
       },
-      { property: "og:title", content: "Autumn Villa �� Maheshwaram" },
+      { property: "og:title", content: "Autumn Villa — Maheshwaram" },
       {
         property: "og:description",
         content: "182 premium duplex villas in South Hyderabad's Future City corridor.",
@@ -91,7 +91,7 @@ const amenities = [
   },
   {
     icon: Baby,
-    label: "Children��s play area",
+    label: "Children’s play area",
     img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600&auto=format&fit=crop",
   },
 ];
@@ -246,8 +246,8 @@ function AutumnVillasPage() {
             {[
               "23 Acres Premium Villa Community",
               "Only 182 Exclusive Villas",
-              "Plot Sizes: 220�550+ Sq. Yards",
-              "Built-up Area: 2,640�5,500+ Sq. Ft.",
+              "Plot Sizes: 220–550+ Sq. Yards",
+              "Built-up Area: 2,640–5,500+ Sq. Ft.",
               "30,000 Sq. Ft. Clubhouse",
               "25+ Lifestyle Amenities",
               "Spacious & Premium Villa Designs",
