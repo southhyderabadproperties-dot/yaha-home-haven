@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Facebook, Instagram, Mail, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Facebook, Instagram, Mail, Menu, Phone, X, Youtube } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -378,7 +378,7 @@ export function SiteFooter() {
             <div className="flex gap-3 pt-2">
               <a
                 aria-label="Instagram"
-                href="#"
+                href="https://www.instagram.com/southhyderabadproperties/"
                 target="_blank"
                 rel="noreferrer"
                 className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
@@ -387,12 +387,21 @@ export function SiteFooter() {
               </a>
               <a
                 aria-label="Facebook"
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61596433949909"
                 target="_blank"
                 rel="noreferrer"
                 className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
               >
                 <Facebook />
+              </a>
+              <a
+                aria-label="YouTube"
+                href="https://www.youtube.com/@South_Hyderabad_Properties"
+                target="_blank"
+                rel="noreferrer"
+                className="social-button hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all"
+              >
+                <Youtube />
               </a>
             </div>
           </div>

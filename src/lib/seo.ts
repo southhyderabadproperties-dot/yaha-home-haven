@@ -44,7 +44,11 @@ export const organizationSchema = () =>
       addressRegion: "Telangana",
       addressCountry: "IN",
     },
-    sameAs: ["https://www.facebook.com/share/1E9URqKEay/"],
+    sameAs: [
+      "https://www.facebook.com/profile.php?id=61596433949909",
+      "https://www.instagram.com/southhyderabadproperties/",
+      "https://www.youtube.com/@South_Hyderabad_Properties",
+    ],
   });
 
 export const breadcrumbSchema = (items: { name: string; path: string }[]) =>

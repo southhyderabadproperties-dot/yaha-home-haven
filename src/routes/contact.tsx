@@ -1,5 +1,5 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
-import { Clock3, Facebook, Instagram, Mail, MapPin, Phone, Send } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Clock3, Facebook, Instagram, Mail, MapPin, Phone, Send, Youtube } from "lucide-react";
 import { useState } from "react";
 import { jsonLd } from "@/lib/seo";
 
@@ -117,7 +117,7 @@ function ContactPage() {
             </div>
             <div className="mt-8 flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/southhyderabadproperties/"
                 aria-label="Instagram"
                 className="social-button border-border text-primary"
                 target="_blank"
@@ -126,13 +126,22 @@ function ContactPage() {
                 <Instagram />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61596433949909"
                 aria-label="Facebook"
                 className="social-button border-border text-primary"
                 target="_blank"
                 rel="noreferrer"
               >
                 <Facebook />
+              </a>
+              <a
+                href="https://www.youtube.com/@South_Hyderabad_Properties"
+                aria-label="YouTube"
+                className="social-button border-border text-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Youtube />
               </a>
             </div>
           </div>
