@@ -315,6 +315,84 @@
   animation: heartbeat 1.8s ease-in-out infinite;
 }
 
+/* iOS 27 Liquid Glass (Water Glass) mobile menu styles */
+.ios-liquid-sheet {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.56) 0%,
+    rgba(224, 242, 254, 0.36) 52%,
+    rgba(255, 255, 255, 0.48) 100%
+  );
+  backdrop-filter: blur(22px) saturate(195%) brightness(1.05);
+  -webkit-backdrop-filter: blur(22px) saturate(195%) brightness(1.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 24px 48px -12px rgba(15, 23, 42, 0.25),
+    0 8px 20px -4px rgba(23, 99, 207, 0.14),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 6px rgba(56, 189, 248, 0.14);
+}
+
+.ios-liquid-trigger {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(224, 242, 254, 0.35) 55%,
+    rgba(255, 255, 255, 0.52) 100%
+  );
+  backdrop-filter: blur(18px) saturate(190%);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 6px 18px -4px rgba(15, 23, 42, 0.1),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 3px rgba(56, 189, 248, 0.15);
+}
+
+.ios-liquid-dropdown {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(214, 237, 255, 0.32) 48%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  backdrop-filter: blur(26px) saturate(210%) contrast(1.03);
+  -webkit-backdrop-filter: blur(26px) saturate(210%) contrast(1.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 14px 32px -8px rgba(15, 23, 42, 0.16),
+    inset 0 2px 3px rgba(255, 255, 255, 0.95),
+    inset 0 -3px 10px rgba(14, 165, 233, 0.14);
+}
+
+.ios-liquid-dropdown::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2.25rem;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: inherit;
+}
+
+.ios-liquid-item {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.56) 0%, rgba(240, 249, 255, 0.28) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 2px rgba(56, 189, 248, 0.08);
+}
+
+.ios-liquid-item:active {
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.75) 0%, rgba(255, 237, 213, 0.5) 100%);
+  border-color: rgba(255, 107, 0, 0.4);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
