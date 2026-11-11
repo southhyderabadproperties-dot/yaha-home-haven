@@ -157,19 +157,56 @@ export function SiteHeader() {
       </div>
       {open && (
         <nav
-          className="border-t border-border bg-background px-5 py-5 lg:hidden"
+          className="border-t border-white/30 px-5 py-5 lg:hidden"
           aria-label="Mobile navigation"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.88) 100%)",
+            backdropFilter: "blur(32px) saturate(2)",
+            WebkitBackdropFilter: "blur(32px) saturate(2)",
+          }}
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.slice(0, 2).map((item) => (
               <MobileLink key={item.to} {...item} onClick={close} />
             ))}
             <details className="group">
-              <summary className="flex items-center justify-between rounded-md px-3 py-3 font-semibold text-foreground hover:bg-accent cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                Projects{" "}
-                <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+              <summary
+                className="flex items-center justify-between rounded-2xl px-4 py-3 font-semibold text-foreground cursor-pointer list-none [&::-webkit-details-marker]:hidden
+                  bg-white/30 backdrop-blur-xl border border-white/40 shadow-[0_2px_16px_rgba(255,255,255,0.18),inset_0_1px_0_rgba(255,255,255,0.6)]
+                  group-open:rounded-b-none group-open:border-b-transparent
+                  transition-all duration-300 active:scale-[0.98]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 100%)",
+                }}
+              >
+                <span className="bg-gradient-to-r from-[#FF6B00] to-[#ff9a3c] bg-clip-text text-transparent font-bold tracking-wide">
+                  Projects
+                </span>
+                <span
+                  className="flex h-6 w-6 items-center justify-center rounded-full transition-transform duration-300 group-open:rotate-180"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,107,0,0.25) 0%, rgba(255,107,0,0.08) 100%)",
+                    border: "1px solid rgba(255,107,0,0.3)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5)",
+                  }}
+                >
+                  <ChevronDown className="h-3.5 w-3.5 text-[#FF6B00]" />
+                </span>
               </summary>
-              <div className="flex flex-col gap-1 pl-3 pr-2 py-3 mt-1 border-l-2 border-brand-orange/20 ml-2 mb-2">
+              {/* Liquid glass dropdown panel */}
+              <div
+                className="flex flex-col gap-0.5 px-2 pt-1 pb-2 mb-2 rounded-b-2xl border border-t-0 border-white/40"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.18) 100%)",
+                  backdropFilter: "blur(24px) saturate(1.8)",
+                  WebkitBackdropFilter: "blur(24px) saturate(1.8)",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.08), inset 0 -1px 0 rgba(255,255,255,0.4)",
+                }}
+              >
                 {[
                   {
                     name: "Autumn Villa",
@@ -211,18 +248,35 @@ export function SiteHeader() {
                     loc: "Immaguda, Tukkuguda",
                     to: "/projects/kavuri-forest-nest-immaguda",
                   },
-                ].map((p) => (
+                ].map((p, i) => (
                   <Link
                     key={p.to}
                     to={p.to}
-                    className="group/item flex flex-col gap-0.5 rounded-lg p-3 transition-colors hover:bg-brand-soft active:bg-brand-soft"
                     onClick={close}
+                    className="group/item flex items-center justify-between rounded-xl px-3 py-2.5 transition-all duration-200 active:scale-[0.97]"
+                    style={{
+                      background: i % 2 === 0 ? "rgba(255,255,255,0.22)" : "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.3)",
+                      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5)",
+                    }}
                   >
-                    <span className="font-display text-[15px] font-semibold text-foreground transition-colors group-hover/item:text-brand-orange">
-                      {p.name}
+                    <span className="flex flex-col gap-0.5">
+                      <span className="font-display text-[14px] font-semibold text-foreground transition-colors group-hover/item:text-[#FF6B00]">
+                        {p.name}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80">
+                        {p.loc}
+                      </span>
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                      {p.loc}
+                    <span
+                      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(255,107,0,0.2), rgba(255,107,0,0.05))",
+                        border: "1px solid rgba(255,107,0,0.25)",
+                      }}
+                    >
+                      <ChevronDown className="h-3 w-3 -rotate-90 text-[#FF6B00]" />
                     </span>
                   </Link>
                 ))}
