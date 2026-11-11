@@ -13,6 +13,63 @@ const navItems = [
   { label: "Contact Us", to: "/contact" as const },
 ];
 
+const projectLinks = [
+  { name: "Autumn Villa", loc: "Maheshwaram", to: "/projects/autumn-villas-maheshwaram" },
+  { name: "Anvay Avillas", loc: "Kongara Kalan", to: "/projects/anvay-avillas-kongara-kalan" },
+  { name: "Constella Villas", loc: "Tukkuguda", to: "/projects/constella-villas-tukkuguda" },
+  { name: "Vertex Florenza", loc: "Tukkuguda", to: "/projects/vertex-florenza-tukkuguda" },
+  { name: "Vertex Viva Calista", loc: "Tukkuguda", to: "/projects/vertex-viva-calista-tukkuguda" },
+  {
+    name: "Riddhi Laxman County",
+    loc: "Tukkuguda, Mankhal",
+    to: "/projects/riddhi-laxman-county-tukkuguda",
+  },
+  {
+    name: "Kavuri Hills Lemon Leaf",
+    loc: "Tukkuguda, Mankhal",
+    to: "/projects/kavuri-hills-lemon-leaf-tukkuguda",
+  },
+  {
+    name: "Kavuri Forest Nest",
+    loc: "Immaguda, Tukkuguda",
+    to: "/projects/kavuri-forest-nest-immaguda",
+  },
+];
+
+function LiquidProjectList({ onSelect }: { onSelect: () => void }) {
+  return (
+    <>
+      {projectLinks.map((p) => (
+        <Link
+          key={p.to}
+          to={p.to}
+          onClick={onSelect}
+          className="ios-liquid-item group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 transition-all duration-200 active:scale-[0.97]"
+        >
+          <span className="flex flex-col gap-0.5">
+            <span className="font-display text-[14px] font-bold text-slate-900 transition-colors group-hover/item:text-[#FF6B00]">
+              {p.name}
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">
+              {p.loc}
+            </span>
+          </span>
+          <span
+            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-transform duration-200 group-hover/item:translate-x-0.5"
+            style={{
+              background: "linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,107,0,0.14))",
+              border: "1px solid rgba(255,255,255,0.9)",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.95)",
+            }}
+          >
+            <ChevronDown className="h-3 w-3 -rotate-90 text-[#FF6B00]" />
+          </span>
+        </Link>
+      ))}
+    </>
+  );
+}
+
 import logoImg from "@/assets/logo.jpg";
 
 export function Brand({
@@ -75,63 +132,8 @@ export function SiteHeader() {
               Projects{" "}
               <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
             </button>
-            <div className="invisible absolute left-1/2 top-[68px] w-72 -translate-x-1/2 translate-y-2 rounded-xl border border-border/80 bg-background/95 p-2.5 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              {[
-                {
-                  name: "Autumn Villa",
-                  loc: "Maheshwaram",
-                  to: "/projects/autumn-villas-maheshwaram",
-                },
-                {
-                  name: "Anvay Avillas",
-                  loc: "Kongara Kalan",
-                  to: "/projects/anvay-avillas-kongara-kalan",
-                },
-                {
-                  name: "Constella Villas",
-                  loc: "Tukkuguda",
-                  to: "/projects/constella-villas-tukkuguda",
-                },
-                {
-                  name: "Vertex Florenza",
-                  loc: "Tukkuguda",
-                  to: "/projects/vertex-florenza-tukkuguda",
-                },
-                {
-                  name: "Vertex Viva Calista",
-                  loc: "Tukkuguda",
-                  to: "/projects/vertex-viva-calista-tukkuguda",
-                },
-                {
-                  name: "Riddhi Laxman County",
-                  loc: "Tukkuguda, Mankhal",
-                  to: "/projects/riddhi-laxman-county-tukkuguda",
-                },
-                {
-                  name: "Kavuri Hills Lemon Leaf",
-                  loc: "Tukkuguda, Mankhal",
-                  to: "/projects/kavuri-hills-lemon-leaf-tukkuguda",
-                },
-                {
-                  name: "Kavuri Forest Nest",
-                  loc: "Immaguda, Tukkuguda",
-                  to: "/projects/kavuri-forest-nest-immaguda",
-                },
-              ].map((p) => (
-                <Link
-                  key={p.to}
-                  to={p.to}
-                  className="group/item flex flex-col gap-0.5 rounded-lg p-3 transition-colors hover:bg-brand-soft"
-                  onClick={close}
-                >
-                  <span className="font-display text-[15px] font-semibold text-foreground transition-colors group-hover/item:text-brand-orange">
-                    {p.name}
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                    {p.loc}
-                  </span>
-                </Link>
-              ))}
+            <div className="ios-liquid-dropdown invisible absolute left-1/2 top-[68px] flex max-h-[calc(100vh-6rem)] w-80 -translate-x-1/2 translate-y-2 flex-col gap-2 overflow-y-auto rounded-2xl p-2.5 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <LiquidProjectList onSelect={close} />
             </div>
           </div>
           {navItems.slice(2).map((item) => (
@@ -183,76 +185,8 @@ export function SiteHeader() {
                 </span>
               </summary>
               {/* iOS 27 Liquid Water Glass dropdown chamber (mobile only) */}
-              <div className="ios-liquid-dropdown mt-2 mb-2 flex flex-col gap-2 rounded-2xl p-2.5">
-                {[
-                  {
-                    name: "Autumn Villa",
-                    loc: "Maheshwaram",
-                    to: "/projects/autumn-villas-maheshwaram",
-                  },
-                  {
-                    name: "Anvay Avillas",
-                    loc: "Kongara Kalan",
-                    to: "/projects/anvay-avillas-kongara-kalan",
-                  },
-                  {
-                    name: "Constella Villas",
-                    loc: "Tukkuguda",
-                    to: "/projects/constella-villas-tukkuguda",
-                  },
-                  {
-                    name: "Vertex Florenza",
-                    loc: "Tukkuguda",
-                    to: "/projects/vertex-florenza-tukkuguda",
-                  },
-                  {
-                    name: "Vertex Viva Calista",
-                    loc: "Tukkuguda",
-                    to: "/projects/vertex-viva-calista-tukkuguda",
-                  },
-                  {
-                    name: "Riddhi Laxman County",
-                    loc: "Tukkuguda, Mankhal",
-                    to: "/projects/riddhi-laxman-county-tukkuguda",
-                  },
-                  {
-                    name: "Kavuri Hills Lemon Leaf",
-                    loc: "Tukkuguda, Mankhal",
-                    to: "/projects/kavuri-hills-lemon-leaf-tukkuguda",
-                  },
-                  {
-                    name: "Kavuri Forest Nest",
-                    loc: "Immaguda, Tukkuguda",
-                    to: "/projects/kavuri-forest-nest-immaguda",
-                  },
-                ].map((p) => (
-                  <Link
-                    key={p.to}
-                    to={p.to}
-                    onClick={close}
-                    className="ios-liquid-item group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 transition-all duration-200 active:scale-[0.97]"
-                  >
-                    <span className="flex flex-col gap-0.5">
-                      <span className="font-display text-[14px] font-bold text-slate-900 transition-colors group-hover/item:text-[#FF6B00]">
-                        {p.name}
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">
-                        {p.loc}
-                      </span>
-                    </span>
-                    <span
-                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-transform duration-200 group-hover/item:translate-x-0.5"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,107,0,0.14))",
-                        border: "1px solid rgba(255,255,255,0.9)",
-                        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.95)",
-                      }}
-                    >
-                      <ChevronDown className="h-3 w-3 -rotate-90 text-[#FF6B00]" />
-                    </span>
-                  </Link>
-                ))}
+              <div className="ios-liquid-dropdown relative mt-2 mb-2 flex flex-col gap-2 rounded-2xl p-2.5">
+                <LiquidProjectList onSelect={close} />
               </div>
             </details>
             {navItems.slice(2).map((item) => (
