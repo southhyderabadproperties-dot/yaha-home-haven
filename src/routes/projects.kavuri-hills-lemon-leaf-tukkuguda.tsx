@@ -237,10 +237,7 @@ function KavuriVillasPage() {
               "Clear Title & HMDA Approved Layout",
               "Bank Loan Assistance",
             ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 rounded-xl border border-border/50 bg-brand-soft/50 p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-orange/30"
-              >
+              <div key={i} className="ios-liquid-card flex items-start gap-4 rounded-2xl p-6">
                 <CheckCircle2 className="h-6 w-6 shrink-0 text-brand-orange" />
                 <p className="font-semibold leading-relaxed text-foreground">{item}</p>
               </div>
