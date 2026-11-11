@@ -22,7 +22,7 @@ export function FloatingContactButtons() {
         <a
           href="tel:+919646952999"
           aria-label={`Call South Hyderabad Properties at ${SITE_PHONE}`}
-          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#1763cf] text-white shadow-lg shadow-[#1763cf]/35 transition-all duration-300 hover:scale-110 hover:bg-[#124da1] active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#1763cf]/40"
+          className="ios-liquid-btn flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#1763cf]/40"
         >
           <Phone className="h-5 w-5 sm:h-6 sm:w-6 transition-transform duration-300 group-hover:rotate-12" />
         </a>
