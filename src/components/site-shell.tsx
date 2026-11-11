@@ -162,9 +162,9 @@ export function SiteHeader() {
           className="border-t border-border bg-background px-5 py-5 lg:hidden"
           aria-label="Mobile navigation"
         >
-          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1.5">
             {navItems.slice(0, 2).map((item) => (
-              <MobileLink key={item.to} {...item} onClick={close} />
+              <MobileLink key={item.to} {...item} active={pathname === item.to} onClick={close} />
             ))}
             <details className="group my-1">
               <summary className="ios-liquid-trigger flex items-center justify-between rounded-2xl px-4 py-3 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden transition-all duration-300 active:scale-[0.98]">
@@ -190,7 +190,7 @@ export function SiteHeader() {
               </div>
             </details>
             {navItems.slice(2).map((item) => (
-              <MobileLink key={item.to} {...item} onClick={close} />
+              <MobileLink key={item.to} {...item} active={pathname === item.to} onClick={close} />
             ))}
             <Button asChild variant="brand" className="mt-3 w-full">
               <a href="tel:+919646952999">
@@ -220,14 +220,25 @@ function NavLink({
   );
 }
 
-function MobileLink({ label, to, onClick }: { label: string; to: string; onClick: () => void }) {
+function MobileLink({
+  label,
+  to,
+  active,
+  onClick,
+}: {
+  label: string;
+  to: string;
+  active: boolean;
+  onClick: () => void;
+}) {
   return (
     <Link
       to={to}
       onClick={onClick}
-      className="rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent"
+      className={`mobile-nav-link ${active ? "mobile-nav-link-active" : ""}`}
     >
-      {label}
+      <span>{label}</span>
+      {active && <span className="h-2 w-2 rounded-full bg-brand-orange" />}
     </Link>
   );
 }
