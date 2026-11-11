@@ -156,127 +156,115 @@ export function SiteHeader() {
         </Button>
       </div>
       {open && (
-        <>
-          <div
-            aria-hidden="true"
-            onClick={close}
-            className="fixed inset-x-0 top-20 bottom-0 z-40 lg:hidden"
-            style={{
-              background: "rgba(15, 23, 42, 0.22)",
-              backdropFilter: "blur(3px)",
-              WebkitBackdropFilter: "blur(3px)",
-            }}
-          />
-          <nav
-            className="ios-liquid-sheet absolute inset-x-3 top-[calc(100%+10px)] z-50 max-h-[calc(100dvh-6.25rem)] overflow-y-auto rounded-3xl p-4 lg:hidden"
-            aria-label="Mobile navigation"
-          >
-            <div className="mx-auto flex max-w-7xl flex-col gap-1.5">
-              {navItems.slice(0, 2).map((item) => (
-                <MobileLink key={item.to} {...item} onClick={close} />
-              ))}
-              <details className="group my-1">
-                <summary className="ios-liquid-trigger flex items-center justify-between rounded-2xl px-4 py-3 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden transition-all duration-300 active:scale-[0.98]">
-                  <span className="bg-gradient-to-r from-[#FF6B00] to-[#ff8c2b] bg-clip-text text-transparent font-bold tracking-wide">
-                    Projects
-                  </span>
-                  <span
-                    className="flex h-7 w-7 items-center justify-center rounded-full transition-transform duration-300 group-open:rotate-180"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(255,107,0,0.22) 0%, rgba(255,255,255,0.65) 100%)",
-                      border: "1px solid rgba(255,107,0,0.35)",
-                      boxShadow:
-                        "0 2px 6px rgba(255,107,0,0.15), inset 0 1px 0 rgba(255,255,255,0.85)",
-                    }}
+        <nav
+          className="border-t border-border bg-background px-5 py-5 lg:hidden"
+          aria-label="Mobile navigation"
+        >
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {navItems.slice(0, 2).map((item) => (
+              <MobileLink key={item.to} {...item} onClick={close} />
+            ))}
+            <details className="group my-1">
+              <summary className="ios-liquid-trigger flex items-center justify-between rounded-2xl px-4 py-3 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden transition-all duration-300 active:scale-[0.98]">
+                <span className="bg-gradient-to-r from-[#FF6B00] to-[#ff8c2b] bg-clip-text text-transparent font-bold tracking-wide">
+                  Projects
+                </span>
+                <span
+                  className="flex h-7 w-7 items-center justify-center rounded-full transition-transform duration-300 group-open:rotate-180"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,107,0,0.22) 0%, rgba(255,255,255,0.65) 100%)",
+                    border: "1px solid rgba(255,107,0,0.35)",
+                    boxShadow:
+                      "0 2px 6px rgba(255,107,0,0.15), inset 0 1px 0 rgba(255,255,255,0.85)",
+                  }}
+                >
+                  <ChevronDown className="h-3.5 w-3.5 text-[#FF6B00]" />
+                </span>
+              </summary>
+              {/* iOS 27 Liquid Water Glass dropdown chamber (mobile only) */}
+              <div className="ios-liquid-dropdown mt-2 mb-2 flex flex-col gap-2 rounded-2xl p-2.5">
+                {[
+                  {
+                    name: "Autumn Villa",
+                    loc: "Maheshwaram",
+                    to: "/projects/autumn-villas-maheshwaram",
+                  },
+                  {
+                    name: "Anvay Avillas",
+                    loc: "Kongara Kalan",
+                    to: "/projects/anvay-avillas-kongara-kalan",
+                  },
+                  {
+                    name: "Constella Villas",
+                    loc: "Tukkuguda",
+                    to: "/projects/constella-villas-tukkuguda",
+                  },
+                  {
+                    name: "Vertex Florenza",
+                    loc: "Tukkuguda",
+                    to: "/projects/vertex-florenza-tukkuguda",
+                  },
+                  {
+                    name: "Vertex Viva Calista",
+                    loc: "Tukkuguda",
+                    to: "/projects/vertex-viva-calista-tukkuguda",
+                  },
+                  {
+                    name: "Riddhi Laxman County",
+                    loc: "Tukkuguda, Mankhal",
+                    to: "/projects/riddhi-laxman-county-tukkuguda",
+                  },
+                  {
+                    name: "Kavuri Hills Lemon Leaf",
+                    loc: "Tukkuguda, Mankhal",
+                    to: "/projects/kavuri-hills-lemon-leaf-tukkuguda",
+                  },
+                  {
+                    name: "Kavuri Forest Nest",
+                    loc: "Immaguda, Tukkuguda",
+                    to: "/projects/kavuri-forest-nest-immaguda",
+                  },
+                ].map((p) => (
+                  <Link
+                    key={p.to}
+                    to={p.to}
+                    onClick={close}
+                    className="ios-liquid-item group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 transition-all duration-200 active:scale-[0.97]"
                   >
-                    <ChevronDown className="h-3.5 w-3.5 text-[#FF6B00]" />
-                  </span>
-                </summary>
-                {/* iOS 27 Liquid Water Glass dropdown chamber */}
-                <div className="ios-liquid-dropdown mt-2 flex flex-col gap-2 rounded-2xl p-2.5">
-                  {[
-                    {
-                      name: "Autumn Villa",
-                      loc: "Maheshwaram",
-                      to: "/projects/autumn-villas-maheshwaram",
-                    },
-                    {
-                      name: "Anvay Avillas",
-                      loc: "Kongara Kalan",
-                      to: "/projects/anvay-avillas-kongara-kalan",
-                    },
-                    {
-                      name: "Constella Villas",
-                      loc: "Tukkuguda",
-                      to: "/projects/constella-villas-tukkuguda",
-                    },
-                    {
-                      name: "Vertex Florenza",
-                      loc: "Tukkuguda",
-                      to: "/projects/vertex-florenza-tukkuguda",
-                    },
-                    {
-                      name: "Vertex Viva Calista",
-                      loc: "Tukkuguda",
-                      to: "/projects/vertex-viva-calista-tukkuguda",
-                    },
-                    {
-                      name: "Riddhi Laxman County",
-                      loc: "Tukkuguda, Mankhal",
-                      to: "/projects/riddhi-laxman-county-tukkuguda",
-                    },
-                    {
-                      name: "Kavuri Hills Lemon Leaf",
-                      loc: "Tukkuguda, Mankhal",
-                      to: "/projects/kavuri-hills-lemon-leaf-tukkuguda",
-                    },
-                    {
-                      name: "Kavuri Forest Nest",
-                      loc: "Immaguda, Tukkuguda",
-                      to: "/projects/kavuri-forest-nest-immaguda",
-                    },
-                  ].map((p) => (
-                    <Link
-                      key={p.to}
-                      to={p.to}
-                      onClick={close}
-                      className="ios-liquid-item group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 transition-all duration-200 active:scale-[0.97]"
+                    <span className="flex flex-col gap-0.5">
+                      <span className="font-display text-[14px] font-bold text-slate-900 transition-colors group-hover/item:text-[#FF6B00]">
+                        {p.name}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">
+                        {p.loc}
+                      </span>
+                    </span>
+                    <span
+                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-transform duration-200 group-hover/item:translate-x-0.5"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,107,0,0.14))",
+                        border: "1px solid rgba(255,255,255,0.9)",
+                        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.95)",
+                      }}
                     >
-                      <span className="flex flex-col gap-0.5">
-                        <span className="font-display text-[14px] font-bold text-slate-900 transition-colors group-hover/item:text-[#FF6B00]">
-                          {p.name}
-                        </span>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">
-                          {p.loc}
-                        </span>
-                      </span>
-                      <span
-                        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-transform duration-200 group-hover/item:translate-x-0.5"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,107,0,0.12))",
-                          border: "1px solid rgba(255,255,255,0.85)",
-                          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9)",
-                        }}
-                      >
-                        <ChevronDown className="h-3 w-3 -rotate-90 text-[#FF6B00]" />
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </details>
-              {navItems.slice(2).map((item) => (
-                <MobileLink key={item.to} {...item} onClick={close} />
-              ))}
-              <Button asChild variant="brand" className="mt-3 w-full rounded-2xl shadow-lg">
-                <a href="tel:+919646952999">
-                  <Phone /> Call +91 96469 52999
-                </a>
-              </Button>
-            </div>
-          </nav>
-        </>
+                      <ChevronDown className="h-3 w-3 -rotate-90 text-[#FF6B00]" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </details>
+            {navItems.slice(2).map((item) => (
+              <MobileLink key={item.to} {...item} onClick={close} />
+            ))}
+            <Button asChild variant="brand" className="mt-3 w-full">
+              <a href="tel:+919646952999">
+                <Phone /> Call +91 96469 52999
+              </a>
+            </Button>
+          </div>
+        </nav>
       )}
     </header>
   );
@@ -303,7 +291,7 @@ function MobileLink({ label, to, onClick }: { label: string; to: string; onClick
     <Link
       to={to}
       onClick={onClick}
-      className="rounded-xl px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-white/45 active:bg-white/65"
+      className="rounded-sm px-3 py-3 font-semibold text-foreground hover:bg-accent"
     >
       {label}
     </Link>
