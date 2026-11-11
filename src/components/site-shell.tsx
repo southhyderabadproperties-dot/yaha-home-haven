@@ -119,7 +119,7 @@ export function SiteHeader() {
       <div className="page-wrap grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto]">
         <Brand />
         <nav
-          className="hidden items-center justify-center gap-7 lg:flex"
+          className="hidden items-center justify-center gap-2 lg:flex"
           aria-label="Main navigation"
         >
           {navItems.slice(0, 2).map((item) => (
